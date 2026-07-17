@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>1838 Black Metropolis — People & Papers Network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#16130e;--panel:#221d15;--ink:#efe7d8;--dim:#a89c86;--gold:#d4a24e;--rust:#b4552d;--teal:#4e8f83;--line:#3a3226}
+*{box-sizing:border-box;margin:0}
+html{overscroll-behavior:none}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 Georgia,'Times New Roman',serif;height:100vh;display:flex;flex-direction:column;overflow:hidden;overscroll-behavior:none;-webkit-tap-highlight-color:transparent}
+header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}
+header h1{font-size:19px;font-weight:normal;letter-spacing:.06em}
+header h1 b{color:var(--gold)}
+header .sub{color:var(--dim);font-size:12.5px;font-style:italic}
+#wrap{flex:1;display:flex;min-height:0}
+#left{width:290px;border-right:1px solid var(--line);display:flex;flex-direction:column;background:var(--panel)}
+#tabs{display:flex;margin:12px 12px 0;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+#tabs button{flex:1;background:var(--bg);border:0;color:var(--dim);font:13px Georgia;padding:7px;cursor:pointer;letter-spacing:.08em}
+#tabs button.on{background:#33290f;color:var(--gold)}
+#search{margin:12px;padding:9px 12px;background:var(--bg);border:1px solid var(--line);color:var(--ink);font:inherit;border-radius:4px;outline:none}
+#search:focus{border-color:var(--gold)}
+#plist{overflow-y:auto;flex:1}
+.prow{padding:7px 14px;cursor:pointer;border-bottom:1px solid #2a2419;font-size:13.5px;display:flex;justify-content:space-between;gap:8px}
+.prow:hover{background:#2b2517}
+.prow.sel{background:#33290f;border-left:3px solid var(--gold)}
+.prow .ct{color:var(--dim);font-size:11.5px;white-space:nowrap}
+.badge{display:inline-block;font-size:10px;border-radius:3px;padding:0 5px;margin-left:5px;vertical-align:1px}
+.b-w{background:#463818;color:var(--gold)} .b-n{background:#1d3a35;color:#7fc2b4} .b-c{background:#3a2430;color:#d18aa8}
+.b-d{background:#2a3a1d;color:#a8c27f}
+#filters{display:flex;flex-wrap:wrap;gap:5px;margin:0 12px 8px}
+#filters .chip{font-size:10.5px;padding:3px 9px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--dim);cursor:pointer;font-family:Georgia}
+#filters .chip.on{background:#33290f;color:var(--gold);border-color:var(--gold)}
+#orgsel,#churchsel,#papersel{margin:0 12px 8px;padding:7px 9px;width:calc(100% - 24px);background:var(--bg);border:1px solid var(--line);color:var(--ink);font:12.5px Georgia;border-radius:4px;outline:none}
+#orgsel:focus,#churchsel:focus,#papersel:focus{border-color:var(--gold)}
+.orgchips{margin:6px 0 2px}
+.orgchips span{display:inline-block;font-size:11px;background:#2c261a;color:#c9ab6b;border-radius:9px;padding:2px 8px;margin:2px 3px 0 0;cursor:pointer}
+#center{flex:1;position:relative;min-width:0}
+canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+#hint{position:absolute;bottom:10px;left:14px;color:var(--dim);font-size:11.5px;font-style:italic;pointer-events:none}
+#legend{position:absolute;top:10px;left:14px;font-size:11.5px;color:var(--dim)}
+#allbtn{position:absolute;top:8px;right:14px;background:var(--panel);border:1px solid var(--line);color:var(--gold);font:12px Georgia;padding:6px 13px;border-radius:14px;cursor:pointer}
+#allbtn:hover{border-color:var(--gold)}
+#allbtn.on{background:#33290f;border-color:var(--gold)}
+#legend span{margin-right:14px}
+/* mini ego panel -- opens on click in the "all connections" full map so you can see a
+   node's complete real connections without disturbing the stable main layout. Flex
+   column layout so the canvas grows/shrinks to fill whatever size the panel is
+   resized to (see #miniResize) -- header and hint strip stay a fixed height. */
+#miniPanel{position:absolute;top:48px;right:14px;width:300px;height:280px;min-width:220px;min-height:180px;max-width:80vw;max-height:80vh;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.55);z-index:6;display:none;flex-direction:column;overflow:hidden}
+#miniPanel.on{display:flex}
+#miniHead{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid var(--line);background:#2a2419}
+#miniHead span{font-size:12.5px;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#miniClose{background:none;border:0;color:var(--dim);font-size:15px;line-height:1;cursor:pointer;padding:2px 5px;flex:0 0 auto}
+#miniClose:hover{color:var(--ink)}
+#miniCv{flex:1 1 auto;display:block;width:100%;height:auto;min-height:0;cursor:pointer;background:var(--bg)}
+#miniHint{flex:0 0 auto;padding:5px 10px;font-size:10.5px;color:var(--dim);font-style:italic;border-top:1px solid var(--line)}
+#miniResize{position:absolute;right:0;bottom:0;width:16px;height:16px;cursor:nwse-resize;z-index:2}
+#miniResize::after{content:'';position:absolute;right:3px;bottom:3px;width:0;height:0;border-style:solid;border-width:0 0 8px 8px;border-color:transparent transparent var(--dim) transparent;opacity:.6}
+#miniResize:hover::after{border-color:transparent transparent var(--gold) transparent;opacity:1}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+#right{width:400px;min-width:280px;max-width:760px;border-left:1px solid var(--line);overflow-y:auto;background:var(--panel);padding:18px 20px}
+.vsplit{width:6px;cursor:col-resize;background:transparent;flex:0 0 6px;position:relative;z-index:5}
+.vsplit:hover,.vsplit.on{background:rgba(212,162,78,.25)}
+#right h2{font-size:17px;color:var(--gold);font-weight:normal;margin-bottom:2px}
+#right .dates{color:var(--dim);font-style:italic;font-size:13px;margin-bottom:10px}
+#right h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin:16px 0 6px;border-bottom:1px solid var(--line);padding-bottom:3px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:9px 11px;margin-bottom:8px;font-size:13px}
+.card .src{color:var(--teal);font-size:11.5px;margin-top:4px}
+.card .role{color:var(--gold);font-size:11.5px}
+.card q{color:var(--dim);font-style:italic;display:block;margin-top:3px}
+.card .hl{color:var(--ink);font-weight:bold}
+.pl{color:var(--gold);cursor:pointer;text-decoration:underline dotted}
+.src a{color:var(--teal);text-decoration:underline dotted}
+.src a:hover{color:var(--gold)}
+.empty{color:var(--dim);font-style:italic;font-size:13px}
+#stats{padding:9px 14px;font-size:11.5px;color:var(--dim);border-top:1px solid var(--line)}
+#sitefooter{flex:0 0 auto;padding:5px 22px;font-size:10.5px;color:var(--dim);text-align:center;border-top:1px solid var(--line)}
+#sitefooter a{color:var(--teal);text-decoration:underline dotted}
+#sitefooter a:hover{color:var(--gold)}
+/* ---------- mobile: slide-in drawers for #left / #right + touch canvas ----------
+   Desktop layout (the flex row in #wrap) is left completely untouched below the
+   breakpoint threshold. #rightPanel is a new wrapper around the pre-existing #right
+   so a persistent close button can sit next to it without ever being wiped out by
+   the `right.innerHTML = h` writes that select()/selectEvent()/selectOrg() do --
+   display:contents makes it invisible to desktop layout (behaves as if #right were
+   still a direct flex child of #wrap, unchanged from before). */
+#rightPanel{display:contents}
+#menuBtn,#leftClose,#rightClose,#detailFab,#drawerBackdrop{display:none}
+@media (max-width:860px){
+  header{position:relative;padding:10px 14px 10px 50px;gap:4px}
+  header h1{font-size:14px}
+  header .sub{display:none}
+  #menuBtn{display:flex;align-items:center;justify-content:center;position:absolute;left:10px;top:8px;
+    width:34px;height:34px;background:var(--panel);border:1px solid var(--line);border-radius:6px;
+    color:var(--gold);font-size:17px;cursor:pointer;z-index:3}
+  #drawerBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:15}
+  #drawerBackdrop.hide{display:none!important}
+  #left{position:fixed;top:0;left:0;bottom:0;width:86vw;max-width:340px;z-index:20;
+    padding-top:52px;transform:translateX(-100%);transition:transform .22s ease;box-shadow:6px 0 24px rgba(0,0,0,.5)}
+  #left.open{transform:translateX(0)}
+  #leftClose{display:flex;align-items:center;justify-content:center;position:absolute;top:6px;right:6px;
+    width:36px;height:36px;background:none;border:0;color:var(--dim);font-size:20px;cursor:pointer;z-index:2}
+  #search{font-size:16px}
+  .vsplit{display:none}
+  #rightPanel{display:flex;flex-direction:column;position:fixed;top:0;right:0;bottom:0;width:100vw;z-index:20;
+    background:var(--panel);transform:translateX(100%);transition:transform .22s ease}
+  #rightPanel.open{transform:translateX(0)}
+  #right{width:100%;max-width:100%;min-width:0;border-left:0;flex:1;padding:52px 16px 18px}
+  #rightClose{display:flex;align-items:center;justify-content:center;position:absolute;top:6px;right:6px;
+    width:38px;height:38px;background:none;border:0;color:var(--dim);font-size:22px;cursor:pointer;z-index:2}
+  #detailFab{display:flex;align-items:center;gap:6px;position:absolute;bottom:16px;right:14px;
+    background:var(--panel);border:1px solid var(--gold);color:var(--gold);font:13px Georgia;
+    padding:10px 18px;border-radius:22px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5);z-index:4}
+  #detailFab.hide{display:none!important}
+  #allbtn{font-size:11px;padding:6px 12px;top:6px;right:10px}
+  #legend{font-size:9.5px;max-width:56vw;top:8px}
+  #legend span{display:block;margin-right:0}
+  #miniPanel{left:8px;right:8px;top:auto;bottom:60px;width:auto;height:42vh;max-height:340px;max-width:calc(100vw - 16px)}
+  #miniResize{display:none}
+  #hint{font-size:10px;right:8px;left:8px;text-align:center;bottom:6px}
+  .prow{padding:11px 14px;font-size:14.5px}
+}
+</style>
+</head>
+<body>
+<header>
+  <button id="menuBtn" aria-label="Open menu" title="Open menu">☰</button>
+  <h1><b>1838 BLACK METROPOLIS</b> · People &amp; Papers Network</h1>
+  <span class="sub">Winch Names Reference + historic Black newspapers (Freedoms Journal, Philadelphia Tribune, Colored American, Pennsylvania Freeman) + 1838, 1847 PAS Census + 1820 Directory — click a name to see every reference · build __BUILD__</span>
+</header>
+<div id="drawerBackdrop" class="hide"></div>
+<div id="wrap">
+  <div id="left">
+    <button id="leftClose" aria-label="Close menu" title="Close">✕</button>
+    <div id="tabs"><button id="tab-p" class="on">PEOPLE</button><button id="tab-e">EVENTS</button><button id="tab-o">ORGS</button></div>
+    <input id="search" placeholder="Search a name… e.g. Cornish" autocomplete="off">
+    <div id="filters">
+      <span class="chip on" data-f="all">All</span>
+      <span class="chip" data-f="winch">Winch</span>
+      <span class="chip" data-f="papers">In newspapers</span>
+      <span class="chip" data-f="c1838">1838 census</span>
+      <span class="chip" data-f="c1847">1847 census</span>
+      <span class="chip" data-f="dir1820">1820 directory</span>
+    </div>
+    <select id="papersel"><option value="">All newspapers…</option></select>
+    <select id="orgsel"><option value="">All organizations…</option></select>
+    <select id="churchsel"><option value="">All churches (1838 census)…</option></select>
+    <div id="plist"></div>
+    <div id="stats"></div>
+  </div>
+  <div id="center">
+    <div id="legend">
+      <span><i class="dot" style="background:#d4a24e"></i>person (selected)</span>
+      <span><i class="dot" style="background:#4e8f83"></i>connected person</span>
+      <span><i class="dot" style="background:#b4552d"></i>event</span>
+      <span><i class="dot" style="background:#d18aa8"></i>organization</span>
+    </div>
+    <button id="allbtn">⦿ All connections</button>
+    <div id="miniPanel">
+      <div id="miniHead"><span id="miniTitle"></span><button id="miniClose" title="close">✕</button></div>
+      <canvas id="miniCv"></canvas>
+      <div id="miniHint">click a name to open it here</div>
+      <div id="miniResize" title="drag to resize"></div>
+    </div>
+    <canvas id="cv"></canvas>
+    <div id="hint">drag to pan · scroll to zoom · click/tap a node to navigate</div>
+    <button id="detailFab" class="hide">Details</button>
+  </div>
+  <div class="vsplit" id="rsplit" title="drag to resize"></div>
+  <div id="rightPanel">
+    <button id="rightClose" aria-label="Close details" title="Close">✕</button>
+    <div id="right"><p class="empty">Select a person to see their newspaper appearances, writings, events, co-attendees, and Winch reference entry.</p></div>
+  </div>
+</div>
+<footer id="sitefooter"><a href="https://www.1838blackmetropolis.com/" target="_blank" rel="noopener">1838 Black Metropolis Historiography, AI Visuals, and Interpretation</a> © 2023, 2024, 2025, 2026 by 1838 Black Metropolis, Inc., is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="noopener">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a><br>For 1838 Black Metropolis use only.</footer>
+<script>
+// new-version check: compare our build stamp against the server's every few minutes
+(function(){
+  const mine = (document.querySelector('header .sub')?.textContent.match(/build ([\d\- :]+)/)||[])[1];
+  if(!mine) return;
+  async function check(){
+    try{
+      const r = await fetch(location.pathname.endsWith('/') ? 'index.html' : location.pathname, {cache:'no-store'});
+      const t = await r.text();
+      const theirs = (t.match(/build ([\d\- :]+)/)||[])[1];
+      if(theirs && theirs !== mine && !document.getElementById('updbar')){
+        const b = document.createElement('div');
+        b.id='updbar';
+        b.style.cssText='position:fixed;bottom:14px;right:14px;background:#33290f;border:1px solid #d4a24e;color:#efe7d8;font:13px Georgia;padding:10px 16px;border-radius:8px;cursor:pointer;z-index:99;box-shadow:0 2px 12px rgba(0,0,0,.5)';
+        b.textContent = '↻ Newer data available — click to reload';
+        b.onclick = ()=>location.reload(true);
+        document.body.appendChild(b);
+      }
+    }catch(e){}
+  }
+  setTimeout(check, 30000);
+  setInterval(check, 5*60*1000);
+})();
+// resizable detail panel
+(function(){
+  const right = document.getElementById('right'), split = document.getElementById('rsplit');
+  try{ const w = localStorage.getItem('bm_rightw'); if(w) right.style.width = w + 'px'; }catch(e){}
+  let dragging = false;
+  split.addEventListener('mousedown', e=>{ dragging = true; split.classList.add('on'); e.preventDefault(); });
+  window.addEventListener('mousemove', e=>{
+    if(!dragging) return;
+    const w = Math.max(280, Math.min(760, window.innerWidth - e.clientX));
+    right.style.width = w + 'px';
+    if(typeof resize === 'function') resize();
+  });
+  window.addEventListener('mouseup', ()=>{
+    if(!dragging) return;
+    dragging = false; split.classList.remove('on');
+    try{ localStorage.setItem('bm_rightw', parseInt(right.style.width)||400); }catch(e){}
+  });
+})();
+</script>
+<script>
+const DATA = /*__DATA__*/null;
+const P = new Map(DATA.people.map(p=>[p.id,p]));
+const E = new Map(DATA.events.map(e=>[e.id,e]));
+const A = new Map(DATA.articles.map(a=>[a.id,a]));
+const PAPERS = {CA:'Colored American', PF:'Pennsylvania Freeman', FJ:"Freedom's Journal", PP:'Pencil Pusher (Phila. Tribune)'};
+const NBR = new Map(); // pid -> Map(pid -> weight)
+for (const [a,b,w] of DATA.edges){
+  if(!NBR.has(a)) NBR.set(a,new Map()); if(!NBR.has(b)) NBR.set(b,new Map());
+  NBR.get(a).set(b,(NBR.get(a).get(b)||0)+w); NBR.get(b).set(a,(NBR.get(b).get(a)||0)+w);
+}
+// ---------- "all connections" full-map tuning ----------
+// Default view only draws people with this many or more total connections, to keep
+// the center of the map from becoming an unreadable, dense hairball. Clicking any
+// node still reveals every one of its real connections regardless of this threshold --
+// see openMiniPanel() below (the mini ego-panel), not the main map itself.
+const FULL_MIN_CONN = 10;
+// People are drawn at one uniform size (same as an org/event's Small tier below) --
+// person-to-person line clutter is what made the map unreadable, not dot size, so
+// dot size no longer tries to encode importance; the person-to-person LINES do the
+// decluttering instead (see draw()/tick() -- they're hidden by default and only
+// appear for whichever person is currently selected/highlighted).
+const PERSON_R = 8;
+// Orgs and events get one of three fixed sizes based on how many people are actually
+// attached to them in the data (their real total, not just how many are on screen):
+// 0-10 Small, 11-20 Medium, 21+ Large.
+const GROUP_R_SMALL = 8, GROUP_R_MEDIUM = 12, GROUP_R_LARGE = 17;
+const groupR = total => total<=10 ? GROUP_R_SMALL : total<=20 ? GROUP_R_MEDIUM : GROUP_R_LARGE;
+// A person's "primary" affiliation is whichever single org or event they belong to with
+// the largest real total membership/attendance (comparing across both together) -- e.g.
+// someone in a 3-person committee AND the 131-member Philadelphia African Lodge has the
+// Lodge as primary. tick() below pulls a person tight against their primary affiliation
+// and only loosely toward any others, so people in just one or two groups nestle in close
+// (reading as part of that cluster) while people who bridge several groups get stretched
+// between them and visually stick out as connectors -- exactly reflecting how central
+// they are to the network. Computed once and cached since the underlying data is static.
+const primaryAffilCache = new Map();
+function personPrimaryAffil(pid){
+  if(primaryAffilCache.has(pid)) return primaryAffilCache.get(pid);
+  const p = P.get(pid);
+  let best = null, bestN = -1;
+  if(p){
+    for(const {e:eid} of (p.events||[])){
+      const e = E.get(eid); if(!e) continue;
+      if(e.att.length>bestN){ bestN=e.att.length; best={type:'e', id:eid}; }
+    }
+    (DATA.orgs||[]).forEach(o=>{
+      if(!o.members.includes(pid)) return;
+      if(o.members.length>bestN){ bestN=o.members.length; best={type:'o', name:o.name}; }
+    });
+  }
+  primaryAffilCache.set(pid, best);
+  return best;
+}
+function isPrimaryAffil(pid, type, key){
+  const b = personPrimaryAffil(pid);
+  if(!b || b.type!==type) return false;
+  return type==='e' ? b.id===key : b.name===key;
+}
+// tick()'s spring target distance for a person-org/person-event link: tight for a
+// person's primary affiliation (nestles them right against that cluster), loose for
+// any other org/event they also belong to (stretches them toward it instead, which is
+// what makes multi-affiliated people visibly stick out as connectors between clusters).
+const PRIMARY_GAP_BASE = 26, SECONDARY_GAP_BASE = 140;
+// Target distance for person-to-person links -- see tick() for why this needs to be
+// short and firmly enforced (freshly-revealed people otherwise drift far from wherever
+// they were pulled in, having no other force anchoring them).
+const PP_GAP_BASE = 40;
+// Long-range "leash" radius/strength -- see tick() for why weakly-connected sub-
+// clusters need this to keep from drifting away into isolated islands. The dataset
+// keeps growing with every newspaper batch, which gradually widens the well-connected
+// main mass's own natural spread -- 1100 was calibrated against an earlier, smaller
+// dataset (~900 units, p99) and has since been outgrown once already (hit 1124 once the
+// core reached 609 people). Bumped to 1400 for real headroom against continued growth,
+// rather than re-tuning this every time another batch lands.
+const LEASH_RADIUS = 1400, LEASH_K = 0.01;
+// Direct per-frame pull of each org/event toward the live centroid of its own
+// currently-linked members -- see tick() for why the leash above isn't enough on
+// its own (an org can be individually within LEASH_RADIUS of the map centroid while
+// still sitting far from its own members, if it has no primary-affiliated members to
+// anchor it strongly and only weak/diffuse secondary springs). 0.03 is calibrated
+// against the dataset's worst zero-primary-member orgs (settle ~270-320px from their
+// own members' centroid, down from 800px+ before this force existed); pushing higher
+// gains little further ground and risks the well-connected main mass itself exceeding
+// LEASH_RADIUS.
+const GROUP_ANCHOR_K = 0.03;
+function activity(p){return (p.mentions?.length||0)+(p.events?.length||0)*2+(p.articles?.length||0)*2;}
+const sorted = [...P.values()].sort((x,y)=> (activity(y)-activity(x)) || ((y.refs?.length||0)-(x.refs?.length||0)) || x.name.localeCompare(y.name));
+
+// ---------- left list ----------
+const plist = document.getElementById('plist'), search = document.getElementById('search');
+let mode = 'p';
+const sortedEvents = [...E.values()].sort((a,b)=>(a.date||'').localeCompare(b.date||'')||a.name.localeCompare(b.name));
+function renderList(q){
+  q=(q||'').toLowerCase();
+  if(mode==='p'){
+    const f = window._srcFilter||'all';
+    const om = window._orgFilter ? new Set((DATA.orgs.find(o=>o.name===window._orgFilter)||{members:[]}).members) : null;
+    const ch = window._churchFilter||null;
+    const pf = window._paperFilter||null;
+    const inPaper = p=>{
+      if(!pf) return true;
+      for(const m of (p.mentions||[])) if(m.i && m.i.startsWith(pf)) return true;
+      for(const x of (p.articles||[])){ const a=A.get(x.a); if(a && a.issue && a.issue.startsWith(pf)) return true; }
+      return false;};
+    const pass = p=>{
+      if(!inPaper(p)) return false;
+      if(om && !om.has(p.id)) return false;
+      if(ch==='__none__'){ if(!(p.census||[]).some(NOCHURCH)) return false; }
+      else if(ch && !(p.census||[]).some(c=>c.church===ch)) return false;
+      if(f==='all') return true;
+      if(f==='winch') return p.src==='winch';
+      if(f==='papers') return (p.mentions?.length||p.articles?.length||p.events?.length);
+      if(f==='c1838') return (p.census||[]).some(c=>c.y===1838);
+      if(f==='c1847') return (p.census||[]).some(c=>c.y===1847);
+      if(f==='dir1820') return (p.directory||[]).length>0;
+      return true;};
+    const blob = p=>{
+      if(p._blob===undefined){
+        const parts=[p.name,p.aka||''];
+        for(const r of (p.refs||[])) parts.push(r.n||'',r.c||'');
+        for(const m of (p.mentions||[])) parts.push(m.ctx||'');
+        for(const c of (p.census||[])) parts.push(c.church||'',c.addr||'',c.occM||'',c.occF||'');
+        for(const d of (p.directory||[])) parts.push(d.occ||'',d.addr||'');
+        parts.push((p.orgs||[]).join(' '));
+        p._blob = parts.join(' ').toLowerCase();
+      }
+      return p._blob;};
+    const nameHit = p=>p.name.toLowerCase().includes(q)||(p.aka||'').toLowerCase().includes(q);
+    const deep = q.length>=3;
+    let rows = sorted.filter(p=>pass(p)&&(nameHit(p)||(deep&&blob(p).includes(q))));
+    if(deep && q) rows = [...rows.filter(nameHit), ...rows.filter(p=>!nameHit(p))];
+    rows = rows.slice(0,400);
+    plist.innerHTML = rows.map(p=>{
+      const badge = p.src==='winch' ? '<span class="badge b-w">Winch</span>'
+        : p.src==='census' ? '<span class="badge b-c">census</span>'
+        : p.src==='1820directory' ? '<span class="badge b-d">1820 directory</span>' : '<span class="badge b-n">paper</span>';
+      const ct = [];
+      if(p.mentions?.length) ct.push(p.mentions.length+'✎');
+      if(p.events?.length) ct.push(p.events.length+'★');
+      if(p.refs?.length) ct.push(p.refs.length+'§');
+      if(p.census?.length) ct.push(p.census.length+'⌂');
+      if(p.directory?.length) ct.push(p.directory.length+'▤');
+      return `<div class="prow" data-id="${p.id}" data-t="p"><span>${p.name}${badge}</span><span class="ct">${ct.join(' ')}</span></div>`;
+    }).join('');
+  } else if(mode==='o'){
+    const rows = [...(DATA.orgs||[])].filter(o=>o.name.toLowerCase().includes(q))
+      .sort((a,b)=>b.members.length-a.members.length || a.name.localeCompare(b.name)).slice(0,400);
+    plist.innerHTML = rows.map(o=>
+      `<div class="prow" data-t="o" data-name="${o.name.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"><span>${o.name}</span><span class="ct">${o.members.length}◆</span></div>`).join('');
+  } else {
+    const rows = sortedEvents.filter(e=>(e.name+' '+(e.loc||'')+' '+(e.desc||'')+' '+(e.date||'')).toLowerCase().includes(q)).slice(0,400);
+    plist.innerHTML = rows.map(e=>
+      `<div class="prow" data-id="${e.id}" data-t="e"><span>${e.name}</span><span class="ct">${e.date||''} · ${e.att.length}♦</span></div>`).join('');
+  }
+}
+plist.addEventListener('click',ev=>{const r=ev.target.closest('.prow'); if(!r)return;
+  if(r.dataset.t==='e') selectEvent(+r.dataset.id);
+  else if(r.dataset.t==='o') selectOrg(r.dataset.name);
+  else select(+r.dataset.id);
+  if(isMobile()) closeLeftDrawer();});
+search.addEventListener('input',()=>renderList(search.value));
+const tabP=document.getElementById('tab-p'), tabE=document.getElementById('tab-e'), tabO=document.getElementById('tab-o');
+function setMode(m){ mode=m; tabP.classList.toggle('on',m==='p'); tabE.classList.toggle('on',m==='e'); tabO.classList.toggle('on',m==='o');
+  search.placeholder = m==='p' ? 'Search a name… e.g. Cornish' : m==='o' ? 'Search organizations… e.g. Lodge' : 'Search events… e.g. convention';
+  renderList(search.value); }
+tabP.addEventListener('click',()=>setMode('p'));
+tabE.addEventListener('click',()=>setMode('e'));
+tabO.addEventListener('click',()=>setMode('o'));
+const orgsel = document.getElementById('orgsel');
+const orgsAll = [...(DATA.orgs||[])].sort((a,b)=>a.name.localeCompare(b.name));
+orgsel.innerHTML = '<option value="">All organizations…</option>' + orgsAll.map(o=>
+  `<option value="${esc(o.name)}">${esc(o.name)} (${o.members.length})</option>`).join('');
+orgsel.addEventListener('change',()=>{
+  window._orgFilter = orgsel.value || null;
+  if(mode!=='p') setMode('p'); else renderList(search.value);});
+const papersel = document.getElementById('papersel');
+{ const pc = {};
+  for(const p of P.values()){
+    const codes = new Set();
+    for(const m of (p.mentions||[])) if(m.i) codes.add(m.i.split('_')[0]);
+    for(const x of (p.articles||[])){ const a=A.get(x.a); if(a&&a.issue) codes.add(a.issue.split('_')[0]); }
+    for(const c of codes) pc[c]=(pc[c]||0)+1; }
+  for(const [code,label] of Object.entries(PAPERS)){
+    if(!pc[code]) continue;
+    const op=document.createElement('option'); op.value=code;
+    op.textContent=label; papersel.appendChild(op); } }
+papersel.addEventListener('change',()=>{
+  window._paperFilter = papersel.value || null;
+  if(mode!=='p') setMode('p'); else renderList(search.value);});
+const churchsel = document.getElementById('churchsel');
+const NOCHURCH = c => c.y===1838 && (!c.church || c.church==='0');
+{ const cc = {}; let none=0;
+  for(const p of P.values()) for(const c of (p.census||[])){
+    if(NOCHURCH(c)) none++;
+    else if(c.church && c.church!=='0') cc[c.church]=(cc[c.church]||0)+1; }
+  Object.entries(cc).sort((a,b)=>b[1]-a[1]).forEach(([name,n])=>{
+    const op=document.createElement('option'); op.value=name;
+    const label = /^\d+$/.test(name) ? `Church code ${name}` : name;
+    op.textContent=`${label} (${n})`; churchsel.appendChild(op);});
+  const op=document.createElement('option'); op.value='__none__';
+  op.textContent=`None recorded (${none})`; churchsel.appendChild(op); }
+churchsel.addEventListener('change',()=>{
+  window._churchFilter = churchsel.value || null;
+  if(mode!=='p') setMode('p'); else renderList(search.value);});
+document.getElementById('filters').addEventListener('click',ev=>{
+  const c=ev.target.closest('.chip'); if(!c)return;
+  window._srcFilter=c.dataset.f;
+  document.querySelectorAll('#filters .chip').forEach(x=>x.classList.toggle('on',x===c));
+  if(mode!=='p') setMode('p'); else renderList(search.value);
+});
+document.getElementById('stats').textContent =
+  `${DATA.people.length} people · ${DATA.events.length} events · ${DATA.articles.length} articles · ${DATA.edges.length} connections`;
+renderList('');
+
+// ---------- mobile slide-in drawers ----------
+// #left (people/events/orgs list) and #rightPanel (detail) are the full desktop
+// panels, repurposed as full-screen overlays below the 860px breakpoint (see CSS).
+// isMobile() is checked live (not cached) since a device can rotate/resize.
+const menuBtn = document.getElementById('menuBtn'), leftClose = document.getElementById('leftClose'),
+  rightClose = document.getElementById('rightClose'), rightPanel = document.getElementById('rightPanel'),
+  drawerBackdrop = document.getElementById('drawerBackdrop'), detailFab = document.getElementById('detailFab'),
+  leftEl = document.getElementById('left');
+function isMobile(){ return window.innerWidth <= 860; }
+function syncBackdrop(){
+  const on = leftEl.classList.contains('open') || rightPanel.classList.contains('open');
+  drawerBackdrop.classList.toggle('hide', !on);
+}
+function syncFab(){
+  detailFab.classList.toggle('hide', !isMobile() || rightPanel.classList.contains('open'));
+}
+function openLeftDrawer(){ leftEl.classList.add('open'); syncBackdrop(); }
+function closeLeftDrawer(){ leftEl.classList.remove('open'); syncBackdrop(); }
+function openRightDrawer(){ rightPanel.classList.add('open'); syncBackdrop(); syncFab(); }
+function closeRightDrawer(){ rightPanel.classList.remove('open'); syncBackdrop(); syncFab(); }
+menuBtn.addEventListener('click', ()=>{ closeRightDrawer(); openLeftDrawer(); });
+leftClose.addEventListener('click', closeLeftDrawer);
+rightClose.addEventListener('click', closeRightDrawer);
+detailFab.addEventListener('click', openRightDrawer);
+drawerBackdrop.addEventListener('click', ()=>{ closeLeftDrawer(); closeRightDrawer(); });
+window.addEventListener('resize', syncFab);
+
+// ---------- detail panel ----------
+const right = document.getElementById('right');
+const ISSUE_LABEL = s=>{ if(!s) return ''; const [c,d]=s.split('_'); return (PAPERS[c]||c)+' — '+d; };
+const URLS = DATA.issueUrls||{};
+const JPEG_ISSUES = new Set(DATA.jpegIssues||[]);
+function srcLinks(slug,pg){
+  if(!slug) return '';
+  let h = '';
+  if(JPEG_ISSUES.has(slug)){
+    h += ` · <a href="pages/${slug}_p${pg}.jpg" target="_blank" title="open the scanned page">view page</a>`;
+    if(URLS[slug]) h += ` · <a href="${URLS[slug]}" target="_blank" title="full issue PDF on Google Drive">full issue</a>`;
+  } else if(URLS[slug]) {
+    // no local page scans for this source (e.g. a born-digital document) -- link straight into the
+    // PDF at the cited page via Google Drive's #page= fragment, plus a plain link to the whole document.
+    h += ` · <a href="${URLS[slug]}#page=${pg}" target="_blank" title="open this page in the source document">view page</a>`;
+    h += ` · <a href="${URLS[slug]}" target="_blank" title="full document on Google Drive">full document</a>`;
+  }
+  return h;
+}
+function esc(t){return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function select(pid){
+  const p = P.get(pid); if(!p) return;
+  window._sel = pid;
+  document.querySelectorAll('.prow').forEach(r=>r.classList.toggle('sel', +r.dataset.id===pid));
+  let h = `<h2>${esc(p.name)}</h2><div class="dates">${esc(p.dates||'')}${p.src==='winch'?' · in Winch reference':p.src==='census'?' · from census records':p.src==='1820directory'?' · from the 1820 city directory':' · found in newspapers'}</div>`;
+  if(p.aka) h += `<div class="dates" style="margin-top:-8px">also recorded as: ${esc(p.aka)}</div>`;
+  if(p.orgs?.length) h += `<div class="orgchips">${p.orgs.map(o=>`<span data-o="${esc(o)}">${esc(o)}</span>`).join('')}</div>`;
+  // articles authored
+  const arts = (p.articles||[]).map(x=>A.get(x.a)).filter(Boolean);
+  if(arts.length){ h += `<h3>Wrote / signed in the paper</h3>` + arts.map(a=>
+    `<div class="card"><span class="hl">${esc(a.hl)}</span><q>${esc(a.sum)}</q><div class="src">${ISSUE_LABEL(a.issue)}, p.${a.pg} · ${esc(a.ty)}${srcLinks(a.issue,a.pg)}</div></div>`).join(''); }
+  // events
+  const evs = (p.events||[]).map(x=>({e:E.get(x.e),role:x.role})).filter(x=>x.e);
+  if(evs.length){ h += `<h3>Events</h3>` + evs.map(({e,role})=>{
+    const others = e.att.filter(([q])=>q!==pid).map(([q,r])=>{
+      const op=P.get(q); return op?`<span class="pl" data-p="${q}">${esc(op.name)}</span> <em style="color:var(--dim)">(${esc(r)})</em>`:'';
+    }).filter(Boolean).join(', ');
+    return `<div class="card"><span class="hl pl" data-e="${e.id}">${esc(e.name)}</span><div class="role">${esc(role)} · ${esc(e.date||'')} · ${esc(e.loc||'')}</div><q>${esc(e.desc)}</q>${others?`<div style="margin-top:5px;font-size:12.5px"><b style="color:var(--rust)">Also there:</b> ${others}</div>`:''}</div>`;
+  }).join(''); }
+  // mentions
+  if(p.mentions?.length){ h += `<h3>Appears in the paper (${p.mentions.length})</h3>` + p.mentions.slice(0,25).map(m=>
+    `<div class="card">${m.role?`<span class="role">${esc(m.role)}</span> — `:''}<q>…${esc(m.ctx)}…</q><div class="src">${ISSUE_LABEL(m.i)}, p.${m.p}${m.amb?' · <em>name match uncertain</em>':''}${srcLinks(m.i,m.p)}</div></div>`).join(''); }
+  // census records
+  if(p.census?.length){ h += `<h3>Census records</h3>` + p.census.map(c=>{
+    const bits=[];
+    if(c.addr) bits.push(c.addr + (c.ward?` (Ward ${c.ward})`:''));
+    if(c.occM) bits.push('occupation: '+c.occM);
+    if(c.occF) bits.push('female occupation: '+c.occF);
+    if(c.fam) bits.push(c.fam+' in family');
+    if(c.church) bits.push('church: '+c.church);
+    if(c.wealth) bits.push('family wealth: $'+c.wealth);
+    if(c.read==='1') bits.push('can read');
+    if(c.write==='1') bits.push('can write');
+    if(c.born_slaves) bits.push(c.born_slaves+' born enslaved');
+    if(c.region) bits.push(c.region);
+    let mh='';
+    if(c.match) mh = `<div style="margin-top:4px;font-size:12px;color:var(--gold)">✓ Confirmed ${c.y===1838?'1847':'1838'} match${c.match.cert?` (${esc(c.match.cert)})`:''}${c.match.addr47?` — 1847 addr: ${esc(c.match.addr47)}`:''}${c.match.addr38?` — 1838 addr: ${esc(c.match.addr38)}`:''}</div>`;
+    return `<div class="card"><span class="hl">${c.y} census — ${esc(c.name)}</span><q>${esc(bits.join(' · '))}</q>${mh}<div class="src">${c.y===1838?'Pennsylvania Abolition Society census of 1838':'Society of Friends census of 1847 (SOFAAC)'} · household ID ${esc(c.cid||'?')} · <em>name-based link</em></div></div>`;
+  }).join(''); }
+  // 1820 city directory records
+  if(p.directory?.length){ h += `<h3>1820 city directory (${p.directory.length})</h3>` + p.directory.map(d=>{
+    const bits=[];
+    if(d.occ) bits.push(d.occ);
+    if(d.addr) bits.push(d.addr);
+    if(d.pdfPage) bits.push('directory p.'+d.pdfPage);
+    if(d.conf) bits.push('confidence: '+d.conf);
+    const rev = d.needsReview ? `<div style="margin-top:4px;font-size:12px;color:var(--rust)">⚑ needs review: ${esc(d.needsReview)}</div>` : '';
+    return `<div class="card"><span class="hl">${esc(d.name||p.name)}</span><q>${esc(bits.join(' · '))}</q>${rev}<div class="src">1820 Philadelphia city directory (cross-marked Black residents)${d.ocr?` · OCR: "${esc(d.ocr)}"`:''} · <em>name-based link</em> · <a href="https://drive.google.com/file/d/19a_BG9N5yWaskwywXPh-t_f_3qa3MiCU/view?usp=drive_link" target="_blank" title="1820 Philadelphia directory source on Google Drive">view directory</a></div></div>`;
+  }).join(''); }
+  // winch refs
+  if(p.refs?.length){ h += `<h3>Winch reference entry (${p.refs.length})</h3>` + p.refs.map(r=>
+    `<div class="card">${esc(r.n||'')}${r.c?`<div class="src">(${esc(r.c)})</div>`:''}</div>`).join(''); }
+  if(!arts.length&&!evs.length&&!p.mentions?.length&&!p.refs?.length&&!p.directory?.length) h += '<p class="empty">No records.</p>';
+  right.innerHTML = h;
+  right.scrollTop = 0;
+  if(isMobile() && !window._suppressAutoOpen) openRightDrawer();
+  right.querySelectorAll('.pl').forEach(el=>el.addEventListener('click',()=>{
+    if(el.dataset.e) selectEvent(+el.dataset.e); else select(+el.dataset.p);}));
+  right.querySelectorAll('.orgchips span').forEach(el=>el.addEventListener('click',()=>{
+    orgsel.value = el.dataset.o; window._orgFilter = el.dataset.o;
+    if(mode!=='p') setMode('p'); else renderList(search.value);}));
+  if(window._fullView){
+    // the main map stays completely stable on click now -- no new nodes/links are ever
+    // added to it here (that used to wake the whole simulation and make every node on
+    // the map drift, not just the clicked one). If this person happens to already be
+    // visible, just highlight them and their existing on-map links; either way, open
+    // the mini panel with their COMPLETE real ego-network (see openMiniPanel below).
+    const existing = nodes.find(n=>n.type==='p'&&n.id===pid);
+    for(const n of nodes) n.sel = (n.type==='p' && n.id===pid);
+    setHighlight(existing || null);
+    openMiniPanel('p', pid, p.name);
+  } else { setHighlight(null); buildGraph(pid); }
+}
+
+function selectEvent(eid){
+  const e = E.get(eid); if(!e) return;
+  document.querySelectorAll('.prow').forEach(r=>r.classList.toggle('sel', r.dataset.t==='e' && +r.dataset.id===eid));
+  let h = `<h2>${esc(e.name)}</h2><div class="dates">${esc(e.date||'date unknown')}${e.loc?' · '+esc(e.loc):''}</div>`;
+  if(e.desc) h += `<div class="card"><q>${esc(e.desc)}</q>${e.issue?`<div class="src">${ISSUE_LABEL(e.issue)}, p.${e.pg}${srcLinks(e.issue,e.pg)}</div>`:''}</div>`;
+  if(e.att.length){
+    h += `<h3>Who was there (${e.att.length})</h3>` + e.att.map(([q,role])=>{
+      const op=P.get(q); if(!op) return '';
+      return `<div class="card"><span class="pl" data-p="${q}">${esc(op.name)}</span> <span class="role">— ${esc(role)}</span>${op.src==='winch'?' <span class="badge b-w">Winch</span>':''}</div>`;
+    }).join('');
+  } else h += '<p class="empty">No attendees recorded.</p>';
+  right.innerHTML = h; right.scrollTop = 0;
+  if(isMobile() && !window._suppressAutoOpen) openRightDrawer();
+  right.querySelectorAll('.pl').forEach(el=>el.addEventListener('click',()=>select(+el.dataset.p)));
+  if(window._fullView){
+    const existing = nodes.find(n=>n.type==='e'&&n.id===eid);
+    for(const n of nodes) n.sel = (n.type==='e' && n.id===eid);
+    setHighlight(existing || null);
+    openMiniPanel('e', eid, e.name);
+  } else { setHighlight(null); buildEventGraph(eid); }
+}
+function buildEventGraph(eid){
+  const e=E.get(eid); nodes=[]; links=[];
+  const nmap=new Map();
+  function addNode(id,type,label,r){ if(nmap.has(type+id))return nmap.get(type+id);
+    const n={id,type,label,r,x:(Math.random()-.5)*80,y:(Math.random()-.5)*80,z:0,vx:0,vy:0,vz:0};
+    nmap.set(type+id,n); nodes.push(n); return n;}
+  const center=addNode(eid,'e',e.name,15); center.x=0;center.y=0;center.fixed=true;
+  for(const [q] of e.att){ const op=P.get(q); if(!op)continue;
+    const n=addNode(q,'p',op.name,8); links.push({s:center,t:n,w:3}); }
+  // link attendees who share other events/co-occurrences
+  const ids=e.att.map(([q])=>q);
+  for(let i=0;i<ids.length;i++)for(let j=i+1;j<ids.length;j++){
+    const w=(NBR.get(ids[i])||new Map()).get(ids[j]); if(w>3){
+      const a=nmap.get('p'+ids[i]),b=nmap.get('p'+ids[j]); if(a&&b)links.push({s:a,t:b,w:1,faint:true});}}
+  view={x:0,y:0,k:1};
+  for(let it=0;it<300;it++) tick();
+}
+// clicking an organization (in the ORGS tab or on an org node) shows the org itself
+// as the centered node with all its members connected around it, plus the detail panel
+function selectOrg(name){
+  const oi=(DATA.orgs||[]).findIndex(o=>o.name===name); if(oi<0) return;
+  const o=DATA.orgs[oi];
+  const mem=o.members.filter(q=>P.has(q));
+  document.querySelectorAll('.prow').forEach(r=>r.classList.toggle('sel', r.dataset.t==='o' && r.dataset.name===name));
+  let h=`<h2>${esc(o.name)}</h2><div class="dates">organization · ${mem.length} members on record</div>`;
+  h+=`<div style="margin:2px 0 6px;font-size:12.5px"><span class="pl" id="orgfilterbtn">filter the people list to this organization</span></div>`;
+  if(mem.length){
+    h+=`<h3>Members (${mem.length})</h3>`+mem.map(q=>{const op=P.get(q);
+      const s=(o.src||{})[q]; let sl='';
+      if(s&&s.i) sl=`<div class="src">${ISSUE_LABEL(s.i)}${s.p?', p.'+s.p:''}${srcLinks(s.i,s.p)}</div>`;
+      else if(s&&s.e&&E.get(s.e)){const ev=E.get(s.e);
+        sl=`<div class="src">from event: <span class="pl" data-e="${s.e}">${esc(ev.name)}</span>${ev.date?' · '+esc(ev.date):''}</div>`;}
+      else if(s&&s.w) sl=`<div class="src">named in Winch reference entry</div>`;
+      return `<div class="card"><span class="pl" data-p="${q}">${esc(op.name)}</span>${op.src==='winch'?' <span class="badge b-w">Winch</span>':''}${sl}</div>`;}).join('');
+  } else h+='<p class="empty">No members on record.</p>';
+  right.innerHTML=h; right.scrollTop=0;
+  if(isMobile() && !window._suppressAutoOpen) openRightDrawer();
+  right.querySelectorAll('.pl').forEach(el=>el.addEventListener('click',()=>{
+    if(el.dataset.e) selectEvent(+el.dataset.e); else if(el.dataset.p) select(+el.dataset.p);}));
+  const fb=document.getElementById('orgfilterbtn');
+  if(fb) fb.addEventListener('click',()=>{ orgsel.value=name; window._orgFilter=name;
+    if(mode!=='p') setMode('p'); else renderList(search.value); });
+  if(window._fullView){
+    const existing = nodes.find(n=>n.type==='o'&&n.org===name);
+    for(const n of nodes) n.sel=(n.type==='o' && n.org===name);
+    setHighlight(existing || null);
+    openMiniPanel('o', oi, o.name);
+  } else { setHighlight(null); buildOrgGraph(oi); }
+}
+function buildOrgGraph(oi){
+  const o=DATA.orgs[oi]; nodes=[]; links=[];
+  const nmap=new Map();
+  function addNode(id,type,label,r){ if(nmap.has(type+id))return nmap.get(type+id);
+    const n={id,type,label,r,x:(Math.random()-.5)*80,y:(Math.random()-.5)*80,z:0,vx:0,vy:0,vz:0};
+    nmap.set(type+id,n); nodes.push(n); return n;}
+  const center=addNode('g'+oi,'o',o.name,15); center.x=0;center.y=0;center.fixed=true;center.org=o.name;
+  const mem=o.members.filter(q=>P.has(q));
+  for(const q of mem){ const op=P.get(q);
+    const n=addNode(q,'p',op.name,6); links.push({s:center,t:n,w:2}); }
+  // faint links between members who also co-occur elsewhere in the data
+  for(let i=0;i<mem.length;i++)for(let j=i+1;j<mem.length;j++){
+    const w=(NBR.get(mem[i])||new Map()).get(mem[j]); if(w>1){
+      const a=nmap.get('p'+mem[i]),b=nmap.get('p'+mem[j]); if(a&&b)links.push({s:a,t:b,w:1,faint:true});}}
+  sizeByDegree(nodes,links,5,20,2.6);
+  center.r=Math.max(center.r,14);
+  view={x:0,y:0,k: mem.length>60?0.55:1};   // big orgs start zoomed out enough to fit
+  for(let it=0;it<300;it++) tick();
+}
+// ---------- ego network graph ----------
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let nodes=[], links=[], view={x:0,y:0,k:1}, dragN=null, panning=false, rotating=false, px=0, py=0;
+// set true on first touch input -- widens the tap hit-radius in pick()/pickMini() below
+// so fingers (much less precise than a mouse cursor) get an effective tap target of
+// roughly 40px even around small/leaf nodes, without changing how big anything looks.
+let isTouchDevice = false;
+let rot={yaw:0,pitch:0};
+// every circle (person, event, or org) is sized by how many connections it actually
+// has in whatever graph is currently rendered -- counted straight off the `links` list
+// that was just built, so it stays accurate whether that node is a hub or a leaf, and
+// whether we're in the ego view or the full map. Sqrt scale so *area*, not radius,
+// tracks degree -- keeps heavily-connected hub nodes readable without overwhelming
+// the canvas or overlapping their neighbors too badly. rMin keeps 0-connection nodes
+// (e.g. an org whose members aren't all on screen in "core" mode) big enough to still
+// see and click.
+function sizeByDegree(nodes, links, rMin, rMax, mult){
+  const lc = new Map();
+  for(const l of links){ lc.set(l.s,(lc.get(l.s)||0)+1); lc.set(l.t,(lc.get(l.t)||0)+1); }
+  for(const n of nodes){ const c = lc.get(n)||0; n.deg = c; n.r = rMin + Math.min(rMax-rMin, mult*Math.sqrt(c)); }
+  return lc;
+}
+function setHighlight(n){
+  window._hlN = n || null;
+  if(!n){ window._hl = null; return; }
+  const s = new Set();
+  for(const l of links){ if(l.s===n) s.add(l.t); if(l.t===n) s.add(l.s); }
+  window._hl = s;
+}
+function project(){
+  const is3d = !!window._fullView;
+  if(!is3d){ for(const n of nodes){n.px=n.x;n.py=n.y;n.ps=1;n.pz=0;} return; }
+  const cy=Math.cos(rot.yaw), sy=Math.sin(rot.yaw), cp=Math.cos(rot.pitch), sp=Math.sin(rot.pitch), F=1300;
+  for(const n of nodes){
+    const rx = n.x*cy - n.z*sy, rz = n.x*sy + n.z*cy;
+    const ry = n.y*cp - rz*sp,  rz2 = n.y*sp + rz*cp;
+    n.ps = F/(F+rz2); n.px = rx*n.ps; n.py = ry*n.ps; n.pz = rz2;
+  }
+}
+function resize(){cv.width=cv.clientWidth*devicePixelRatio;cv.height=cv.clientHeight*devicePixelRatio;}
+window.addEventListener('resize',()=>{resize(); if(document.getElementById('miniPanel').classList.contains('on')){ resizeMini(); fitMiniView(); drawMini(); }});
+resize();
+function buildGraph(pid){
+  const p=P.get(pid); nodes=[]; links=[];
+  const nmap=new Map();
+  function addNode(id,type,label,r){ if(nmap.has(type+id))return nmap.get(type+id);
+    const n={id,type,label,r,x:(Math.random()-.5)*80,y:(Math.random()-.5)*80,z:0,vx:0,vy:0,vz:0};
+    nmap.set(type+id,n); nodes.push(n); return n;}
+  const center=addNode(pid,'p',p.name,16); center.x=0;center.y=0;center.fixed=true;
+  // neighbor people (initial r is just a placeholder -- sizeByDegree() overwrites
+  // every node's radius below once the full links list for this view is known)
+  const nb=[...(NBR.get(pid)||new Map()).entries()].sort((a,b)=>b[1]-a[1]).slice(0,40);
+  for(const [q,w] of nb){ const op=P.get(q); if(!op)continue;
+    const n=addNode(q,'p',op.name,6); links.push({s:center,t:n,w}); }
+  // events of this person
+  for(const {e} of (p.events||[]).map(x=>({e:E.get(x.e)})).filter(x=>x.e)){
+    const en=addNode(e.id,'e',e.name,6); links.push({s:center,t:en,w:4});
+    for(const [q] of e.att){ if(q===pid)continue; const k=nmap.get('p'+q); if(k) links.push({s:en,t:k,w:2}); } }
+  // 2nd-degree light links among neighbors
+  for(let i=0;i<nb.length;i++)for(let j=i+1;j<nb.length;j++){
+    const w=(NBR.get(nb[i][0])||new Map()).get(nb[j][0]); if(w){
+      links.push({s:nmap.get('p'+nb[i][0]),t:nmap.get('p'+nb[j][0]),w:Math.min(w,2),faint:true});}}
+  // size every circle by its actual connection count in this ego view (min 5px so
+  // single-link leaves stay clickable, max 20px so the center hub doesn't swallow it)
+  sizeByDegree(nodes, links, 5, 20, 2.6);
+  view={x:0,y:0,k:1};
+  for(let it=0;it<300;it++) tick();
+}
+// ---------- mini ego panel ----------
+// In the "all connections" full map, clicking a node used to pull its full real
+// connections directly into the shared nodes/links array (ensurePersonInFull etc.) --
+// but that woke the whole simulation and every already-settled node on the map would
+// drift, not just the area around the click, since forces like the group-anchor and
+// leash recompute over the WHOLE node set every frame. Now the main map is never
+// touched by a click. Instead this small floating panel (top-right of the canvas)
+// shows the clicked node's complete real ego-network -- reusing the exact same
+// buildGraph/buildEventGraph/buildOrgGraph logic the standalone ego view already uses
+// (same physics, same settle loop), just run into a throwaway snapshot instead of the
+// live main map, then drawn on its own small canvas. The main map's nodes/links/view
+// are saved and restored untouched around the snapshot build.
+const miniCv = document.getElementById('miniCv'), miniCtx = miniCv.getContext('2d');
+let miniNodes=[], miniLinks=[], miniView={x:0,y:0,k:1};
+function resizeMini(){ miniCv.width=miniCv.clientWidth*devicePixelRatio; miniCv.height=miniCv.clientHeight*devicePixelRatio; }
+function snapshotEgo(builderFn){
+  const savedNodes=nodes, savedLinks=links, savedView=view, savedFV=window._fullView;
+  nodes=[]; links=[]; window._fullView=false;   // ego-view tuning (2D, no leash/group-anchor)
+  builderFn();
+  const snap = {nodes, links};
+  nodes=savedNodes; links=savedLinks; view=savedView; window._fullView=savedFV;   // main map exactly as it was
+  return snap;
+}
+// scale/center the snapshot to fit the small panel -- the builder functions tune their
+// own view.k for the full-size main canvas, which is the wrong scale for a 300x230 box
+function fitMiniView(){
+  if(!miniNodes.length){ miniView={x:0,y:0,k:1}; return; }
+  let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+  for(const n of miniNodes){ minX=Math.min(minX,n.x-n.r); maxX=Math.max(maxX,n.x+n.r);
+    minY=Math.min(minY,n.y-n.r); maxY=Math.max(maxY,n.y+n.r); }
+  const w=Math.max(1,maxX-minX), h=Math.max(1,maxY-minY);
+  const cw=miniCv.clientWidth||300, ch=miniCv.clientHeight||230;
+  const k=Math.max(0.15,Math.min(3,Math.min((cw-40)/w,(ch-50)/h)));
+  miniView={x:-(minX+maxX)/2*k, y:-(minY+maxY)/2*k, k};
+}
+function drawMini(){
+  miniCtx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  miniCtx.clearRect(0,0,miniCv.clientWidth,miniCv.clientHeight);
+  if(!miniNodes.length) return;
+  miniCtx.save();
+  miniCtx.translate(miniCv.clientWidth/2+miniView.x, miniCv.clientHeight/2+miniView.y);
+  miniCtx.scale(miniView.k, miniView.k);
+  for(const l of miniLinks){
+    miniCtx.strokeStyle = l.faint ? 'rgba(168,156,134,.3)' : 'rgba(212,162,78,.55)';
+    miniCtx.lineWidth = l.faint ? 0.6 : Math.min(1+l.w*.3,3);
+    miniCtx.beginPath(); miniCtx.moveTo(l.s.x,l.s.y); miniCtx.lineTo(l.t.x,l.t.y); miniCtx.stroke();
+  }
+  for(const n of miniNodes){
+    miniCtx.beginPath(); miniCtx.arc(n.x,n.y,Math.max(1.5,n.r),0,7);
+    miniCtx.fillStyle = n.fixed ? '#d4a24e' : n.type==='e' ? '#b4552d' : n.type==='o' ? '#d18aa8' : '#4e8f83';
+    miniCtx.fill();
+    if(n.fixed){ miniCtx.strokeStyle='#efe7d8'; miniCtx.lineWidth=1.2; miniCtx.stroke(); }
+  }
+  miniCtx.textAlign='center';
+  for(const n of miniNodes){
+    if(!n.fixed && miniNodes.length>25 && n.r<6) continue;   // keep dense ego-networks readable
+    const label = n.label.length>20 ? n.label.slice(0,19)+'…' : n.label;
+    miniCtx.font = n.fixed ? 'bold 10.5px Georgia' : '9px Georgia';
+    miniCtx.fillStyle = n.fixed ? '#efe7d8' : '#c9bda6';
+    miniCtx.fillText(label, n.x, n.y+n.r+9);
+  }
+  miniCtx.restore();
+}
+function openMiniPanel(kind, id, title){
+  let snap;
+  if(kind==='p') snap = snapshotEgo(()=>buildGraph(id));
+  else if(kind==='e') snap = snapshotEgo(()=>buildEventGraph(id));
+  else if(kind==='o') snap = snapshotEgo(()=>buildOrgGraph(id));
+  else return;
+  miniNodes = snap.nodes; miniLinks = snap.links;
+  document.getElementById('miniTitle').textContent = title;
+  document.getElementById('miniPanel').classList.add('on');
+  resizeMini();
+  fitMiniView();
+  drawMini();
+}
+function closeMiniPanel(){
+  document.getElementById('miniPanel').classList.remove('on');
+  miniNodes=[]; miniLinks=[];
+}
+function pickMini(mx,my){
+  const x=(mx-miniCv.clientWidth/2-miniView.x)/miniView.k, y=(my-miniCv.clientHeight/2-miniView.y)/miniView.k;
+  const pad = (isTouchDevice ? 20 : 6)/miniView.k;
+  return miniNodes.find(n=>Math.hypot(n.x-x,n.y-y)<Math.max(3,n.r)+pad);
+}
+document.getElementById('miniClose').addEventListener('click', closeMiniPanel);
+miniCv.addEventListener('click', e=>{
+  const n = pickMini(e.offsetX, e.offsetY); if(!n) return;
+  if(n.type==='p') select(n.id);
+  else if(n.type==='e') selectEvent(n.id);
+  else if(n.type==='o' && n.org) selectOrg(n.org);
+});
+// resizable mini panel -- drag the bottom-right corner grip to expand/contract it,
+// remembered across visits the same way the main #right detail panel's width is
+(function(){
+  const panel = document.getElementById('miniPanel'), grip = document.getElementById('miniResize');
+  try{
+    const w = localStorage.getItem('bm_miniw'), h = localStorage.getItem('bm_minih');
+    if(w) panel.style.width = w + 'px';
+    if(h) panel.style.height = h + 'px';
+  }catch(e){}
+  let resizing = false, startW=0, startH=0, startX=0, startY=0;
+  grip.addEventListener('mousedown', e=>{
+    resizing = true; startW = panel.clientWidth; startH = panel.clientHeight;
+    startX = e.clientX; startY = e.clientY; e.preventDefault(); e.stopPropagation();
+  });
+  window.addEventListener('mousemove', e=>{
+    if(!resizing) return;
+    const w = Math.max(220, Math.min(window.innerWidth*0.8, startW + (e.clientX-startX)));
+    const h = Math.max(180, Math.min(window.innerHeight*0.8, startH + (e.clientY-startY)));
+    panel.style.width = w + 'px'; panel.style.height = h + 'px';
+    if(panel.classList.contains('on')){ resizeMini(); fitMiniView(); drawMini(); }
+  });
+  window.addEventListener('mouseup', ()=>{
+    if(!resizing) return;
+    resizing = false;
+    try{ localStorage.setItem('bm_miniw', parseInt(panel.style.width)||300);
+      localStorage.setItem('bm_minih', parseInt(panel.style.height)||280); }catch(e){}
+  });
+})();
+function repulse(a,b){
+  const full = !!window._fullView;
+  let dx=b.x-a.x,dy=b.y-a.y,dz=(b.z||0)-(a.z||0),d2=dx*dx+dy*dy+dz*dz;
+  if(d2<1){dx=Math.random()-.5;dy=Math.random()-.5;d2=1;}
+  // full-map repulsion is stronger/longer-range than it needs to be for ~10k nodes --
+  // now that the default view only draws a few hundred, push them apart harder so the
+  // center has real breathing room instead of everything settling into a tight clump.
+  const cutoff = full ? 300000 : 22500, K = full ? 700 : 140;
+  if(d2<cutoff){const d=Math.sqrt(d2),f=K/d2;const fx=dx/d*f,fy=dy/d*f,fz=dz/d*f;
+    if(!a.fixed){a.vx-=fx;a.vy-=fy;a.vz-=fz;} if(!b.fixed){b.vx+=fx;b.vy+=fy;b.vz+=fz;}}
+}
+function tick(){
+  const SP = window._fullView ? 3.4 : 1;   // spacing multiplier for the full map
+  const fv = !!window._fullView;
+  for(const l of links){ const dx=l.t.x-l.s.x,dy=l.t.y-l.s.y,dz=(l.t.z||0)-(l.s.z||0),
+    d=Math.hypot(dx,dy,dz)||1;
+    const isPO = fv && ((l.s.type==='p'&&(l.t.type==='o'||l.t.type==='e')) || (l.t.type==='p'&&(l.s.type==='o'||l.s.type==='e')));
+    const isPP = fv && l.s.type==='p' && l.t.type==='p';
+    // person-to-org/event links: primary affiliation pulls tight (nestle in close),
+    // any other affiliation pulls loose (stretches them out toward it instead) -- see
+    // PRIMARY_GAP_BASE/SECONDARY_GAP_BASE. Person-to-person links are hidden by default
+    // (revealed only for whoever's currently selected) but still keep a short/tight
+    // PP_GAP_BASE target so the core people who DO share direct connections read as a
+    // clean cluster rather than a loose scatter. Everything else (ego views, org/event-
+    // to-org/event, etc.) keeps the original width-based formula.
+    const target = isPO ? (l.primary ? PRIMARY_GAP_BASE : SECONDARY_GAP_BASE)*SP
+      : isPP ? PP_GAP_BASE*SP
+      : (60+240/(l.w+1))*SP;
+    // stiffness (not just target distance) has to differ too -- a short target alone
+    // gets overwhelmed by ambient repulsion from the hundreds of other nearby nodes.
+    // Person-to-person links were originally left very weak (0.0012) on the theory that
+    // they shouldn't compete with org/event anchoring -- but that meant a freshly-
+    // revealed person (whose ONLY force is usually this one PP spring, since they often
+    // don't belong to any tracked org/event at all) got flung outward by repulsion with
+    // nothing strong enough to reel them back in, ending up scattered far across the map.
+    // Bumped to 0.015 -- strong enough to win against repulsion and keep them close,
+    // still below the primary org/event tier so it doesn't override that anchoring for
+    // people who DO have one.
+    const stiff = isPO ? (l.primary ? 0.02 : 0.0025) : isPP ? 0.015 : 0.004;
+    const f=(d-target)*stiff*(l.faint?0.4:1);
+    const fx=dx/d*f,fy=dy/d*f,fz=dz/d*f;
+    if(!l.s.fixed){l.s.vx+=fx;l.s.vy+=fy;l.s.vz+=fz;} if(!l.t.fixed){l.t.vx-=fx;l.t.vy-=fy;l.t.vz-=fz;} }
+  if(nodes.length<=160){
+    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++) repulse(nodes[i],nodes[j]);
+  } else {
+    // grid-bucketed repulsion for the full map -- CELL sized to match the wider
+    // repulsion cutoff above so the 3x3-neighborhood check still catches every pair
+    // that's actually within range
+    const CELL=560, grid=new Map();
+    for(const n of nodes){ const k=(Math.floor(n.x/CELL))+','+(Math.floor(n.y/CELL));
+      (grid.get(k)||grid.set(k,[]).get(k)).push(n); }
+    for(const n of nodes){
+      const cx=Math.floor(n.x/CELL), cy=Math.floor(n.y/CELL);
+      for(let gx=cx-1;gx<=cx+1;gx++)for(let gy=cy-1;gy<=cy+1;gy++){
+        const cell=grid.get(gx+','+gy); if(!cell)continue;
+        for(const m of cell) if(m!==n && (m.x>n.x || (m.x===n.x&&m.y>n.y))) repulse(n,m); }
+      // gentle centering so disconnected clumps stay on screen -- eased off from before
+      // so clusters can spread further out instead of being yanked back toward the middle
+      n.vx-=n.x*0.00012; n.vy-=n.y*0.00012; n.vz-=(n.z||0)*0.00012; }
+  }
+  // gentle pull of each community toward its own centroid (full map only) -- also eased
+  // off so clusters stay loosely grouped without compacting toward the center
+  if(window._fullView && window._commGroups){
+    for(const g of window._commGroups){
+      let cx=0,cy=0,cz=0;
+      for(const n of g){cx+=n.x;cy+=n.y;cz+=n.z||0;}
+      cx/=g.length; cy/=g.length; cz/=g.length;
+      for(const n of g){ if(n.fixed||n.pin)continue;
+        n.vx+=(cx-n.x)*0.0009; n.vy+=(cy-n.y)*0.0009; n.vz+=(cz-(n.z||0))*0.0009; }
+    }
+  }
+  // Long-range "leash" (full map only): some orgs/events end up as their members' ONLY
+  // substantial connection -- no other overlap with the rest of the network -- so
+  // nothing but the very weak centering force above ever pulls that whole little
+  // cluster back once repulsion has pushed it outward during the settle (or a click
+  // reveals a batch of new, weakly-anchored members near an org/event that itself sits
+  // far out). It just parks itself as an island, however far that push happened to
+  // carry it. This adds a firmer, longer-range pull that only engages past LEASH_RADIUS
+  // from the map's overall centroid -- anything closer (i.e. the well-connected main
+  // mass) is completely unaffected, so normal spacing there is untouched.
+  if(fv){
+    let mcx=0,mcy=0,mcz=0;
+    for(const n of nodes){ mcx+=n.x; mcy+=n.y; mcz+=n.z||0; }
+    mcx/=nodes.length; mcy/=nodes.length; mcz/=nodes.length;
+    for(const n of nodes){ if(n.fixed||n.pin)continue;
+      const dx=n.x-mcx, dy=n.y-mcy, dz=(n.z||0)-mcz, d=Math.hypot(dx,dy,dz)||1;
+      if(d>LEASH_RADIUS){ const f=(d-LEASH_RADIUS)*LEASH_K;
+        n.vx-=dx/d*f; n.vy-=dy/d*f; n.vz-=dz/d*f; }
+    }
+  }
+  // An org/event with NO primary members at all (everyone who belongs to it has a
+  // bigger primary tie elsewhere) only gets weak, individually-scattered secondary
+  // springs pulling it in many different directions -- those are too diffuse/slow to
+  // reliably converge on where its own members actually are within the settle window,
+  // so the org can end up sitting near the map's overall centroid (passing the leash
+  // above) while still being visually far from the specific people linked to it, since
+  // they're on a different side of the main mass. This adds a direct, per-frame pull
+  // for every org/event node toward the LIVE centroid of its own currently-linked
+  // members -- self-correcting regardless of how the individual weak springs net out.
+  if(fv){
+    const groupLinks = new Map();
+    for(const l of links){
+      if(l.s.type==='o'||l.s.type==='e'){ if(!groupLinks.has(l.s)) groupLinks.set(l.s,[]); groupLinks.get(l.s).push(l.t); }
+      if(l.t.type==='o'||l.t.type==='e'){ if(!groupLinks.has(l.t)) groupLinks.set(l.t,[]); groupLinks.get(l.t).push(l.s); }
+    }
+    for(const [gn, members] of groupLinks){
+      if((gn.fixed||gn.pin) || !members.length) continue;
+      let mcx=0,mcy=0,mcz=0;
+      for(const m of members){ mcx+=m.x; mcy+=m.y; mcz+=m.z||0; }
+      mcx/=members.length; mcy/=members.length; mcz/=members.length;
+      gn.vx += (mcx-gn.x)*GROUP_ANCHOR_K; gn.vy += (mcy-gn.y)*GROUP_ANCHOR_K; gn.vz += (mcz-(gn.z||0))*GROUP_ANCHOR_K;
+    }
+  }
+  for(const n of nodes){ if(n.fixed||n.pin)continue;
+    n.vx*=.82;n.vy*=.82;n.vz*=.82; n.x+=n.vx;n.y+=n.vy;n.z=(n.z||0)+n.vz;}
+}
+function buildFullGraph(){
+  nodes=[]; links=[];
+  const core = !window._mapAll;   // default: only well-connected people (see FULL_MIN_CONN)
+  const nmap=new Map(), deg=new Map(), edgeCt=new Map();
+  for(const [a,b,w] of DATA.edges){ deg.set(a,(deg.get(a)||0)+w); deg.set(b,(deg.get(b)||0)+w);
+    edgeCt.set(a,(edgeCt.get(a)||0)+1); edgeCt.set(b,(edgeCt.get(b)||0)+1); }
+  function addP(id){ if(nmap.has('p'+id))return nmap.get('p'+id);
+    const p=P.get(id); if(!p)return null;
+    // r/deg here are just placeholders -- sizeByDegree() overwrites both below
+    // once the full links list for this view is known
+    const n={id,type:'p',label:p.name,r:6,deg:deg.get(id)||0,
+      x:(Math.random()-.5)*2800,y:(Math.random()-.5)*2000,z:(Math.random()-.5)*1700,vx:0,vy:0,vz:0};
+    nmap.set('p'+id,n); nodes.push(n); return n;}
+  for(const [a,b,w] of DATA.edges){
+    // default view: only people with FULL_MIN_CONN+ total connections get drawn at all,
+    // to keep the center of the map from becoming an unreadable hairball. Clicking any
+    // node still pulls in every one of its real connections regardless of this cutoff --
+    // see openMiniPanel() (the mini ego-panel), not the main map itself.
+    if(core && ((edgeCt.get(a)||0)<FULL_MIN_CONN || (edgeCt.get(b)||0)<FULL_MIN_CONN)) continue;
+    const na=addP(a), nb=addP(b);
+    if(na&&nb) links.push({s:na,t:nb,w:Math.min(w,4),faint:w<2});}
+  for(const e of E.values()){ if(!e.att.length)continue;
+    // org/event nodes only link to people already on the map by default (core mode) --
+    // and if the default filter left them with zero qualifying attendees, skip the
+    // node entirely rather than draw an isolated circle that just adds to the clutter.
+    const evLinks=[];
+    for(const [q] of e.att){ const pn = core ? nmap.get('p'+q) : (nmap.get('p'+q)||addP(q)); if(pn) evLinks.push(pn); }
+    if(core && !evLinks.length) continue;
+    const en={id:e.id,type:'e',label:e.name,r:groupR(e.att.length),total:e.att.length,deg:e.att.length,
+      x:(Math.random()-.5)*2800,y:(Math.random()-.5)*2000,z:(Math.random()-.5)*1700,vx:0,vy:0,vz:0};
+    nmap.set('e'+e.id,en); nodes.push(en);
+    for(const pn of evLinks) links.push({s:en,t:pn,w:2,primary:isPrimaryAffil(pn.id,'e',e.id)}); }
+  // organization nodes
+  (DATA.orgs||[]).forEach((o,oi)=>{
+    if(o.members.length<3) return;
+    const memLinks=[];
+    for(const q of o.members){
+      const pn = core ? nmap.get('p'+q) : (nmap.get('p'+q)||addP(q));  // core: orgs link only to people already on the map
+      if(pn) memLinks.push(pn); }
+    if(core && !memLinks.length) return;   // no qualifying members -- skip the isolated node
+    const on={id:'o'+oi,type:'o',label:o.name,r:groupR(o.members.length),total:o.members.length,deg:o.members.length,
+      org:o.name,x:(Math.random()-.5)*2800,y:(Math.random()-.5)*2000,z:(Math.random()-.5)*1700,vx:0,vy:0,vz:0};
+    nodes.push(on);
+    for(const pn of memLinks) links.push({s:on,t:pn,w:1,faint:o.members.length>40,primary:isPrimaryAffil(pn.id,'o',o.name)}); });
+  // sizeByDegree still populates n.deg (used for label-priority ranking below), but
+  // every radius gets overridden right after: people are all one uniform size now, and
+  // orgs/events get one of three fixed sizes based on their real total people count
+  // (not on-screen degree) -- see PERSON_R / groupR().
+  sizeByDegree(nodes, links, PERSON_R, PERSON_R, 0);
+  for(const n of nodes){ if(n.type==='o'||n.type==='e') n.r = groupR(n.total); else if(n.type==='p') n.r = PERSON_R; }
+  // ---- community detection (label propagation) -> spatial clustering only ----
+  // (colors now always follow the legend -- see draw() -- this just keeps related
+  // people visually grouped in space instead of scattered uniformly)
+  const adj = new Map();
+  for(const l of links){
+    if(!adj.has(l.s)) adj.set(l.s,[]); if(!adj.has(l.t)) adj.set(l.t,[]);
+    const w = l.faint ? 1 : (l.w+1);
+    adj.get(l.s).push([l.t,w]); adj.get(l.t).push([l.s,w]);
+  }
+  // Plain majority-vote label propagation tends to collapse dense social-network graphs
+  // like this one into one giant "rich get richer" super-community (empirically, ~84% of
+  // the core network here) -- useless as a single bubble since exploding it just recreates
+  // the hairball. Biasing each candidate label's pull by 1/sqrt(that label's current size)
+  // -- a standard balanced-LPA trick -- makes already-large communities progressively less
+  // attractive to new joiners, letting smaller genuine sub-communities persist instead of
+  // being absorbed.
+  nodes.forEach((n,i)=>n.comm=i);
+  const commSize = new Map(nodes.map(n=>[n.comm,1]));
+  for(let it=0; it<12; it++){
+    let changed=0;
+    for(const n of nodes){
+      const nb = adj.get(n); if(!nb||!nb.length) continue;
+      const tally = new Map();
+      for(const [m,w] of nb) tally.set(m.comm,(tally.get(m.comm)||0)+w);
+      let best=n.comm, bw=(tally.get(n.comm)||0)/Math.sqrt(commSize.get(n.comm)||1);
+      for(const [c,w] of tally){ const score=w/Math.sqrt(commSize.get(c)||1);
+        if(score>bw || (score===bw && c<best)){best=c;bw=score;} }
+      if(best!==n.comm){
+        commSize.set(n.comm,(commSize.get(n.comm)||1)-1); commSize.set(best,(commSize.get(best)||0)+1);
+        n.comm=best;changed++;
+      }
+    }
+    if(!changed) break;
+  }
+  const groups = new Map();
+  for(const n of nodes){ if(!groups.has(n.comm)) groups.set(n.comm,[]); groups.get(n.comm).push(n); }
+  window._commGroups = [...groups.values()].filter(g=>g.length>=4);
+  view={x:0,y:0,k:0.26};   // start a bit more zoomed out to fit the now-looser layout
+  rot={yaw:0.5,pitch:0.28}; window._spin=false;   // static by default -- drag empty space to rotate manually
+  setHighlight(null);
+  for(let it=0;it<260;it++) tick();   // settle fully before the very first frame renders
+  window._simTTL=0;   // frozen once settled -- draw() only re-ticks while dragging or just after new nodes are added
+}
+const allbtn=document.getElementById('allbtn');
+allbtn.addEventListener('click',()=>{
+  window._fullView=!window._fullView;
+  allbtn.classList.toggle('on',window._fullView);
+  document.getElementById('hint').textContent = window._fullView
+    ? 'tap a node to open its full connections in the panel · drag/rotate empty space · drag a node out — it sticks · double-tap to release · pinch or scroll to zoom'
+    : 'drag to pan · pinch or scroll to zoom · tap a node to navigate';
+  if(window._fullView) buildFullGraph();
+  else { closeMiniPanel(); if(window._sel) buildGraph(window._sel); }
+});
+function draw(){
+  ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  ctx.clearRect(0,0,cv.clientWidth,cv.clientHeight);
+  ctx.save();
+  ctx.translate(cv.clientWidth/2+view.x,cv.clientHeight/2+view.y); ctx.scale(view.k,view.k);
+  const is3d = !!window._fullView;
+  if(is3d && window._spin && !rotating && !dragN) rot.yaw += 0.0012;
+  project();
+  const hlN = window._hlN, hl = window._hl;
+  for(const l of links){
+    // person-to-person lines are the bulk of the line clutter on the full map -- they
+    // only render for whichever person is currently selected/highlighted (their real
+    // connections to other people), never all-at-once by default. Person-to-org and
+    // person-to-event lines (and org/event/ego-view lines generally) always render --
+    // they're what tells you who belongs where, and there just aren't as many of them.
+    if(is3d && l.s.type==='p' && l.t.type==='p' && !(hlN && (l.s===hlN || l.t===hlN))) continue;
+    const depth = is3d ? Math.max(.15, Math.min(1, ((l.s.ps+l.t.ps)/2 - .55)*2.2)) : 1;
+    const onHl = hlN && (l.s===hlN || l.t===hlN);
+    const dimF = hlN && !onHl ? 0.18 : 1;
+    ctx.strokeStyle = onHl ? `rgba(232,196,120,${Math.max(.55,.8*depth)})`
+      : l.faint ? `rgba(168,156,134,${.10*depth*dimF})` : `rgba(212,162,78,${.25*depth*dimF})`;
+    ctx.lineWidth=((l.faint&&!onHl?0.6:Math.min(1+l.w*.3,3))+(onHl?0.7:0))*((l.s.ps+l.t.ps)/2||1);
+    ctx.beginPath();ctx.moveTo(l.s.px,l.s.py);ctx.lineTo(l.t.px,l.t.py);ctx.stroke(); }
+  const showAll = nodes.length<=160 || view.k>=1.5;
+  const order = is3d ? [...nodes].sort((a,b)=>b.pz-a.pz) : nodes;
+  for(const n of order){
+    const depth = is3d ? Math.max(.25, Math.min(1, (n.ps-.55)*2.2)) : 1;
+    const isHl = !hlN || n===hlN || (hl && hl.has(n));
+    ctx.globalAlpha = depth * (isHl ? 1 : 0.18);
+    ctx.beginPath();ctx.arc(n.px,n.py,Math.max(1.5,n.r*n.ps),0,7);
+    ctx.fillStyle = (n.fixed||n.sel) ? '#d4a24e'
+      : n.type==='e' ? '#b4552d' : n.type==='o' ? '#d18aa8' : '#4e8f83';
+    ctx.fill();
+    if(n.fixed||n.sel){ctx.strokeStyle='#efe7d8';ctx.lineWidth=1.5;ctx.stroke();}
+    else if(n.pin){ctx.strokeStyle='rgba(239,231,216,.6)';ctx.lineWidth=1.2;ctx.stroke();}
+  }
+  // ---- label pass ----
+  // Which labels show is recomputed only a few times a second (and when the view,
+  // selection, or graph changes), then held steady between recomputes -- deciding
+  // fresh every frame made labels flicker as the simulation jittered. Rules at
+  // recompute time: (1) budget: zoomed out only the top-N most-connected nodes get
+  // labels, growing as you zoom in; (2) overlap: labels place in priority order
+  // (selected > highlighted > highest degree, with a stickiness bonus for labels
+  // already showing) and any label colliding with one already placed is skipped.
+  window._lblT = (window._lblT||0)+1;
+  if(!window._lblSet || window._lblNodes!==nodes || window._lblHl!==hlN
+     || Math.abs((window._lblK||0)-view.k)>1e-4 || window._lblT>=12){
+    window._lblT=0; window._lblNodes=nodes; window._lblHl=hlN; window._lblK=view.k;
+    const prev = window._lblSet || new Set();
+    const labelBoxes = [];
+    const boxFree=(x0,y0,x1,y1)=>{
+      for(const o of labelBoxes){ if(x0<o.x1 && x1>o.x0 && y0<o.y1 && y1>o.y0) return false; }
+      return true;
+    };
+    const candidates = order.filter(n=>{
+      const isHl = !hlN || n===hlN || (hl && hl.has(n));
+      return (showAll || n.fixed || n.sel || n.deg>=5 || (hlN && isHl)) && (!is3d || n.ps>0.78 || (hlN && isHl));
+    });
+    const score = m => (m.fixed||m.sel?1e6:0) + (hlN && m===hlN?9e5:0) + (hlN && hl && hl.has(m)?5e5:0)
+      + (prev.has(m)?40:0) + (m.deg||0);
+    candidates.sort((a,b)=> (score(b)-score(a)) || (a.label<b.label?-1:1));
+    const budget = (showAll || hlN) ? Infinity
+      : Math.round(24 + 160*Math.max(0, Math.min(1, (view.k-0.25)/1.0)));
+    const set = new Set(); let placed = 0;
+    for(const n of candidates){
+      const important = n.fixed || n.sel || (hlN && n===hlN);
+      if(!important && placed>=budget) break;
+      const label = n.label.length>26 ? n.label.slice(0,25)+'…' : n.label;
+      ctx.font=((n.fixed||n.sel)?'bold 12px':'10.5px')+' Georgia';
+      const tx = n.px, ty = n.py+n.r*n.ps+11;
+      const w = ctx.measureText(label).width;
+      const x0=tx-w/2-3, x1=tx+w/2+3, y0=ty-11, y1=ty+4;
+      if(!important && !boxFree(x0,y0,x1,y1)) continue;
+      labelBoxes.push({x0,y0,x1,y1});
+      set.add(n); placed++;
+    }
+    window._lblSet = set;
+  }
+  for(const n of order){
+    if(!window._lblSet.has(n)) continue;
+    const depth = is3d ? Math.max(.25, Math.min(1, (n.ps-.55)*2.2)) : 1;
+    const isHl = !hlN || n===hlN || (hl && hl.has(n));
+    const label = n.label.length>26 ? n.label.slice(0,25)+'…' : n.label;
+    ctx.font=((n.fixed||n.sel)?'bold 12px':'10.5px')+' Georgia';
+    ctx.globalAlpha = depth * (isHl ? 1 : 0.18);
+    ctx.fillStyle=(n.fixed||n.sel)?'#efe7d8':'#c9bda6';
+    ctx.textAlign='center'; ctx.fillText(label,n.px,n.py+n.r*n.ps+11);
+  }
+  ctx.globalAlpha = 1;
+  ctx.restore();
+  // The full map settles fully before its first render (see buildFullGraph) and then
+  // FREEZES -- no perpetual jitter or auto-rotation, and clicking a node no longer wakes
+  // it either (see openMiniPanel/mouseup) -- so the layout reads as a calm, stable
+  // picture instead of something that never stops drifting. It only wakes back up
+  // briefly (window._simTTL frames) after an actual drag-release, so a dragged node's
+  // springs can settle into their new position, or continuously while a node is
+  // currently being dragged. Ego-view graphs (person/event/org drill-downs) are much
+  // smaller and keep the original always-on gentle simulation.
+  if(nodes.length){
+    if(!window._fullView){ for(let i=0;i<2;i++) tick(); }
+    else if(dragN){ for(let i=0;i<2;i++) tick(); }
+    else if((window._simTTL||0)>0){ for(let i=0;i<2;i++) tick(); window._simTTL--; }
+  }
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+function pick(mx,my){
+  const x=(mx-cv.clientWidth/2-view.x)/view.k, y=(my-cv.clientHeight/2-view.y)/view.k;
+  // padding is defined in screen px then converted to world units (dividing by view.k)
+  // so the effective on-screen tap target stays ~40px across regardless of zoom level
+  const pad = (isTouchDevice ? 20 : 6)/view.k;
+  const cands = nodes.filter(n=>Math.hypot(n.px-x,n.py-y)<Math.max(3,n.r*(n.ps||1))+pad);
+  return window._fullView ? cands.sort((a,b)=>a.pz-b.pz)[0] : cands[0];
+}
+let dragStart = null;
+// pointerDown/Move/Up hold the actual interaction logic, shared by both mouse and
+// touch input below so there's exactly one implementation to keep correct -- this is
+// the same class of bug the mouseup window._simTTL issue was (duplicated logic
+// drifting out of sync), so touch support is wired through these instead of a
+// separate parallel implementation.
+function pointerDown(x,y){
+  const n=pick(x,y);
+  if(n && !window._fullView){dragN=n;n.fixed=true;}
+  else if(n){dragN=n; window._spin=false; dragStart={x:n.x,y:n.y,z:n.z||0};}      // 3D: elastic drag
+  else if(window._fullView){rotating=true; window._spin=false;}
+  else {panning=true;}
+  px=x;py=y; cv.style.cursor='grabbing';
+}
+function pointerMove(mx,my){
+  if(dragN && !window._fullView){dragN.x+=(mx)/view.k;dragN.y+=(my)/view.k;}
+  else if(dragN){ // 3D elastic pull: screen delta -> world delta via inverse rotation
+    const cy=Math.cos(rot.yaw), sy=Math.sin(rot.yaw), cp=Math.cos(rot.pitch), sp=Math.sin(rot.pitch);
+    const s=(view.k*(dragN.ps||1))||1;
+    const dx=mx/s, dy=my/s;
+    dragN.x += dx*cy - dy*sp*sy;
+    dragN.y += dy*cp;
+    dragN.z += -dx*sy - dy*sp*cy;
+    dragN.vx=dragN.vy=dragN.vz=0;
+  }
+  else if(rotating){rot.yaw+=mx*0.005; rot.pitch=Math.max(-1.3,Math.min(1.3,rot.pitch+my*0.005));}
+  else if(panning){view.x+=mx;view.y+=my;}
+}
+function pointerUp(x,y){
+  const wasClick = Math.abs(x-px)<4 && Math.abs(y-py)<4;
+  // a plain click/tap on a node in full view still sets dragN (the elastic-drag
+  // branch above doesn't know yet whether this will turn out to be a click or a real
+  // drag), and pointerMove may have already nudged its x/y/z by a pixel or two from
+  // ordinary mouse/trackpad/touch jitter even though the total movement stayed under
+  // the wasClick threshold. Snap it back to exactly where it started so a genuine
+  // click never moves the node at all -- only an intentional drag (wasClick===false)
+  // should.
+  if(dragN && wasClick && dragStart){
+    dragN.x=dragStart.x; dragN.y=dragStart.y; dragN.z=dragStart.z; dragN.vx=dragN.vy=dragN.vz=0;
+  }
+  if(dragN && wasClick){
+    setHighlight(dragN);
+    if(dragN.type==='p') select(dragN.id);
+    else if(dragN.type==='e') selectEvent(dragN.id);
+    else if(dragN.type==='o' && dragN.org){ selectOrg(dragN.org); } }
+  else if(!dragN && wasClick){ setHighlight(null); }   // click/tap empty space clears highlight
+  if(dragN && !wasClick && window._fullView) dragN.pin = true;  // pulled nodes stick where you put them
+  if(dragN && !window._fullView) dragN.fixed = dragN===nodes[0];
+  // only wake the sim after an ACTUAL drag-release (wasClick===false) -- this used to
+  // fire on every plain click too (dragN gets set on pointerDown for any node click,
+  // click or drag alike), waking window._simTTL for 40 frames and letting the
+  // group-anchor/leash/spring forces nudge the WHOLE settled map every time you
+  // clicked a node. That was the real remaining cause of "the balls move when I click
+  // them" -- the earlier fix to select()/selectEvent()/selectOrg() stopped THEM from
+  // waking the sim, but this release handler was still doing it unconditionally.
+  if(dragN && !wasClick && window._fullView) window._simTTL = Math.max(window._simTTL||0, 40);
+  dragN=null;dragStart=null;panning=false;rotating=false;cv.style.cursor='grab';
+}
+function releasePinAt(x,y){
+  const n=pick(x,y);
+  if(n && n.pin){ n.pin=false; if(window._fullView) window._simTTL=Math.max(window._simTTL||0,40); }   // releases a pinned node back to the springs
+}
+function zoomBy(f){
+  const minK=window._fullView?0.08:.25;   // full map allows zooming out much further
+  view.k=Math.max(minK,Math.min(4,view.k*f));
+}
+cv.addEventListener('mousedown',e=>pointerDown(e.offsetX,e.offsetY));
+window.addEventListener('mousemove',e=>pointerMove(e.movementX,e.movementY));
+window.addEventListener('mouseup',e=>pointerUp(e.offsetX,e.offsetY));
+cv.addEventListener('dblclick',e=>releasePinAt(e.offsetX,e.offsetY));
+cv.addEventListener('wheel',e=>{e.preventDefault(); zoomBy(e.deltaY<0?1.12:0.89);},{passive:false});
+
+// ---------- touch support: drag-to-pan, pinch-to-zoom, tap-to-select, tap-and-hold
+// to drag a node, double-tap to release a pinned node. touch-action:none on the
+// canvas (see CSS) hands ALL gesture handling to us, so the browser never fights
+// these listeners with its own native scroll/pinch-zoom behavior.
+function touchPos(t){ const r=cv.getBoundingClientRect(); return {x:t.clientX-r.left, y:t.clientY-r.top}; }
+function touchDist(t0,t1){ return Math.hypot(t0.clientX-t1.clientX, t0.clientY-t1.clientY); }
+let lastTouch=null, pinching=false, pinchDist=0, pinchStartK=1, lastTapAt=0, lastTapX=0, lastTapY=0;
+cv.addEventListener('touchstart',e=>{
+  e.preventDefault();
+  isTouchDevice = true;
+  if(e.touches.length===2){
+    pinching=true; dragN=null; dragStart=null; panning=false; rotating=false;
+    pinchDist=touchDist(e.touches[0],e.touches[1]); pinchStartK=view.k;
+    return;
+  }
+  pinching=false;
+  const p=touchPos(e.touches[0]); lastTouch=p;
+  pointerDown(p.x,p.y);
+},{passive:false});
+cv.addEventListener('touchmove',e=>{
+  e.preventDefault();
+  if(pinching && e.touches.length===2){
+    const d=touchDist(e.touches[0],e.touches[1]);
+    const minK=window._fullView?0.08:.25;
+    view.k=Math.max(minK,Math.min(4, pinchStartK*(d/(pinchDist||d))));
+    return;
+  }
+  if(e.touches.length!==1) return;
+  const p=touchPos(e.touches[0]);
+  if(lastTouch) pointerMove(p.x-lastTouch.x, p.y-lastTouch.y);
+  lastTouch=p;
+},{passive:false});
+cv.addEventListener('touchend',e=>{
+  e.preventDefault();
+  if(pinching){
+    pinching = e.touches.length===2;
+    if(!pinching){ dragN=null;dragStart=null;panning=false;rotating=false; cv.style.cursor='grab'; }
+    return;
+  }
+  const ct = e.changedTouches && e.changedTouches[0];
+  const p = ct ? touchPos(ct) : (lastTouch || {x:px,y:py});
+  pointerUp(p.x,p.y);
+  // double-tap (two releases within 320ms and 20px of each other) releases a pinned
+  // node, mirroring the desktop dblclick behavior.
+  const now=Date.now();
+  if(now-lastTapAt<320 && Math.abs(p.x-lastTapX)<20 && Math.abs(p.y-lastTapY)<20){
+    releasePinAt(p.x,p.y); lastTapAt=0;
+  } else { lastTapAt=now; lastTapX=p.x; lastTapY=p.y; }
+  lastTouch=null;
+},{passive:false});
+cv.addEventListener('touchcancel',()=>{
+  pinching=false; lastTouch=null; dragN=null; dragStart=null; panning=false; rotating=false; cv.style.cursor='grab';
+});
+
+// initial selection: most active person
+// initial page-load selection shouldn't yank the detail drawer open over the graph
+// on mobile before the person has tapped anything -- only user-triggered selects
+// (via select()/selectEvent()/selectOrg() below) should auto-open it.
+window._suppressAutoOpen = true;
+if(sorted.length) select(sorted[0].id);
+window._suppressAutoOpen = false;
+syncFab();
+</script>
+</body>
+</html>
