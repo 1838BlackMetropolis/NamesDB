@@ -389,5 +389,533 @@
    }
   ],
   "note": "Michiko approved 2026-07-29 ('newspaper sources are all James Needham Sr'). The newspaper 'James F. Needham' and 'James Needham' records are James Needham Sr. (the 1840s father) = Winch 'Needham, James'. Source-qualified aliases so it does NOT touch the ICY roster 'Needham, James F.' (coppin), who is the SON (James F. Needham Jr, ICY graduate) -- kept as a separate ICY person."
+ },
+ {
+  "keep": "Jackson, Benjamin",
+  "aliases": [
+   {
+    "name": "Benjamin Jackson",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Wears, Isaiah C.",
+  "aliases": [
+   {
+    "name": "Isaiah C. Wears",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Nicholson, John",
+  "aliases": [
+   {
+    "name": "John Nicholson",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Tudas, Jonathan",
+  "aliases": [
+   {
+    "name": "Jonathan Tudas",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Purvis, Robert",
+  "aliases": [
+   {
+    "name": "Robert Purvis",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Smith, Stephen",
+  "aliases": [
+   {
+    "name": "Stephen Smith",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Douglass, Robert Jr.",
+  "aliases": [
+   {
+    "name": "Robert Douglass Jr.",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Douglass, Frederick",
+  "aliases": [
+   {
+    "name": "Frederick Douglass",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Langston, John Mercer",
+  "aliases": [
+   {
+    "name": "John Mercer Langston",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "James, Stephen",
+  "aliases": [
+   {
+    "name": "Stephen James",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Williamson, Daniel",
+  "aliases": [
+   {
+    "name": "Daniel Williamson",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. (census record renamed to title case)."
+ },
+ {
+  "keep": "Thompson, Elias",
+  "aliases": [
+   {
+    "name": "Elias Thompson",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. (census record renamed to title case)."
+ },
+ {
+  "keep": "Horsey, George",
+  "aliases": [
+   {
+    "name": "George Horsey",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. (census record renamed to title case)."
+ },
+ {
+  "keep": "Lewis, Henry",
+  "aliases": [
+   {
+    "name": "Henry Lewis",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. (census record renamed to title case)."
+ },
+ {
+  "keep": "Reed, Isaac",
+  "aliases": [
+   {
+    "name": "Isaac Reed",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. (census record renamed to title case)."
+ },
+ {
+  "keep": "White, Miles",
+  "aliases": [
+   {
+    "name": "Miles White",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. (census record renamed to title case)."
+ },
+ {
+  "keep": "Sammons, William",
+  "aliases": [
+   {
+    "name": "William Sammons",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. (census record renamed to title case)."
+ },
+ {
+  "keep": "Edward Hall",
+  "aliases": [
+   {
+    "name": "Edward Hall",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Henry C. Wright",
+  "aliases": [
+   {
+    "name": "Henry C. Wright",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Henry Highland Garnet",
+  "aliases": [
+   {
+    "name": "Henry Highland Garnet",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Isaac Chase",
+  "aliases": [
+   {
+    "name": "Isaac Chase",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Thomas Shipley",
+  "aliases": [
+   {
+    "name": "Thomas Shipley",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person."
+ },
+ {
+  "keep": "Bias, James J. G.",
+  "aliases": [
+   {
+    "name": "James J. G. Bias",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. Dr. J.J.G. Bias, 1842 temperance leader."
+ },
+ {
+  "keep": "Jacob C. White Sr.",
+  "aliases": [
+   {
+    "name": "Jacob C. White Sr.",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. (1842 Wesley Sabbath School letter)."
+ },
+ {
+  "keep": "Jacob C. White Jr.",
+  "aliases": [
+   {
+    "name": "White, Jacob C., Jr.",
+    "source": "coppin"
+   },
+   {
+    "name": "Jacob C. White Jr.",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. Unites the newspaper, ICY (Coppin) and 1871 StoryMap records of Jacob C. White Jr., PERL leader."
+ },
+ {
+  "keep": "Catto, Octavius V.",
+  "aliases": [
+   {
+    "name": "Octavius V. Catto",
+    "source": "storymap"
+   },
+   {
+    "name": "Octavius V. Catto",
+    "source": "newspaper"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. Fold the 1871 StoryMap and the newspaper 'Octavius V. Catto' into the Winch/ICY Catto record."
+ },
+ {
+  "keep": "Still, William",
+  "aliases": [
+   {
+    "name": "William Still",
+    "source": "storymap"
+   },
+   {
+    "name": "William Still",
+    "source": "newspaper"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. Fold the 1871 StoryMap and newspaper 'William Still' into the Winch William Still."
+ },
+ {
+  "keep": {
+   "id": 351588,
+   "name": "Johnson, Jane"
+  },
+  "aliases": [
+   {
+    "name": "Jane Johnson",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. 1849 Mother Bethel defender -> the UGRR 'Johnson, Jane' (id351588). Does NOT touch the separate Winch 'Johnson, Jane'."
+ },
+ {
+  "keep": {
+   "id": 351596,
+   "name": "Williams, Samuel"
+  },
+  "aliases": [
+   {
+    "name": "Samuel Williams",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. 'Uncle Sammy' Williams (1849 Boyer House) -> the UGRR 'Williams, Samuel' (id351596). Does NOT touch the census 'Williams, Samuel'."
+ },
+ {
+  "keep": {
+   "id": 230,
+   "name": "Black, Charles"
+  },
+  "aliases": [
+   {
+    "name": "Charles Black",
+    "source": "storymap"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (StoryMap review): StoryMap 'Charles Black' (1842 War of 1812 veteran, the Sr.) -> Winch 'Black, Charles' Register of Trades 1838 record (id230, 'Carpenter. Christian above 8th'). id-qualified keep so it targets ONLY id230 and leaves the other Winch 'Black, Charles' (id231, Donaldson's school) and census 'BLACK, CHARLES' (id351942) untouched. StoryMap 'Charles Black Jr.' kept separate."
+ },
+ {
+  "keep": {
+   "id": 2014,
+   "name": "Mary Lewton"
+  },
+  "aliases": [
+   {
+    "name": "Newton, Mary",
+    "source": "winch"
+   },
+   {
+    "name": "Mary Lewton",
+    "source": "newspaper"
+   },
+   {
+    "name": "Mary Lewton",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30. 'Newton, Mary' (Winch id2014) is Mary Lewton, the Northern Liberties UGRR 'mother to the fleeing bondmen' / Union AME founder. Keyed on the STABLE Winch id2014 (the surviving merge target); folds any recreated newspaper/blog 'Mary Lewton' duplicate by name+source each rebuild. split_nichols.py runs first so only her Female Vigilant Committee note follows. John Lewton (census 'LEWTON, JOHN') and the unrelated 'Newton, John Y.' (Winch, Haytien Emigration Society) stay separate."
+ },
+ {
+  "keep": {
+   "id": 1996,
+   "name": "Needham, James"
+  },
+  "aliases": [
+   {
+    "name": "James Needham",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Blog 'James Needham' (no F.) is James Needham Sr. = Winch 'Needham, James' (id1996)."
+ },
+ {
+  "keep": {
+   "id": 359342,
+   "name": "Needham, James F."
+  },
+  "aliases": [
+   {
+    "name": "James Fields Needham",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Blog 'James Fields Needham' is James Needham Jr. = the ICY roster 'Needham, James F.' (coppin, id359342, the son)."
+ },
+ {
+  "keep": {
+   "id": 550,
+   "name": "Cassey, Amy Matilda"
+  },
+  "aliases": [
+   {
+    "name": "Amy Matilda",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Blog 'Amy Matilda' is Amy Matilda Cassey = Winch 'Cassey, Amy Matilda' (id550)."
+ },
+ {
+  "keep": {
+   "id": 2297,
+   "name": "Rolley, Abner"
+  },
+  "aliases": [
+   {
+    "name": "Abner Rolly",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Blog 'Abner Rolly' -> Winch 'Rolley, Abner' (id2297). (No standalone census 'Abner Rolley' found; the Winch record carries his data.)"
+ },
+ {
+  "keep": {
+   "id": 14199,
+   "name": "Caroline R. LeCount"
+  },
+  "aliases": [
+   {
+    "name": "Carolyn Le Count",
+    "source": "blog"
+   },
+   {
+    "name": "Carolyn LeCount",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). The two blog Carolyn LeCount spellings (LeCount / Le Count) unified into the newspaper 'Caroline R. LeCount' (id14199), Catto's fiancee/the transit activist. Blog 'Eliza Ann LeCount' left separate."
+ },
+ {
+  "keep": {
+   "id": 344,
+   "name": "Brister, J."
+  },
+  "aliases": [
+   {
+    "name": "Joseph Brister",
+    "source": "blog"
+   },
+   {
+    "name": "Dr. Joseph Brister",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review): the Winch 'Brister, J.' (id344) IS Dr. Joseph Brister -- fold both blog spellings ('Joseph Brister', 'Dr. Joseph Brister') in."
+ },
+ {
+  "keep": {
+   "name": "Henrietta Duterte",
+   "source": "blog"
+  },
+  "aliases": [
+   {
+    "name": "Henriette Duterte",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Merge the two blog Henrietta/Henriette Duterte spellings."
+ },
+ {
+  "keep": {
+   "id": 59208,
+   "name": "Jacob C. White Sr."
+  },
+  "aliases": [
+   {
+    "name": "Jacob C. White Senior",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Blog 'Jacob C. White Senior' -> newspaper 'Jacob C. White Sr.' (id59208)."
+ },
+ {
+  "keep": {
+   "id": 353358,
+   "name": "MINTUS, LEVINA"
+  },
+  "aliases": [
+   {
+    "name": "Livinia Mintus",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Blog 'Livinia Mintus' -> 1838 census 'MINTUS, LEVINA' (id353358)."
+ },
+ {
+  "keep": {
+   "name": "Mary Ann Shadd Cary",
+   "source": "blog"
+  },
+  "aliases": [
+   {
+    "name": "Mary Ann Shad Cary",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Merge the two blog Mary Ann Shad(d) Cary spellings."
+ },
+ {
+  "keep": {
+   "id": 97,
+   "name": "Ash, Sarah"
+  },
+  "aliases": [
+   {
+    "name": "Mrs. Ash",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). Blog 'Mrs. Ash' is Sarah Ash = Winch 'Ash, Sarah' (id97)."
+ },
+ {
+  "keep": {
+   "id": 31244,
+   "name": "Du Bois, W.E.B."
+  },
+  "aliases": [
+   {
+    "name": "W.E.B DuBois",
+    "source": "blog"
+   },
+   {
+    "name": "W.E.B Dubois",
+    "source": "blog"
+   },
+   {
+    "name": "W.E.B. DuBois",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review). All blog W.E.B. Du Bois spellings -> dissertation 'Du Bois, W.E.B.' (id31244)."
+ },
+ {
+  "keep": "Lecount, James",
+  "aliases": [
+   {
+    "name": "James LeCount, Jr.",
+    "source": "newspaper"
+   },
+   {
+    "name": "James Le Count",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko approved 2026-07-30 (blog review): merge ALL the James LeCounts for her to review -- the two Winch 'Lecount, James' (id1691, id1692) + the 1820-directory 'Lecount, James' (all match the plain-name keep) + the newspaper 'James LeCount, Jr.' + the blog 'James Le Count'. She will split any that turn out to be distinct people."
  }
 ]

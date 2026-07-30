@@ -77,7 +77,7 @@ def main():
     con.execute("DELETE FROM issues")
     con.execute("CREATE TABLE IF NOT EXISTS newspaper_orgs(person_id INT, org TEXT, issue TEXT, page INT)")
     con.execute("DELETE FROM newspaper_orgs")
-    people = con.execute("SELECT id, canonical_name FROM people WHERE source IS NOT 'coppin'").fetchall()  # ICY/Coppin students are a later generation -- do NOT name-match them to 1830s-40s papers (false cross-generation matches); their links come only from the ICY org + confirmed merges
+    people = con.execute("SELECT id, canonical_name FROM people WHERE source NOT IN ('coppin','storymap')").fetchall()  # ICY/Coppin students are a later generation -- do NOT name-match them to 1830s-40s papers (false cross-generation matches); their links come only from the ICY org + confirmed merges
     # Curated suppression of known false OCR name-collisions (Michiko 2026-07-17):
     # the kidnapper "Joseph Johnson" (Cannon-Johnson ring) shares a name with Winch's
     # "Johnson, Joseph"; do NOT auto-attribute the kidnapping-issue mentions to the
@@ -86,7 +86,12 @@ def main():
                           # "Dr. Bias" biographical passage is Dr. J.J.G. Bias (id already gets the
                           # "J. J. G. Bias" mention); the stray match to his wife Eliza came from the
                           # "E" in "A. M. E. Connection" matching her initial. Michiko 2026-07-21.
-                          ("Bias, Eliza A.", "PP_015")}
+                          ("Bias, Eliza A.", "PP_015"),
+                          # "Newton, John Y." (Winch, Haytien Emigration Society 1825) is a DIFFERENT
+                          # John Newton from the two OCR-garbage newspaper mentions that matched him;
+                          # both contexts are gibberish, not about him. Michiko 2026-07-30.
+                          ("Newton, John Y.", "FJ_1828-09-12"),
+                          ("Newton, John Y.", "PF_1838-07-26")}
     _name2pids = {}
     for _pid, _nm in people:
         _name2pids.setdefault(_nm, set()).add(_pid)
