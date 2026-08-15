@@ -917,5 +917,79 @@
    }
   ],
   "note": "Michiko approved 2026-07-30 (blog review): merge ALL the James LeCounts for her to review -- the two Winch 'Lecount, James' (id1691, id1692) + the 1820-directory 'Lecount, James' (all match the plain-name keep) + the newspaper 'James LeCount, Jr.' + the blog 'James Le Count'. She will split any that turn out to be distinct people."
+ },
+ {
+  "keep": "FITZGERALD, JEREMIAH",
+  "aliases": [
+   "Mr. Fitzgerald",
+   "Jeremiah Fitzgerald"
+  ],
+  "note": "Jeremiah Fitzgerald -- 1838 PAS census head of household; the 'Mr. Fitzgerald' of the Flying Horses StoryMap and the 'Jeremiah Fitzgerald' pressing charges in the Mob Attack Statistics (Prisoners For Trial p.199). Confirmed by Michiko 2026-08-14."
+ },
+ {
+  "keep": {
+   "id": 351596,
+   "name": "WILLIAMS, SAMUEL",
+   "source": "census"
+  },
+  "aliases": [
+   {
+    "name": "Samuel Williams",
+    "source": "mobstats"
+   },
+   {
+    "name": "Williams, Samuel",
+    "source": "ugrr"
+   }
+  ],
+  "note": "Samuel Williams -- Boyer House Tavern owner (Mob Attack Statistics m07/m61) = the census Samuel Williams whose 1847 record is the porter house at 235 S. 7th (& 29 Washington). Confirmed by Michiko 2026-08-14 (she cited '245 S. 7th'; the census row reads 235 S. 7th -- only S. 7th Samuel Williams). Deliberately EXCLUDES the ugrr Williams, Samuel and blog Samuel Williams. 2026-08-14 QA: Michiko also confirmed the William Still Underground Railroad 'Samuel Williams' (chapter at p.126) is the same man -- ugrr record folded in. [Housekeeping 2026-08-14: apply_merges kept the lower id, so the surviving row is 351596 (originally the ugrr record); its source was relabeled 'census' in the DB and this group's keep repointed to id 351596. All census/ugrr/mobstats links verified on that row.]"
+ },
+ {
+  "keep": {
+   "id": 42437,
+   "name": "James Forten Sr.",
+   "source": "newspaper"
+  },
+  "aliases": [
+   {
+    "name": "James Forten",
+    "source": "mobstats"
+   }
+  ],
+  "note": "James Forten the elder -- his 1834 Flying Horses appeal to the mayor (Mob Attack Statistics m01). Confirmed by Michiko 2026-08-14. NOT Forten, James Jr."
+ },
+ {
+  "keep": "Gardner, Charles W.",
+  "aliases": [
+   {
+    "name": "Charles Gardner",
+    "source": "mobstats"
+   }
+  ],
+  "note": "Rev. Charles W. Gardner (Winch) -- co-signer of 'The Late Riots' (Mob Attack Statistics m57). Confirmed by Michiko 2026-08-14. Storymap/blog 'Charles Gardner' records left un-merged pending her review."
+ },
+ {
+  "keep": "Payne, Daniel A.",
+  "aliases": [
+   {
+    "name": "Daniel Payne",
+    "source": "mobstats"
+   }
+  ],
+  "note": "Rev. Daniel A. Payne (Winch) -- co-signer of 'The Late Riots' (Mob Attack Statistics m57). Confirmed by Michiko 2026-08-14. Storymap 'Daniel Payne' left un-merged pending her review."
+ },
+ {
+  "keep": {
+   "id": 356728,
+   "name": "Jackson, Benjamin F",
+   "source": "census"
+  },
+  "aliases": [
+   {
+    "name": "Benjamin Jackson",
+    "source": "mobstats"
+   }
+  ],
+  "note": "Benjamin Jackson -- California House Tavern owner (Mob Attack Statistics m08/m61) = the 1847 census Benjamin F Jackson, Bedford Street, porter. Confirmed by Michiko 2026-08-14, who directed this go to the 1847 census record and explicitly NOT to the Winch Jackson, Benjamin (which carries the other 1847 record, 29 Paschalle Alley)."
  }
 ]
