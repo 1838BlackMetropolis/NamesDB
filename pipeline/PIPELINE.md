@@ -2,8 +2,24 @@
 
 Instructions for any Claude session continuing this project. Priority order: **Pencil Pusher** first, then **Freedoms Journal**, then remaining Colored American / Pennsylvania Freeman issues.
 
-## ⚠️ PROD PUSH FAILSAFE (Michiko, 2026-07-29)
-Before ANY push to production (`1838BlackMetropolis/NamesDB`), you MUST ask Michiko for the prod-push password in the chat and only proceed if she gives the correct one. This gate applies to every "promote" — no exceptions, even if she just said "promote". Staging (`michiQ/1838Names`) pushes do NOT require the password. The password value and the production PAT are stored OUTSIDE this repo and outside Google Drive (in `~/.ssh/`, mode 600) so they never get committed or synced — never write either to git or Drive, and never echo them in output.
+## ⚠️ PROD PUSH FAILSAFE (Michiko, revised 2026-08-19)
+Before ANY push to production (`1838BlackMetropolis/NamesDB`), you MUST ask Michiko IN THE CHAT
+for BOTH (1) the prod-push password and (2) the production PAT, at promote time. This applies to
+every promote -- no exceptions, even if she just said "promote".
+- There is NO stored copy of either. The PAT she supplies is the gate: only she can produce a
+  credential that GitHub accepts for that repo, so a working PAT from her in chat IS the
+  authorization. The password is an additional intent check (no stored comparison value exists;
+  do not pretend to verify it -- just require that she states it).
+- NEVER store the password or PAT in the repo, in Google Drive, in progress.txt, or anywhere
+  that persists past the session. Use the PAT for the push(es), then delete any temp file.
+- The staging token (`pipeline/github_token.txt`, michiQ identity) has READ access to prod but
+  not write -- do not attempt to promote with it.
+- Promote pattern: prod keeps its own squash history -- create a commit on top of prod's HEAD
+  with the current staging tree (`git commit-tree 'HEAD^{tree}' -p <prodHEAD> -m "Promote staging
+  (michiQ <sha>): ..."`) and push that sha to prod main.
+- (Historical note: the failsafe previously referenced password/PAT files in `~/.ssh`; that
+  scheme is retired -- Cowork sessions cannot mount hidden dot-folders, and the files no longer
+  exist. Superseded by ask-in-chat, per Michiko 2026-08-19.)
 
 ## Setup (each run)
 1. The working folder is `<Newspapers>/1838 Names Database/` (this folder). Scripts are in `pipeline/`.
@@ -21,7 +37,7 @@ Before ANY push to production (`1838BlackMetropolis/NamesDB`), you MUST ask Mich
    - ARTICLE SUMMARIES (Michiko, 2026-08-05): the `summary` field on an `article` does NOT need a full synopsis. Just the first few sentences of the article are enough — transcribe/lightly clean the opening, enough to identify what the piece is, and stop. This applies to the `articles` array only. Event `description` fields are different: keep those substantive, since they carry the roster/meeting context that is the point of the extraction.
 
 ## Finish (each run)
-1. For every newly processed issue: (a) render page JPEGs into `pages/` named `<slug>_pN.jpg` (`pdftoppm -jpeg -jpegopt quality=68 -r 110` — use `-r 90` for oversized scans; rename `_p-N` to `_pN`); (b) look up the PDF's Google Drive viewUrl via the Drive connector `search_files` and add it to `pipeline/issue_urls.json`. The viewer's "view page" / "full issue" links depend on both.
+1. For every newly processed issue: (a) render page JPEGs into `pages/` named `<slug>_pN.jpg` (`pdftoppm -jpeg -jpegopt quality=68 -r 110` — use `-r 90` for oversized scans; rename `_p-N` to `_pN`). EXCEPTION — Christian Recorder (and, when Michiko says go, Pennsylvania Freeman): microfilm spreads are too fuzzy at 110dpi; render at 300dpi gray, crop per ocr_christian_recorder.py geometry (paper bbox, center split), save JPEG q85 (~1650x2280px, ~1MB/page — done for CR 2026-08-19); (b) look up the PDF's Google Drive viewUrl via the Drive connector `search_files` and add it to `pipeline/issue_urls.json`. The viewer's "view page" / "full issue" links depend on both.
 2. Run `build_viewer.py` (regenerates the viewer; update its PAPERS slug-prefix map for new papers).
 3. Copy `/tmp/black_metropolis.db` back over `black_metropolis.db` in this folder, and the regenerated viewer HTML to BOTH `1838_black_metropolis_viewer.html` and `index.html` (the GitHub Pages copy).
 3. Update `progress.txt` in this folder: which files are done, any problem PDFs.

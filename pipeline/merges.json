@@ -18,9 +18,17 @@
    "James JG Bias",
    "Jas JG Bias",
    "Bias, Jas. J. G.",
-   "Bias, James JG"
+   "Bias, James JG",
+   {
+    "name": "J. J. Gould Bias",
+    "source": "newspaper"
+   },
+   {
+    "name": "Rev. Dr. J. J. G. Bias",
+    "source": "newspaper"
+   }
   ],
-  "note": "Dr. James J. G. Bias — dentist/physician, AME leader, Vigilance Committee. Confirmed by Michiko 2026-07-04. [Run #36, 2026-07-16: Michiko directed that ANY 'J Bias' variant be merged in — added newspaper spellings 'J. G. Bias' and 'Jas. C. Bias' (the 'C' is an OCR misread of his ornate initials; 'Jas.'=James). Deliberately EXCLUDES 'Bias, Eliza A.' (his wife/a woman) and 'Bias, Aexander'/Alexander Bias (census) — different people, not J-Bias variants.] [Run #55b, 2026-07-21: Michiko directed ANY \"JJG Bias / James JG Bias / Jas JG Bias\" spelling be merged — added those punctuation/abbreviation variants.]"
+  "note": "Dr. James J. G. Bias — dentist/physician, AME leader, Vigilance Committee. Confirmed by Michiko 2026-07-04. [Run #36, 2026-07-16: Michiko directed that ANY 'J Bias' variant be merged in — added newspaper spellings 'J. G. Bias' and 'Jas. C. Bias' (the 'C' is an OCR misread of his ornate initials; 'Jas.'=James). Deliberately EXCLUDES 'Bias, Eliza A.' (his wife/a woman) and 'Bias, Aexander'/Alexander Bias (census) — different people, not J-Bias variants.] [Run #55b, 2026-07-21: Michiko directed ANY \"JJG Bias / James JG Bias / Jas JG Bias\" spelling be merged — added those punctuation/abbreviation variants.] [Run #72e, 2026-08-19: Michiko merged the Christian Recorder ad-author 'J. J. Gould Bias' and 'Rev. Dr. J. J. G. Bias' in as well.]"
  },
  {
   "keep": "Douglass, Sarah M.",
@@ -974,9 +982,13 @@
    {
     "name": "Daniel Payne",
     "source": "mobstats"
+   },
+   {
+    "name": "Bishop Daniel A. Payne",
+    "source": "newspaper"
    }
   ],
-  "note": "Rev. Daniel A. Payne (Winch) -- co-signer of 'The Late Riots' (Mob Attack Statistics m57). Confirmed by Michiko 2026-08-14. Storymap 'Daniel Payne' left un-merged pending her review."
+  "note": "Rev. Daniel A. Payne (Winch) -- co-signer of 'The Late Riots' (Mob Attack Statistics m57). Confirmed by Michiko 2026-08-14. Storymap 'Daniel Payne' left un-merged pending her review. [Run #72, 2026-08-19: Michiko approved folding the Christian Recorder's 'Bishop Daniel A. Payne' (newspaper) in as well.]"
  },
  {
   "keep": {
@@ -991,5 +1003,99 @@
    }
   ],
   "note": "Benjamin Jackson -- California House Tavern owner (Mob Attack Statistics m08/m61) = the 1847 census Benjamin F Jackson, Bedford Street, porter. Confirmed by Michiko 2026-08-14, who directed this go to the 1847 census record and explicitly NOT to the Winch Jackson, Benjamin (which carries the other 1847 record, 29 Paschalle Alley)."
+ },
+ {
+  "keep": "Goines, George W.",
+  "aliases": [
+   "G. W. Goines",
+   "George W. Goines"
+  ],
+  "note": "George W. Goines -- Winch + census (same normalized name, both fold to the Winch record) + 'G. W. Goines', The North Star's Philadelphia agent (31 North Fifth St.) and author of the Lyceum/Library letter (NS_1848-02-25). Confirmed by Michiko 2026-08-19."
+ },
+ {
+  "keep": {
+   "name": "John Brown (abolitionist)",
+   "source": "newspaper"
+  },
+  "aliases": [
+   {
+    "name": "Mr. Brown",
+    "source": "newspaper"
+   }
+  ],
+  "note": "John Brown the abolitionist -- the 'Mr. Brown' of Douglass's Springfield conference (NS_1848-02-11), their first meeting. Curated per Michiko 2026-08-19. Deliberately NOT merged with any Philadelphia Brown, John (winch/census/1820directory)."
+ },
+ {
+  "keep": {
+   "name": "ROBINSON, RICHARD",
+   "source": "census"
+  },
+  "aliases": [
+   {
+    "name": "Rev. Richard Robertson",
+    "source": "newspaper"
+   },
+   "Rev. Richard Robinson"
+  ],
+  "note": "Rev. Richard Robinson -- AME minister. Confirmed by Michiko 2026-08-19: the 'Rev. Richard Robertson' printed as chairman (and 'Rev. Mr. Robertson', concluding remarks) of the Rt. Rev. Richard Allen anniversary at Bethel Church (Feb 4 1856, CR_1856-03-04 p2) IS Rev. Richard Robinson; the Christian Recorder's print/typesetting reads Robertson (image-verified) but the man is Robinson. Kept on the census record ROBINSON, RICHARD (1838 PAS census). The 'Rev. Richard Robinson' plain alias future-proofs correctly-spelled newspaper matches. Deliberately does NOT touch winch Robertson D./George/Ishmael-or-Israel/John (no Richard among them)."
+ },
+ {
+  "keep": "Crippen, Abraham",
+  "aliases": [
+   {
+    "name": "Rev. A. C. Crippen",
+    "source": "newspaper"
+   }
+  ],
+  "note": "Rev. A. C. Crippen -- the Camden A.M.E. pastor of the Christian Recorder 1854 (officiated marriages, appointed to Camden by Bishop Nazrey May 1854). = winch Crippen, Abraham. Confirmed by Michiko 2026-08-19 (Run #72)."
+ },
+ {
+  "keep": {
+   "name": "Smith, Stephen",
+   "source": "winch"
+  },
+  "aliases": [
+   {
+    "name": "Rev. Stephen Smith",
+    "source": "newspaper"
+   }
+  ],
+  "note": "Rev. Stephen Smith -- Local Elder / Book Concern committeeman who defended the publishing committee at the Sept 1854 Bethel mass meeting (Christian Recorder). = winch Smith, Stephen (2436, already aliased 'Stephen Smith'). Confirmed by Michiko 2026-08-19 (Run #72). NB deliberately does not touch the separate blog-source 'Stephen Smith' node unless Michiko says so."
+ },
+ {
+  "keep": "Gardiner, Peter",
+  "aliases": [
+   {
+    "name": "Rev. Peter Gardiner",
+    "source": "newspaper"
+   }
+  ],
+  "note": "Rev. Peter Gardiner -- A.M.E. preacher, Westchester station / Media quarterly meeting / Howellville marriage (Christian Recorder 1854). = winch Gardiner, Peter (1103). Confirmed by Michiko 2026-08-19 (Run #72)."
+ },
+ {
+  "keep": {
+   "name": "Willis Nazrey",
+   "source": "newspaper"
+  },
+  "aliases": [
+   {
+    "name": "Bishop Willis Nazrey",
+    "source": "newspaper"
+   }
+  ],
+  "note": "Bishop Willis Nazrey of the A.M.E. Church -- two newspaper-source nodes for the same man (pilot-era 'Willis Nazrey' 3027 + 'Bishop Willis Nazrey'). Kept on 3027. Confirmed by Michiko 2026-08-19 (Run #72)."
+ },
+ {
+  "keep": {
+   "name": "Harper, Frances Ellen Watkins",
+   "source": "ugrr"
+  },
+  "aliases": [
+   {
+    "name": "Francis Ellen Watkins Harper",
+    "source": "blog"
+   }
+  ],
+  "note": "Frances Ellen Watkins Harper -- poet/abolitionist; her 'Poems on Miscellaneous Subjects' reviewed in the Christian Recorder (No.20, 1854). Folds the blog-source duplicate into the ugrr record. Confirmed by Michiko 2026-08-19 (Run #72)."
  }
 ]
