@@ -313,6 +313,24 @@ for e in events.values():
     for pid, _ in e["att"]:
         if pid in people:
             add_org(pid, org_name, {"e": e["id"]})
+# Hand-curated organizations (pipeline/curated_orgs.json, Michiko 2026-11-01: the vigilance committees
+# kept as separate groups, plus the Frank Johnson Guards and Williams Assembly). Automatic labels in
+# "drop" are removed first, then each curated org gets exactly the listed members, each with its role
+# and citation. Curated orgs are always kept, even with no members, and carry a note shown in the panel.
+CURATED = json.load(open(os.path.join(os.path.dirname(TPL), "curated_orgs.json"), encoding="utf-8"))
+for lbl in CURATED.get("drop", []):
+    gone = org_members.pop(lbl.lower(), None)
+    if gone: print("   curated: dropped automatic org", repr(lbl), len(gone["pids"]), "members")
+CURATED_NOTES = {}
+for co in CURATED["orgs"]:
+    key = co["name"].lower()
+    e = org_members.setdefault(key, {"label": co["name"], "pids": set(), "src": {}})
+    e["label"] = co["name"]; e["curated"] = True
+    CURATED_NOTES[co["name"]] = co.get("note", "")
+    for pid, sv in co["members"]:
+        if pid not in people:
+            print("   curated: WARNING member id", pid, "not in people for", co["name"]); continue
+        e["pids"].add(pid); e["src"][pid] = sv
 # Fold "<Org> <meeting description>" entries into <Org> (added 2026-10-31, Michiko's org-list
 # consolidation). An entry folds only when it starts with another org's full name followed by
 # punctuation or an event word (meeting, annual, anniversary, quarterly, delegation ...), and never
@@ -346,8 +364,11 @@ for a, b in ORG_FOLD_LOG: print("   fold:", a, "=>", b)
 # finalize orgs: keep those with >=2 members
 orgs_out = []
 for key, e in org_members.items():
-    if len(e["pids"]) >= 2:
-        orgs_out.append({"name": e["label"], "members": sorted(e["pids"]), "src": e["src"]})
+    # >=2 members, OR named in a curated event (a real organization even if only its secretary is known,
+    # e.g. the 1827 Protecting Society -- added 2026-10-31, Michiko)
+    if e.get("curated") or len(e["pids"]) >= 2 or any("e" in sv for sv in e["src"].values()):
+        orgs_out.append({"name": e["label"], "members": sorted(e["pids"]), "src": e["src"],
+                         **({"note": CURATED_NOTES[e["label"]]} if CURATED_NOTES.get(e["label"]) else {})})
 orgs_out.sort(key=lambda o: (-len(o["members"]), o["name"]))
 for o in orgs_out:
     for pid in o["members"]:
@@ -405,7 +426,17 @@ if has_table("mobstats_people"):
             people[pid].setdefault("mobstats", []).append(mid)
 
 # prune people with no content at all (after census attach)
-keep = {pid for pid, p in people.items() if p["refs"] or p["mentions"] or p["events"] or p["articles"] or p.get("census") or p.get("directory") or p.get("nolibs") or p.get("ugrr") or p.get("coppin") or p.get("storymap") or p.get("blog") or p.get("mobstats")}
+# Hand-curated person-to-person connections (pipeline/person_links.json, Michiko). Shown on both
+# profiles ("Connected to") and added as a strong map link.
+for lk in json.load(open(os.path.join(os.path.dirname(TPL), "person_links.json"), encoding="utf-8"))["links"]:
+    a, b2 = lk["a"], lk["b"]
+    if a in people and b2 in people:
+        people[a].setdefault("links", []).append({"p": b2, "n": lk.get("note", "")})
+        people[b2].setdefault("links", []).append({"p": a, "n": lk.get("note", "")})
+        k = (min(a, b2), max(a, b2)); edges[k] = edges.get(k, 0) + 3
+    else:
+        print("   person_links: WARNING missing id", a, b2)
+keep = {pid for pid, p in people.items() if p["refs"] or p["mentions"] or p["events"] or p["articles"] or p.get("census") or p.get("directory") or p.get("nolibs") or p.get("ugrr") or p.get("coppin") or p.get("storymap") or p.get("blog") or p.get("mobstats") or p.get("links")}
 people = {pid: p for pid, p in people.items() if pid in keep}
 edges = {k: v for k, v in edges.items() if k[0] in people and k[1] in people}
 
@@ -416,12 +447,31 @@ data = {"people": list(people.values()),
         "issueUrls": urls,
         "jpegIssues": jpeg_slugs,
         "orgs": [{"name": o["name"], "members": [p for p in o["members"] if p in people],
-                  "src": {str(p): s for p, s in o["src"].items() if p in people}} for o in orgs_out],
+                  "src": {str(p): s for p, s in o["src"].items() if p in people},
+                  **({"note": o["note"]} if o.get("note") else {})} for o in orgs_out],
         "blogs": blogs_meta,
         "mobstats": mobstats_meta}
 
 import datetime
 tpl = open(TPL, encoding="utf-8").read()
+# Michiko 2026-11-01: no "VERIFY" wording in the public listings (the header says this is a curated
+# passion project). Source files keep their [VERIFY] flags for review; they are stripped here, at display.
+_VER_BRACKET = re.compile(r"\s*\[[^\[\]]*?\bVERIFY\b[^\[\]]*\]", re.I)
+_VER_SCAN = re.compile(r"\s*-\s*verify against scan", re.I)
+def _unverify(x):
+    if isinstance(x, str):
+        if "erif" not in x and "ERIF" not in x: return x
+        y = _VER_SCAN.sub("", _VER_BRACKET.sub("", x))
+        y = re.sub(r"\s*;\s*(?=$|[)\],])", "", y)          # dangling '; ' left where a flag was
+        y = re.sub(r"\(\s*\)", "", y)                     # empty parentheses
+        y = re.sub(r"\s+([,.;)])", r"\1", y)
+        return re.sub(r"  +", " ", y).strip() if y != x else x
+    if isinstance(x, list): return [_unverify(v) for v in x]
+    if isinstance(x, dict): return {k: _unverify(v) for k, v in x.items()}
+    return x
+data = _unverify(data)
+_left = len(re.findall(r"\bVERIFY\b|\bverify\b", json.dumps(data, ensure_ascii=False)))
+print("   verify flags stripped from display; remaining 'verify' words:", _left)
 js = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
 html = tpl.replace("/*__DATA__*/null", js)
 # Optional baked "All connections" layout (see viewer_template.html / precompute_fullmap.js):
