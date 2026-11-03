@@ -1,6 +1,6 @@
 # Blog archive -- name matches to confirm
 
-74 posts loaded. Of 478 unique names: 188 linked to existing people, 238 created as new blog people, 52 held as ambiguous (NOT linked -- confirm below).
+74 posts loaded. Of 479 unique names: 197 linked to existing people, 234 created as new blog people, 48 held as ambiguous (NOT linked -- confirm below).
 
 ## Ambiguous (same name as MORE THAN ONE existing record -- not auto-linked)
 Add a group to merges.json (id-qualified) to attach the blog mentions to the right one:
@@ -24,9 +24,6 @@ Add a group to merges.json (id-qualified) to attach the blog mentions to the rig
 - **Jacob C. White, Jr.** (blog)  ↔  Jacob White, Jr.#2774, Jacob C. White Jr.#3037
 - **Jacob Griffith** (blog)  ↔  Griffith, Jacob#356653, Jacob Griffith#359742
 - **James Brister** (blog)  ↔  Brister, James#354473, Brister, James#359042
-- **James Forten Jr.** (blog)  ↔  James Forten, Jr.#963, Forten, James Jr.#1036, James Forten, Jr.#14268
-- **James Forten, Jr** (blog)  ↔  James Forten, Jr.#963, Forten, James Jr.#1036, James Forten, Jr.#14268
-- **James Forten, Jr.** (blog)  ↔  James Forten, Jr.#963, Forten, James Jr.#1036, James Forten, Jr.#14268
 - **James Gordon** (blog)  ↔  Gordon, James R.#1182, Gordon, James R#354661
 - **James Le Count** (blog)  ↔  Lecount, James#1691, James Le Count#361532
 - **James Needham** (blog)  ↔  Needham, James#1996, Needham, James F.#359342
@@ -44,11 +41,10 @@ Add a group to merges.json (id-qualified) to attach the blog mentions to the rig
 - **Robert Johnson** (blog)  ↔  Johnson, Robert#1560, Johnson, Robert#1561, Johnson, Robert#1562, Johnson, Robert#1563, Johnson, Robert C.#1564, JOHNSON, ROBERT#353012
 - **Robert Jones** (blog)  ↔  Jones, Robert#1611, Jones, Robert#1612, Robert Jones#8628, JONES, ROBERT#353052, Jones, Robert H#357223, Jones, Robert C.#359265
 - **Robert Patterson** (blog)  ↔  Robert Patterson#359756, Robert Patterson#360453
-- **Samuel Williams** (blog)  ↔  WILLIAMS, SAMUEL#351596, WILLIAMS, SAMUEL#360594, Williams, Samuel#360595, Williams, Samuel#360596, Williams, Samuel#360597, Williams, Samuel#362194
+- **Samuel Williams** (blog)  ↔  WILLIAMS, SAMUEL#351596, WILLIAMS, SAMUEL#360594, Williams, Samuel#360595, Williams, Samuel#360596, Williams, Samuel#360597, Williams, Samuel#362451
 - **Sarah Jones** (blog)  ↔  Jones, Sarah#1613, Jones, Sarah#1614, Jones, Miss Sarah#1615, JONES, SARAH#353053, Jones, Sarah E.#359266
 - **Sarah Lewis** (blog)  ↔  Sarah Lewis#309587, LEWIS, SARAH#353177
 - **Thomas Bowers** (blog)  ↔  Bowers, Thomas#311, Bowers, Thomas J.#312
-- **Thomas Butler** (blog)  ↔  Butler, Thomas#497, Thomas Butler#59213, BUTLER, THOMAS#352124
 - **William A. Brown** (blog)  ↔  Brown, William#421, Brown, William#422, Brown, William C.#423, Brown, William#355146, Brown, William J#355415, Brown, William#357492, William W. Brown#360410
 - **William Bell** (blog)  ↔  Bell, William#354955, Bell, William#359015, William Bell#359735
 - **William Craft** (blog)  ↔  Craft, William#31199, Craft, William#351700, William Craft#358732
@@ -161,7 +157,6 @@ e.g. honorific/nickname variants of existing people, or national/modern figures 
 - Jane Eleanor Datcher
 - Jane Vasham
 - Jean Jacques Dessalines
-- Jean Pierre Burr
 - Jerena Lee
 - Jessie Redmon Fauset
 - Jill Scott
@@ -202,7 +197,6 @@ e.g. honorific/nickname variants of existing people, or national/modern figures 
 - Lord Baltimore
 - Lord Palmerston
 - Lorene Cary
-- Louis Woodson
 - Louisa Wilkes
 - Madison Washington
 - Maria Hutton
@@ -250,7 +244,6 @@ e.g. honorific/nickname variants of existing people, or national/modern figures 
 - Rebecca Perot
 - Redmon Fauset
 - Redmond Prendible
-- Representative Earle
 - Rev. Phillip Mayer
 - Rich Porter
 - Richard Dancan
@@ -274,7 +267,6 @@ e.g. honorific/nickname variants of existing people, or national/modern figures 
 - Terence O'Neill
 - Thomas Hamill
 - Thomas Jefferson
-- Thomas Jefferson Becket
 - Thomas Paschall
 - Thomas Rogers
 - Toussaint L'Ouverture
