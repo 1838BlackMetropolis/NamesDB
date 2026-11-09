@@ -1,0 +1,1945 @@
+{
+ "_note": "The Juvenile Magazine, No. 3, July 1, 1813 (Arthur Donaldson). Built by build_jm1813.py from jm1813_rosters.json; edit those, not extractions_jm1813.json.",
+ "articles": [],
+ "events": [
+  {
+   "issue": "",
+   "page": 4,
+   "name": "Arthur Donaldson's School for People of Colour: scholars, 1809-1813",
+   "date": "1813-07-01",
+   "location": "Philadelphia",
+   "description": "Arthur Donaldson opened a school for children of colour in Philadelphia on May 1, 1809. In July 1813 he printed the names of his day and night scholars in The Juvenile Magazine, with where each child stood in reading, writing and arithmetic. || Arthur Donaldson opened his school for children of colour on May 1, 1809, in Front Street between Arch and Race, with four scholars, 'convinced that I could not be employed in any way more useful, than instructing the descendants of Africa in plain learning, (as I observed a great want of Schools for them).' An accidental fire on October 23, 1811 burned his schoolroom with all its desks, benches and books (a loss he put at $300) and his list of scholars, so the earliest lists were written 'as near as can be recollected.' He reopened five days later at the corner of Wood and Crown streets, moved on January 1, 1812 to Fifth above Race, and in September 1812 (the magazine's erratum corrects '7th mo.' to '9th mo.') to Nicholson's Court, or Malt Alley, back of No. 107 Cherry Alley, behind the Plaster of Paris Mill on Race above Sixth. By then 93 were on the list (50 boys, 43 girls), about 60 attending. On May 12, 1813 he counted 107 (55 boys, 52 girls). He had three assistants: boys learned from the alphabet through the spelling book downstairs, then reading, writing and cyphering; girls also learned needlework under 'a well qualified Mistress.' Books: Comly's Spelling Book and its Sequel, the Introduction to the English Reader and Sequel, and Bennet's and Kimber's arithmetics. A night school ran alongside the day school. He printed the rolls so his pupils could learn to spell their own and one another's names and, 'when you come to be men and women, ... see how your fellow scholars have turned out.' The rolls: boys and girls from the opening to the fire; boys and girls who entered from October 28, 1811 to May 1, 1813; men and women of the night school; and the roll 'as they now stand, 5th Month 1st, 1813,' with those entering to July 1, ranked by class (arithmetic, writing, or not yet writing). Night scholars were probably adults. Each scholar's lists are given in their role. Where Julie Winch made a record for a scholar ('Attended Donaldson's school, 1809-13'; her notes run through surnames A-G) the scholar is linked to it; other scholars have their own records and are not linked to later adults of the same name. Donations: $31.50 in books and cash, and $97.67 subscribed after the fire (including $77.67 'collected by D. and J.'). Donaldson also asked why the Pennsylvania act of April 4, 1809 for educating poor children gratis was not applied to coloured children, and offered room for 200 to 300 scholars. Source: The Juvenile Magazine, No. 3 (Philadelphia: Arthur Donaldson, Seventh Month [July] 1st, 1813), from the Boston Public Library copy, courtesy the Internet Archive (https://archive.org/details/sim_juvenile-magazine_1813_1-4_3). Michiko Quinones found this source through the Bernice Dutrieuille Shelton papers at the Historical Society of Pennsylvania (https://discover.hsp.org/Record/ead-MSS131/Details). Scans: manuscripts/JuvenileMagazine_1813/JM_1813_p1.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p2.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p3.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p4.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p5.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p6.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p7.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p8.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p9.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p10.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p11.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p12.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p13.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p14.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p15.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p16.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p17.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p18.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p19.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p20.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p21.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p22.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p23.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p24.jpg",
+   "attendees": [
+    [
+     "William Perkins",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Joseph Pancoast",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "William Brummage",
+     "day scholar, 1809-11 list",
+     427
+    ],
+    [
+     "John Collins",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     653
+    ],
+    [
+     "Manlif Nixon",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Oliver Williams",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Addition of Weights and Measures",
+     "new:jm1813"
+    ],
+    [
+     "James Williams",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Joseph Appo",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     14195
+    ],
+    [
+     "Peter Quire",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Cyrus R. Burten",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Subtraction of Integers",
+     466
+    ],
+    [
+     "Thomas Fitzgiles",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     1029
+    ],
+    [
+     "Francis Lewis",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Practice",
+     "new:jm1813"
+    ],
+    [
+     "Robert Lewis",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "John Humphreys",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Jeremiah Harris",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Henry Waters",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Practice",
+     "new:jm1813"
+    ],
+    [
+     "William Mount",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Horace Smith",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Moses Jenkins",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Samuel White",
+     "day scholar, 1809-11 list; night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Simon Dows",
+     "day scholar, 1809-11 list",
+     912
+    ],
+    [
+     "William Thomas",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Practice",
+     "new:jm1813"
+    ],
+    [
+     "Randol Shepherd",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Practice",
+     "new:jm1813"
+    ],
+    [
+     "James Newman",
+     "day scholar, 1809-11 list; night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Wiley Quotance",
+     "day scholar, 1809-11 list; night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "William Yard",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "George Parker",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Sinclair Mitchel",
+     "day scholar, 1809-11 list; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Lindo Lorum",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "William Brown",
+     "day scholar, 1809-11 list",
+     421
+    ],
+    [
+     "Jonathan Blundon",
+     "day scholar, 1809-11 list",
+     270
+    ],
+    [
+     "Joseph Lewis",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Pompey Jones",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Samuel Green",
+     "day scholar, 1809-11 list",
+     1240
+    ],
+    [
+     "John James",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Thomas James",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "David Conyers",
+     "day scholar, 1809-11 list",
+     683
+    ],
+    [
+     "John Conyers",
+     "day scholar, 1809-11 list",
+     684
+    ],
+    [
+     "Nathaniel Todd",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Benjamin Clover",
+     "day scholar, 1809-11 list",
+     615
+    ],
+    [
+     "George Dows",
+     "day scholar, 1809-11 list",
+     911
+    ],
+    [
+     "Hugh Griffith",
+     "day scholar, 1809-11 list",
+     1252
+    ],
+    [
+     "James Harmon",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Thomas Mount",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Richard Jenkins",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Samuel Campbell",
+     "day scholar, 1809-11 list",
+     525
+    ],
+    [
+     "Samuel Hagerman",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Thomas Conyar",
+     "day scholar, 1809-11 list",
+     682
+    ],
+    [
+     "Ashbury Beuly",
+     "day scholar, 1809-11 list",
+     214
+    ],
+    [
+     "Robert Lewis",
+     "day scholar, 1809-11 list",
+     "new:jm1813b"
+    ],
+    [
+     "Samuel Jackson",
+     "day scholar, 1809-11 list; day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Henry Butler",
+     "day scholar, 1809-11 list",
+     490
+    ],
+    [
+     "George Plato",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Charles Blunden",
+     "day scholar, 1809-11 list",
+     269
+    ],
+    [
+     "Charles Davis",
+     "day scholar, 1809-11 list",
+     799
+    ],
+    [
+     "Samuel Camble",
+     "day scholar, 1809-11 list",
+     511
+    ],
+    [
+     "Emanuel Quotance",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "James Simpson",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Robert Anderson",
+     "day scholar, 1809-11 list",
+     73
+    ],
+    [
+     "James Bettle",
+     "day scholar, entered 1811-13",
+     210
+    ],
+    [
+     "Eleven Chase",
+     "day scholar, entered 1811-13",
+     573
+    ],
+    [
+     "Henry Duff",
+     "day scholar, entered 1811-13; night scholar (probably an adult)",
+     922
+    ],
+    [
+     "James Smith",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "William Sockham",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Luke Burton",
+     "day scholar, entered 1811-13",
+     471
+    ],
+    [
+     "William Fraser",
+     "day scholar, entered 1811-13",
+     1058
+    ],
+    [
+     "Charles Black",
+     "day scholar, entered 1811-13",
+     231
+    ],
+    [
+     "Solomon Malony",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Emanuel Rowen",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "John Burket",
+     "day scholar, entered 1811-13",
+     452
+    ],
+    [
+     "Henry Laurence",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Philip Taylor",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Henry Wiltshire",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Samuel Millar",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "James Golar",
+     "day scholar, entered 1811-13",
+     1169
+    ],
+    [
+     "Felix Perue",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "John Wiley",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Thomas Lewis",
+     "day scholar, entered 1811-13; night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Luner Brown",
+     "day scholar, entered 1811-13",
+     392
+    ],
+    [
+     "John Amos",
+     "day scholar, entered 1811-13",
+     53
+    ],
+    [
+     "Nathan Brown",
+     "day scholar, entered 1811-13",
+     400
+    ],
+    [
+     "Lewis Wolf",
+     "day scholar, entered 1811-13; entered May-July 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "John Blake",
+     "day scholar, entered 1811-13",
+     260
+    ],
+    [
+     "William Archer",
+     "day scholar, entered 1811-13",
+     81
+    ],
+    [
+     "Thomas Ross",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Robert Freeman",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Jacob Johnson",
+     "day scholar, entered 1811-13; entered May-July 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "William Wincoob",
+     "day scholar, entered 1811-13; night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "John Davis",
+     "day scholar, entered 1811-13",
+     808
+    ],
+    [
+     "William Johnson",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Thomas Lewis Jr.",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Thomas Williams",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Samuel Lewis",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Peter Jones",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Aaron Shavers",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Abner Cromwell",
+     "day scholar, entered 1811-13",
+     752
+    ],
+    [
+     "Joseph Gilmer",
+     "day scholar, entered 1811-13",
+     1148
+    ],
+    [
+     "Bennet Wilson",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Peter Gray",
+     "day scholar, entered 1811-13",
+     1219
+    ],
+    [
+     "Robert Gordon",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: first class, arithmetic: Addition of Weights and Measures",
+     1188
+    ],
+    [
+     "Thomas Barager",
+     "day scholar, entered 1811-13",
+     145
+    ],
+    [
+     "Johnson Penn",
+     "day scholar, entered 1811-13; night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Peter Duff",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     923
+    ],
+    [
+     "Scipio Sewell",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "William Jennings",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: first class, arithmetic: Subtraction of Integers",
+     "new:jm1813"
+    ],
+    [
+     "Selby Roads",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "George Rowen",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Robert Douglass, jr.",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     899
+    ],
+    [
+     "James Stotts",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "James Quire",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "John Black",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: first class, arithmetic: Division of Integers",
+     241
+    ],
+    [
+     "Ezekiel M'Neal",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Myres R. Burten",
+     "day scholar, entered 1811-13",
+     465
+    ],
+    [
+     "Robert Montier",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "James Bray",
+     "day scholar, entered 1811-13",
+     335
+    ],
+    [
+     "Sarah Montier",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Mary Montier",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Multiplication of Integers",
+     "new:jm1813"
+    ],
+    [
+     "Susanna Montier",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Hannah Montier",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Helen Appo",
+     "day scholar, 1809-11 list",
+     359990
+    ],
+    [
+     "Sarah Collings",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     640
+    ],
+    [
+     "Eleanor Quire",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Harding",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Division of Integers",
+     "new:jm1813"
+    ],
+    [
+     "Eliza Morgan",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Mary Morgan",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Ann Perkins",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: first class, arithmetic: Multiplication of Federal Money",
+     "new:jm1813"
+    ],
+    [
+     "Eliza Barkley",
+     "day scholar, 1809-11 list",
+     157
+    ],
+    [
+     "Priscilla Brown",
+     "day scholar, 1809-11 list",
+     403
+    ],
+    [
+     "Priscilla Fields",
+     "day scholar, 1809-11 list",
+     1015
+    ],
+    [
+     "Susan Sang",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Mary Cole",
+     "day scholar, 1809-11 list",
+     629
+    ],
+    [
+     "Grace Harding",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Singular Skinner",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Maria Still",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Martha Waterford",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Eliza Pancoast",
+     "day scholar, 1809-11 list; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Charlotte Lavinia",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Margaret Weatherhead",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Catherine Weatherhead",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Rachel Mitchel",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Ann Campbell",
+     "day scholar, 1809-11 list",
+     516
+    ],
+    [
+     "Mary Anderson",
+     "day scholar, 1809-11 list",
+     68
+    ],
+    [
+     "Margaret Stotts",
+     "day scholar, 1809-11 list; entered May-July 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Maria Still",
+     "day scholar, 1809-11 list",
+     "new:jm1813b"
+    ],
+    [
+     "Carolina Waterford",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Sarah Waterford",
+     "day scholar, 1809-11 list",
+     "new:jm1813"
+    ],
+    [
+     "Catharine Thomas",
+     "day scholar, 1809-11 list; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Julian Mitchell",
+     "day scholar, 1809-11 list; entered May-July 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Sarah Wheeler",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Jane Shorts",
+     "day scholar, entered 1811-13; entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Maria Colwell",
+     "day scholar, entered 1811-13",
+     665
+    ],
+    [
+     "Amelia Poke",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Louisa Marks",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Mary Marks",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: first class, arithmetic: Multiplication of Integers",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Davis",
+     "day scholar, entered 1811-13",
+     802
+    ],
+    [
+     "Harriet Williams",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Eliza Harris",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Hannah Brown",
+     "day scholar, entered 1811-13",
+     370
+    ],
+    [
+     "Nancy Shepherd",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Lydia Shepherd",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Mary Richmond",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Harriet Fosset",
+     "day scholar, entered 1811-13",
+     1043
+    ],
+    [
+     "Eliza Fosset",
+     "day scholar, entered 1811-13",
+     1042
+    ],
+    [
+     "Henrietta Gardner",
+     "day scholar, entered 1811-13",
+     1102
+    ],
+    [
+     "Jane Duffel",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Maria Parker",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Sarah Lodman",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Cooper",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Lydia White",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Rachel Till",
+     "day scholar, entered 1811-13; entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Violet Lake",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Mary Lawrie",
+     "day scholar, entered 1811-13; night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Ann Wheeler",
+     "day scholar, entered 1811-13; entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Matilda Milburn",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Ann Spanso",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Esther Ann Murphy",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Nancy Easton",
+     "day scholar, entered 1811-13",
+     954
+    ],
+    [
+     "Eliza Easton",
+     "day scholar, entered 1811-13",
+     953
+    ],
+    [
+     "Amy Perkins",
+     "day scholar, entered 1811-13; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Margaret Litle",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Jane Harard",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Mary Cooper",
+     "day scholar, entered 1811-13",
+     698
+    ],
+    [
+     "Esther Perue",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Mary Ann Miller",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Sarah Robinson",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Alice Luff",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Williams",
+     "day scholar, entered 1811-13; entered May-July 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Sarah Douglass",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     901
+    ],
+    [
+     "Jane Fergason",
+     "day scholar, entered 1811-13",
+     1009
+    ],
+    [
+     "Amelia Ringold",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Mary Ann Ringold",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Luff",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Sarah Green",
+     "day scholar, entered 1811-13",
+     1244
+    ],
+    [
+     "Ann Roberts",
+     "day scholar, entered 1811-13",
+     "new:jm1813"
+    ],
+    [
+     "Mary Ann Stotts",
+     "day scholar, entered 1811-13; entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Duncan",
+     "day scholar, entered 1811-13; on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Charles Morgan",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Charles Brown",
+     "night scholar (probably an adult)",
+     359
+    ],
+    [
+     "Henry Burton",
+     "night scholar (probably an adult)",
+     468
+    ],
+    [
+     "Daniel Tillison",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Samuel Barry",
+     "night scholar (probably an adult)",
+     167
+    ],
+    [
+     "Abraham M'Clain",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Jacob Stoops",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Jeremiah Alexander",
+     "night scholar (probably an adult)",
+     16
+    ],
+    [
+     "Peter Wilson",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Isaac Dill",
+     "night scholar (probably an adult)",
+     871
+    ],
+    [
+     "John Lister",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Henry Hummings",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Thomas Ganges",
+     "night scholar (probably an adult)",
+     1095
+    ],
+    [
+     "Ishmael Barto",
+     "night scholar (probably an adult)",
+     168
+    ],
+    [
+     "Richard Gale",
+     "night scholar (probably an adult)",
+     1089
+    ],
+    [
+     "Thomas Black",
+     "night scholar (probably an adult) | listed twice: night scholar (probably an adult)",
+     251
+    ],
+    [
+     "Henry Simmons",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Elijah Burton",
+     "night scholar (probably an adult); on the roll, May 1813; class: writes, does not yet cipher",
+     467
+    ],
+    [
+     "William Jones",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Isaac Colwell",
+     "night scholar (probably an adult)",
+     664
+    ],
+    [
+     "Richard Morris",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Anthony Stewart",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Philip Luff",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Jonathan Harding",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "William Rowley",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Joseph Holmes",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Luke Cesar",
+     "night scholar (probably an adult)",
+     559
+    ],
+    [
+     "William Weeks",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Samuel Bardly",
+     "night scholar (probably an adult)",
+     154
+    ],
+    [
+     "George Patterson",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Thomas Sewell",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Immanuel Madenis",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Lewis Kirkum",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Philip Smith",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Yorick Tittle",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Joseph Greggs",
+     "night scholar (probably an adult)",
+     1246
+    ],
+    [
+     "Eleven Davis",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Elias Hunt",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "John Adams",
+     "night scholar (probably an adult)",
+     3
+    ],
+    [
+     "James Alsop",
+     "night scholar (probably an adult)",
+     46
+    ],
+    [
+     "Elijah Millar",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Joseph Le Count",
+     "night scholar (probably an adult)",
+     1695
+    ],
+    [
+     "Samuel Presgrove",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Isaac Fenes",
+     "night scholar (probably an adult)",
+     1006
+    ],
+    [
+     "Charles Marks",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Robert Down",
+     "night scholar (probably an adult)",
+     908
+    ],
+    [
+     "Perry Bryan",
+     "night scholar (probably an adult)",
+     430
+    ],
+    [
+     "Joseph Thomson",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Samson Taylor",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Benjamin Holt",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "John Henry",
+     "night scholar (probably an adult); on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "William Groves",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Ezekiel Harman",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Peter Field",
+     "night scholar (probably an adult)",
+     1013
+    ],
+    [
+     "Tilman Dansbury",
+     "night scholar (probably an adult)",
+     791
+    ],
+    [
+     "Simon Collins",
+     "night scholar (probably an adult)",
+     657
+    ],
+    [
+     "Charles Murry",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "James Ballard",
+     "night scholar (probably an adult)",
+     129
+    ],
+    [
+     "James Anderson",
+     "night scholar (probably an adult)",
+     64
+    ],
+    [
+     "Immanuel Brown",
+     "night scholar (probably an adult)",
+     376
+    ],
+    [
+     "Joseph Thomas",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "William Rowly",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Frances Manwell",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Mary Edwards",
+     "night scholar (probably an adult)",
+     960
+    ],
+    [
+     "Alice Rogers",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Jane Radney",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Dinah Hall",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Harriet Allen",
+     "night scholar (probably an adult)",
+     25
+    ],
+    [
+     "Sarah Osburn",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Henrietta Pierce",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Sinthy Branson",
+     "night scholar (probably an adult)",
+     332
+    ],
+    [
+     "Sarah Dunn",
+     "night scholar (probably an adult)",
+     936
+    ],
+    [
+     "Jane Lofly",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Hannah Gray",
+     "night scholar (probably an adult)",
+     1212
+    ],
+    [
+     "Hannah Hill",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Judith Mans",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Jane White",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Mary Peterson",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Delia Davis",
+     "night scholar (probably an adult)",
+     800
+    ],
+    [
+     "Sidney Brokens",
+     "night scholar (probably an adult)",
+     349
+    ],
+    [
+     "Ann Bradwick",
+     "night scholar (probably an adult)",
+     330
+    ],
+    [
+     "Mariah Boon",
+     "night scholar (probably an adult)",
+     287
+    ],
+    [
+     "Famy Absalom",
+     "night scholar (probably an adult)",
+     1
+    ],
+    [
+     "Rebecca Brown",
+     "night scholar (probably an adult)",
+     405
+    ],
+    [
+     "Sarah Till",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Frances Smith",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Ann White",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "Susan Rayman",
+     "night scholar (probably an adult)",
+     "new:jm1813"
+    ],
+    [
+     "John Sammons",
+     "on the roll, May 1813; class: first class, arithmetic: Addition of Money",
+     "new:jm1813"
+    ],
+    [
+     "Jacob Augustine",
+     "on the roll, May 1813; class: first class, arithmetic: Division of Integers",
+     102
+    ],
+    [
+     "William Gordon",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     1202
+    ],
+    [
+     "Leven Bailey",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     123
+    ],
+    [
+     "Solomon Brown",
+     "on the roll, May 1813; class: does not yet write",
+     413
+    ],
+    [
+     "William Blake",
+     "on the roll, May 1813; class: does not yet write",
+     264
+    ],
+    [
+     "Jeremiah Jones",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Walter Gordon",
+     "on the roll, May 1813; class: does not yet write",
+     1199
+    ],
+    [
+     "Isaiah Lecount",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "John Gordon",
+     "on the roll, May 1813; class: does not yet write",
+     1183
+    ],
+    [
+     "William Appo",
+     "on the roll, May 1813; class: does not yet write",
+     355075
+    ],
+    [
+     "George Douglass",
+     "on the roll, May 1813; class: does not yet write",
+     894
+    ],
+    [
+     "Thomas Lawrie",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Joseph Williams",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Abraham M'Coy",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Henry Middleton",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Robert Jackson",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "James West",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Benjamin Middleton",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Jesse Le Count",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "William Thomas Jr.",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Edward Thomas",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Joseph Johnson",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Charles Bristel",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "James Gray",
+     "entered May-July 1813; class: writes, does not yet cipher",
+     1214
+    ],
+    [
+     "Charles Taught",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Archibald Shavers",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "John Stoops",
+     "entered May-July 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Alexander Pratos",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "David Bennet",
+     "entered May-July 1813; class: writes, does not yet cipher",
+     199
+    ],
+    [
+     "Garrison Blake",
+     "entered May-July 1813; class: writes, does not yet cipher",
+     258
+    ],
+    [
+     "George Mongatus",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Robert Bougal",
+     "entered May-July 1813; class: does not yet write",
+     278
+    ],
+    [
+     "Sarah Bailey",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     124
+    ],
+    [
+     "Margaret Oakey",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Maryann Nelson",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Susan Montier",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Amelia Turner",
+     "on the roll, May 1813",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Nelson",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Lewis",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Eliza Smith",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Mary Gordon",
+     "on the roll, May 1813; class: writes, does not yet cipher",
+     1184
+    ],
+    [
+     "Catherine Gibbs",
+     "on the roll, May 1813; class: does not yet write",
+     1127
+    ],
+    [
+     "Sarah Ann Gordon",
+     "on the roll, May 1813; class: does not yet write",
+     1194
+    ],
+    [
+     "Harriet Dill",
+     "on the roll, May 1813; class: does not yet write",
+     870
+    ],
+    [
+     "Mary Hazel",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Mary Sammons",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Mary Johnson",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Susan Quire",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Ginn",
+     "on the roll, May 1813; class: does not yet write",
+     1151
+    ],
+    [
+     "Mary Wilks",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Isabella Francis",
+     "on the roll, May 1813; class: does not yet write",
+     1054
+    ],
+    [
+     "Sarah Jones",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Jane Lewis",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Sarah Nelson",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Susan Thomas",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Lydia Dixon",
+     "on the roll, May 1813; class: does not yet write",
+     878
+    ],
+    [
+     "Ann Middleton",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Margaret Harris",
+     "on the roll, May 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Maria Carrel",
+     "entered May-July 1813; class: does not yet write",
+     538
+    ],
+    [
+     "Ann Maria Bogal",
+     "entered May-July 1813; class: does not yet write",
+     274
+    ],
+    [
+     "Sarah Moses",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Mary Roberts",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Nancy Shields",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Susan Jackson",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Maria Williams",
+     "entered May-July 1813; class: writes, does not yet cipher",
+     "new:jm1813"
+    ],
+    [
+     "Helen Merrit",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Susan Black",
+     "entered May-July 1813; class: does not yet write",
+     249
+    ],
+    [
+     "Martha Black",
+     "entered May-July 1813; class: does not yet write",
+     243
+    ],
+    [
+     "Sarah Battis",
+     "entered May-July 1813; class: does not yet write",
+     177
+    ],
+    [
+     "Ruth Harding",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Nancy Francis",
+     "entered May-July 1813; class: does not yet write",
+     1056
+    ],
+    [
+     "Esther Morgan",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Charlotte Chambers",
+     "entered May-July 1813; class: does not yet write",
+     562
+    ],
+    [
+     "Elizabeth Reading",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Jane Duffis",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Ann Morain",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Abigail Biat",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Henrietta Warring",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Nancy Norris",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Amelia Rodman",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Emelia Rodwell",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Elizabeth Parrot",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Nancy James",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813"
+    ],
+    [
+     "Mary Sammons",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813b"
+    ],
+    [
+     "Mary Johnson",
+     "entered May-July 1813; class: does not yet write",
+     "new:jm1813b"
+    ],
+    [
+     "Caroline Butler",
+     "in the May 1813 class lists only; class: does not yet write",
+     488
+    ],
+    [
+     "Susan Butler",
+     "in the May 1813 class lists only; class: does not yet write",
+     496
+    ]
+   ]
+  },
+  {
+   "issue": "",
+   "page": 18,
+   "name": "Schools for people of colour in Philadelphia, 1811 and 1813 (Arthur Donaldson's survey)",
+   "date": "1813-05-12",
+   "location": "Philadelphia",
+   "description": "Arthur Donaldson counted the scholars at every school for people of colour in Philadelphia in October 1811 and again on May 12, 1813, when he found eight schools teaching 414 scholars (The Juvenile Magazine, July 1813). || Arthur Donaldson visited every school for people of colour in Philadelphia twice and printed the counts. OCTOBER 26, 1811 (during the three days his school was closed by the fire): Willing's Alley school, free, under the monthly meetings of Friends, 50 boys and 54 girls, plus a free night school supported by an association of young men, about 60 in winter; one in Green's Court above Pine, boys and girls, about 50, and a night school of about 30; one in Sixth above South, 20; one in Lombard above Seventh, about 30; one in Seventh near Shippen, about 30; one in Sixth near South, about 20; one in Race below Fifth, about 20; his own, about 50, and a night school of 12. Total taught: 426. MAY 12, 1813, 'having visited them myself this day': 1. Willing's Alley, boys taught by Zebulon Holmes and girls by Mary Walton, under the care of the Monthly Meetings of Philadelphia, free, established 1771: 48 boys, 48 girls. 2. Quomony Clarkson, in Green's Court between Spruce and Pine, established 1804: 31 boys, 19 girls. 3. One in Sixth Street taught by Jane Hut, established 1803: 9 boys, 13 girls. 4. In Seventh below Shippen, John Gloster's [John Gloucester], established 1810: 16 boys, 11 girls. 5. In Lombard Street, established by Solomon Clarkson, October 27, 1812: 19 boys, 5 girls. 6. In Race Street, reading and sewing taught by Ruth Hand, supported by a fund belonging to the Episcopal Church under three trustees, established about 1786: 7 boys, 29 girls. 7. In Cherry Alley, taught by James Kelly, established by the Abolition Society March 1, 1813, free: 52 boys. 8. His own, established May 1, 1809: 55 boys, 52 girls. Total: eight schools, 237 males and 177 females, 414 in all. Zebulon Holmes, Mary Walton, Jane Hut and James Kelly are named here as text only. Source: The Juvenile Magazine, No. 3 (Philadelphia: Arthur Donaldson, Seventh Month [July] 1st, 1813), from the Boston Public Library copy, courtesy the Internet Archive (https://archive.org/details/sim_juvenile-magazine_1813_1-4_3). Michiko Quinones found this source through the Bernice Dutrieuille Shelton papers at the Historical Society of Pennsylvania (https://discover.hsp.org/Record/ead-MSS131/Details). Scans: manuscripts/JuvenileMagazine_1813/JM_1813_p2.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p3.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p18.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p19.jpg",
+   "attendees": [
+    [
+     "Quomony Clarkson",
+     "teacher of the school in Green's Court between Spruce and Pine, established 1804 (31 boys, 19 girls, May 1813)",
+     602
+    ],
+    [
+     "Solomon Clarkson",
+     "established the school in Lombard Street, October 27, 1812 (19 boys, 5 girls, May 1813)",
+     603
+    ],
+    [
+     "John Gloucester",
+     "his school in Seventh below Shippen, established 1810 (16 boys, 11 girls, May 1813)",
+     1161
+    ],
+    [
+     "Ruth Hand",
+     "teacher of reading and sewing at the Race Street school, supported by an Episcopal Church fund, established about 1786 (7 boys, 29 girls, May 1813)",
+     1295
+    ]
+   ]
+  },
+  {
+   "issue": "",
+   "page": 21,
+   "name": "Churches of the people of colour in Philadelphia, May 1813 (Juvenile Magazine)",
+   "date": "1813-05-17",
+   "location": "Philadelphia",
+   "description": "The Juvenile Magazine listed the churches of the people of colour in Philadelphia in May 1813 with their members (2,366 in all), and the home addresses of the pastors Absalom Jones, Richard Allen, John Gloucester and John King. || 'An account of the religious denominations of coloured people in the City of Philadelphia, at this time': 1. Episcopal Church of St. Thomas: 180 members at its beginning, July 17, 1794; 560 on May 14, 1813. Absalom Jones, Rector. 2. Bethel Church, established July 28, 1784 [as printed]; 1,272 members on May 17, 1813; in South Sixth between Lombard and Pine. 3. Zoar Meeting, in Brown Street, Northern Liberties, established December 20, 1804, under the care of St. George's; 80 members. 4. Presbyterian Church, incorporated 1809; 300 members; the church built in 1810 in Seventh Street below Shippen. 5. First Baptist, established April 23, 1809, between Race and Vine and Ninth and Tenth streets, in Spring Garden; 80 members. 6. Union Methodist Meeting, under the charge of Bethel, established 1813; 74 members; in Coats' Street between old and new Fourth Street. 7. Mount Sion, under the care of the Episcopal Church, in St. John's Street near Peg's Run. 8. Frankford, under the charge of Bethel, established 1813; 36 members. Aggregate 2,366. PASTORS OF EACH DENOMINATION, PLACES OF ABODE (p. 72): Absalom Jones (Episcopal Church), Powel St. No. 32; Richard Allen (Bethel), Spruce Street No. 150; John Gloster [Gloucester] (Presbyterian), S. Seventh St., 5th door from Shippen Street; John King (1st Baptist), in 10th St. between Race and Vine. Source: The Juvenile Magazine, No. 3 (Philadelphia: Arthur Donaldson, Seventh Month [July] 1st, 1813), from the Boston Public Library copy, courtesy the Internet Archive (https://archive.org/details/sim_juvenile-magazine_1813_1-4_3). Michiko Quinones found this source through the Bernice Dutrieuille Shelton papers at the Historical Society of Pennsylvania (https://discover.hsp.org/Record/ead-MSS131/Details). Scans: manuscripts/JuvenileMagazine_1813/JM_1813_p21.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p22.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p72.jpg",
+   "attendees": [
+    [
+     "Absalom Jones",
+     "Rector, St. Thomas's African Episcopal Church (560 members); lives at No. 32 Powel Street (1813)",
+     1578
+    ],
+    [
+     "Richard Allen",
+     "pastor, Bethel Church (1,272 members); lives at No. 150 Spruce Street (1813)",
+     31
+    ],
+    [
+     "John Gloucester",
+     "pastor, the Presbyterian church in Seventh below Shippen (300 members); lives in S. Seventh Street, 5th door from Shippen (1813)",
+     1161
+    ],
+    [
+     "John King",
+     "pastor, First Baptist (80 members); lives in Tenth Street between Race and Vine (1813)",
+     "new:jm1813"
+    ]
+   ]
+  },
+  {
+   "issue": "",
+   "page": 22,
+   "name": "Benevolent societies of the people of colour, 1813 (Juvenile Magazine)",
+   "date": "1813-07-01",
+   "location": "Philadelphia",
+   "description": "Eleven benevolent societies of the people of colour, with their founding dates and 1813 membership, and the Union Society for schools (The Juvenile Magazine, July 1813). || 'An account of the Benevolent Societies established among the coloured people': 1. The Friendly Society, established 1796, 85 members. 2. Female Society, the Daughters of Ethiopia, established January 8, 1811, 30 members. 3. Female Society, the Daughters of Samaria, established June 10, 1812, 24 members. 4. The Benezette Philanthropic Society, established June 18, 1812, 52 members. 5. Farmers and Mechanics, established January 18, 1812, about 36 members. 6. The Female Benevolent Society, established November 3, 1803, 95 members. 7. The Angola Society, established November 1808, 26 members. 8. The Sons of St. Thomas, established February 15, 1812, 28 members. 9. St. James's Society, established February 14, 1812, 11 members. 10. The Sons of Africa, established March 6, 1810, 49 members. 11. African Lodge, No. 459, established June 24, 1809, 514 members [as printed; the stated aggregate of 590 works only if the lodge had 154]. Aggregate 590 members. 'The above societies meet and pay monthly subscriptions, for the purpose of assisting one another in case of sickness, as well as the widows and orphan children of members.' Also: the Union Society, for the support of schools and domestic manufactures, for the benefit of the African race and people of colour, established 1810. Source: The Juvenile Magazine, No. 3 (Philadelphia: Arthur Donaldson, Seventh Month [July] 1st, 1813), from the Boston Public Library copy, courtesy the Internet Archive (https://archive.org/details/sim_juvenile-magazine_1813_1-4_3). Michiko Quinones found this source through the Bernice Dutrieuille Shelton papers at the Historical Society of Pennsylvania (https://discover.hsp.org/Record/ead-MSS131/Details). Scans: manuscripts/JuvenileMagazine_1813/JM_1813_p22.jpg manuscripts/JuvenileMagazine_1813/JM_1813_p23.jpg",
+   "attendees": []
+  }
+ ]
+}
