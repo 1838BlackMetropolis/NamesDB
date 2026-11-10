@@ -37,6 +37,12 @@ def display_name(n):
     return n.title() if n.isupper() else n
 
 
+try:   # Internet Archive item per issue (2026-11-10), see ia_items.json
+    IA_RULES = json.load(open(os.path.join(HERE, "ia_items.json"), encoding="utf-8"))["rules"]
+except FileNotFoundError:
+    IA_RULES = []
+
+
 def main():
     crops = json.load(open(os.path.join(HERE, "ad_crops.json"), encoding="utf-8"))
     key = lambda iss, pg, hl: f"{iss}|{pg}|{hl}"
@@ -58,10 +64,15 @@ def main():
             missing.append(f"{iss} p{pg} {hl}"); continue
         n_by_page[(iss, pg)] = n_by_page.get((iss, pg), 0) + 1
         fn = f"ads/{iss}_p{pg}_{n_by_page[(iss, pg)]}.jpg"
-        im = Image.open(os.path.join(ROOT, "pages", f"{iss}_p{pg}.jpg")).convert("L")
-        W, H = im.size
         x0, y0, x1, y1 = c["box"]
-        crop = ImageOps.autocontrast(im.crop((int(W * x0), int(H * y0), int(W * x1), int(H * y1))), cutoff=1)
+        # 2026-11-10: prefer the high-resolution crop rendered from the source PDF (render_ad_hires.py)
+        hi = os.path.join(ROOT, "ads_hires", f"{iss}_p{pg}_" + "-".join(str(int(round(v * 1000))) for v in c["box"]) + ".jpg")
+        if os.path.exists(hi):
+            crop = ImageOps.autocontrast(Image.open(hi).convert("L"), cutoff=1)
+        else:
+            im = Image.open(os.path.join(ROOT, "pages", f"{iss}_p{pg}.jpg")).convert("L")
+            W, H = im.size
+            crop = ImageOps.autocontrast(im.crop((int(W * x0), int(H * y0), int(W * x1), int(H * y1))), cutoff=1)
         crop.save(os.path.join(ROOT, fn), "JPEG", quality=85)
         ppl, seen = [], set()
         for pid, nm, role in con.execute("""SELECT p.id, p.canonical_name, ap.role FROM appearances ap
@@ -70,7 +81,8 @@ def main():
             seen.add(pid); ppl.append([pid, display_name(nm)])
         out.append({"img": fn, "issue": iss, "paper": PAPERS.get(iss[:2], iss[:2]), "date": nice_date(iss),
                     "iso": iss.split("_")[1], "page": pg, "title": clean_head(hl), "people": ppl,
-                    "addr": addrs.get(key(iss, pg, hl), []), "where": c.get("where", ""), "note": c.get("note_public", "")})
+                    "addr": addrs.get(key(iss, pg, hl), []), "where": c.get("where", ""), "note": c.get("note_public", ""),
+                    "ia": next((r["url"] for r in IA_RULES if r["from"] <= iss <= r["to"]), "")})
     tpl = open(os.path.join(HERE, "ads_template.html"), encoding="utf-8").read()
     page = tpl.replace("/*__ADS__*/[]", json.dumps(out, ensure_ascii=False, separators=(",", ":")))
     open(os.path.join(ROOT, "ads.html"), "w", encoding="utf-8").write(page)
