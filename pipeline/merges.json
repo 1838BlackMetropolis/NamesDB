@@ -668,9 +668,13 @@
    {
     "name": "Jacob C. White Jr.",
     "source": "storymap"
+   },
+   {
+    "name": "J. C. White, Jr.",
+    "source": "newspaper"
    }
   ],
-  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. Unites the newspaper, ICY (Coppin) and 1871 StoryMap records of Jacob C. White Jr., PERL leader."
+  "note": "Michiko approved 2026-07-30 (StoryMap review): fold the mob-attack StoryMap record into the existing person. Unites the newspaper, ICY (Coppin) and 1871 StoryMap records of Jacob C. White Jr., PERL leader. Newspaper 'J. C. White, Jr.' folded in: Michiko 2026-11-13."
  },
  {
   "keep": "Catto, Octavius V.",
@@ -1146,9 +1150,13 @@
    {
     "name": "Francis E. Watkins Harper",
     "source": "newspaper"
+   },
+   {
+    "name": "F. E. W. Harper",
+    "source": "newspaper"
    }
   ],
-  "note": "Frances Ellen Watkins Harper -- poet/abolitionist; her 'Poems on Miscellaneous Subjects' reviewed in the Christian Recorder (No.20, 1854). Folds the blog-source duplicate into the ugrr record. Confirmed by Michiko 2026-08-19 (Run #72). Newspaper 'Francis E. Watkins Harper' (CR Sept 27, 1862, letter on the war and the colonization scheme) folded in: Michiko approved 2026-11-03 (Run #81 merge candidate 3)."
+  "note": "Frances Ellen Watkins Harper -- poet/abolitionist; her 'Poems on Miscellaneous Subjects' reviewed in the Christian Recorder (No.20, 1854). Folds the blog-source duplicate into the ugrr record. Confirmed by Michiko 2026-08-19 (Run #72). Newspaper 'Francis E. Watkins Harper' (CR Sept 27, 1862, letter on the war and the colonization scheme) folded in: Michiko approved 2026-11-03 (Run #81 merge candidate 3). Newspaper 'F. E. W. Harper' (Christian Recorder 1865 lectures) folded in: Michiko 2026-11-13."
  },
  {
   "keep": "Bundy, Mrs.",
@@ -1452,7 +1460,7 @@
  {
   "keep": {
    "id": 2773,
-   "name": "White, Jacob"
+   "name": "White, Jacob C., Sr."
   },
   "aliases": [
    {
@@ -1462,9 +1470,19 @@
    {
     "name": "Jacob C. White",
     "source": "blog"
+   },
+   {
+    "name": "Jacob C. White Sr."
+   },
+   {
+    "name": "Jacob C. White Senior"
+   },
+   {
+    "name": "J. C. White, Sr.",
+    "source": "newspaper"
    }
   ],
-  "note": "Jacob C. White Sr. (Winch 'White, Jacob': barber and bleeder, 100 Old York Road; secretary of the 1837 Vigilant Committee) = newspaper 'Jacob C. White' (American Moral Reform Convention vice president 1837; Library Company of Colored Persons founder; Lebanon Cemetery office, 711 Lombard, receiving SCSA subscriptions in March 1862). Michiko 2026-11-01: 'Jacob C White Senior so yes, the father.' His son is the separate record 'Jacob C. White Jr.'. The blog record 'Jacob C. White' (snippets name him Jacob C. White, Sr., of the Vigilant Committee) joins too."
+  "note": "Jacob C. White Sr. (Winch 'White, Jacob': barber and bleeder, 100 Old York Road; secretary of the 1837 Vigilant Committee) = newspaper 'Jacob C. White' (American Moral Reform Convention vice president 1837; Library Company of Colored Persons founder; Lebanon Cemetery office, 711 Lombard, receiving SCSA subscriptions in March 1862). Michiko 2026-11-01: 'Jacob C White Senior so yes, the father.' His son is the separate record 'Jacob C. White Jr.'. The blog record 'Jacob C. White' (snippets name him Jacob C. White, Sr., of the Vigilant Committee) joins too. Michiko 2026-11-13: the records 'Jacob C. White Sr.' (the survivor of the earlier Sr. groups above, any source) and newspaper 'J. C. White, Sr.' are folded in too, and the merged record is shown as 'White, Jacob C., Sr.' (Winch's heading 'White, Jacob' stays as an alias; the other Winch 'White, Jacob', the carter, id 2772, is untouched)."
  },
  {
   "keep": {
@@ -1880,5 +1898,73 @@
    }
   ],
   "note": "Continental Restaurant, 717 Lombard: the proprietor is printed 'Charles W. Brister' in 1864-65 (bought Cole's eating saloon, Oct 1864); the earlier Continental ad appearances were already linked to Winch Brister, Charles. Michiko 2026-11-11 confirmed the Brister reading."
+ },
+ {
+  "keep": {
+   "name": "Bassett, Shadrack",
+   "source": "winch"
+  },
+  "aliases": [
+   {
+    "name": "BASSET, SHEDRICK REVD",
+    "source": "census"
+   },
+   {
+    "name": "Bassett, Shedrick",
+    "source": "census"
+   },
+   {
+    "name": "Shadrach Bassett",
+    "source": "newspaper"
+   },
+   {
+    "name": "Shadrack Bassett",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko 2026-11-13: the four Shadrack Bassett records and Julie Winch's entry are one man, Rev. Shadrack Bassett of Bethel (d. Feb. 28, 1861, per the Christian Recorder obituary). The Winch record is created by split_bassett.py, which lifts his notes out of Ebenezer D. Bassett's record."
+ },
+ {
+  "keep": {
+   "name": "Jabez P. Campbell",
+   "source": "newspaper"
+  },
+  "aliases": [
+   {
+    "name": "J. P. Campbell",
+    "source": "newspaper"
+   }
+  ],
+  "note": "Michiko 2026-11-13: 'J. P. Campbell' and 'Jabez P. Campbell' are one man, Bishop Jabez Pitt Campbell of the A.M.E. Church. Not merged: Winch's James, Joseph S., Joshua B. and Joshua E. Campbell, the census Joshua Campbell, the storymap 'Judge Campbell'."
+ },
+ {
+  "keep": {
+   "name": "Lee, Jarena",
+   "source": "winch"
+  },
+  "aliases": [
+   {
+    "name": "Jerena Lee",
+    "source": "blog"
+   }
+  ],
+  "note": "Michiko 2026-11-13: the blog record 'Jerena Lee' is Winch's Jarena Lee. Not merged: census 'LEE, JEREANNA' (1838) and 'Lee, Jarana' (1847)."
+ },
+ {
+  "keep": {
+   "name": "Jeremiah Asher",
+   "source": "newspaper"
+  },
+  "aliases": [
+   {
+    "name": "J. Asher",
+    "source": "newspaper"
+   },
+   {
+    "name": "Mr. Asher",
+    "source": "newspaper"
+   }
+  ],
+  "note": "Michiko 2026-11-13: 'J. Asher' and 'Rev. Mr. Asher' in the Christian Recorder are Rev. Jeremiah Asher of Shiloh Baptist. For review: the Feb. 18, 1865 Lebanon Cemetery notice linked to 'J. Asher' as author falls while he was chaplain of the 6th USCT."
  }
 ]

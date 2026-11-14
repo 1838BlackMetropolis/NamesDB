@@ -1,0 +1,157 @@
+{
+ "_doc": "Portraits shown at the top of a person's card (added 2026-11-13, Michiko). Each entry: 'id' and 'name' of the person record (build_viewer.py stops if the id is gone or its name no longer matches, so a merge or re-numbering cannot silently put a face on the wrong person), 'thumb' (small image in portraits/, about 440px wide, picture only), 'full' (the larger crop with its printed caption, in clippings/; opens when the thumbnail is clicked), 'caption' and 'credit' (shown under the picture). To add a portrait: save both images, add an entry, rebuild.",
+ "portraits": [
+  {
+   "id": 5,
+   "name": "Adger, Robert M.",
+   "thumb": "portraits/CAM_1903-02_robert-m-adger.jpg",
+   "full": "clippings/CAM_1903-02_p290_robert-m-adger-portrait.jpg",
+   "caption": "Robert Mara Adger",
+   "credit": "The Colored American Magazine, February 1903, p. 290"
+  },
+  {
+   "id": 14243,
+   "name": "Theophilus J. Minton",
+   "thumb": "portraits/CAM_1903-02_theophilus-j-minton.jpg",
+   "full": "clippings/CAM_1903-02_p291_theophilus-j-minton-portrait.jpg",
+   "caption": "Theophilus J. Minton",
+   "credit": "The Colored American Magazine, February 1903, p. 291"
+  },
+  {
+   "id": 366457,
+   "name": "Henry L. Phillips",
+   "thumb": "portraits/CAM_1903-02_henry-l-phillips.jpg",
+   "full": "clippings/CAM_1903-02_p291_henry-l-phillips-portrait.jpg",
+   "caption": "Rev. Henry L. Phillips",
+   "credit": "The Colored American Magazine, February 1903, p. 291"
+  },
+  {
+   "id": 366458,
+   "name": "Thomas H. Ringgold",
+   "thumb": "portraits/CAM_1903-02_thomas-h-ringgold.jpg",
+   "full": "clippings/CAM_1903-02_p294_thomas-h-ringgold-portrait.jpg",
+   "caption": "Thomas H. Ringgold",
+   "credit": "The Colored American Magazine, February 1903, p. 294"
+  },
+  {
+   "id": 366459,
+   "name": "Edward F. Harris",
+   "thumb": "portraits/CAM_1903-02_edward-f-harris.jpg",
+   "full": "clippings/CAM_1903-02_p292_edward-f-harris-portrait.jpg",
+   "caption": "Edward F. Harris",
+   "credit": "The Colored American Magazine, February 1903, p. 292"
+  },
+  {
+   "id": 892,
+   "name": "Dorsey, William H.",
+   "thumb": "portraits/CAM_1903-02_william-h-dorsey.jpg",
+   "full": "clippings/CAM_1903-02_p294_william-h-dorsey-portrait.jpg",
+   "caption": "William H. Dorsey",
+   "credit": "The Colored American Magazine, February 1903, p. 294"
+  },
+  {
+   "id": 366609,
+   "name": "Bassett, Shadrack",
+   "thumb": "portraits/Cheyney_Dorsey_shadrack-bassett.jpg",
+   "full": "clippings/Cheyney_Dorsey_Collection_Rev_Shadrack_Bassett.jpg",
+   "caption": "Rev. Shadrack Bassett",
+   "credit": "Cheyney University, Dorsey Collection. Inscribed 'Rev. Shadric Bassett of the A. M. E. Church.'"
+  },
+  {
+   "id": 720,
+   "name": "Corr, Joseph M.",
+   "thumb": "portraits/Cheyney_Dorsey_joseph-m-corr.jpg",
+   "full": "clippings/Cheyney_Dorsey_Collection_Rev_Joseph_M_Corr.jpg",
+   "caption": "Rev. Joseph M. Corr",
+   "credit": "Cheyney University, Dorsey Collection. Lithograph inscribed 'Rev. Joseph M. Corr of the A. M. E. Church.'"
+  },
+  {
+   "id": 14248,
+   "name": "Jeremiah Asher",
+   "thumb": "portraits/Cheyney_Dorsey_jeremiah-asher.jpg",
+   "full": "clippings/Cheyney_Dorsey_Collection_Rev_Jeremiah_Asher.jpg",
+   "caption": "Rev. Jeremiah Asher",
+   "credit": "Cheyney University, Dorsey Collection. Engraving signed 'Yours Truly, Jeremiah Asher.'"
+  },
+  {
+   "id": 361000,
+   "name": "Jabez P. Campbell",
+   "thumb": "portraits/Cheyney_Dorsey_j-p-campbell.jpg",
+   "full": "clippings/Cheyney_Dorsey_Collection_Bishop_J_P_Campbell.jpg",
+   "caption": "Bishop J. P. Campbell",
+   "credit": "Cheyney University, Dorsey Collection. Clipping marked 'Weekly Gazette, Mar. 24, 1883, Phila.'"
+  },
+  {
+   "id": 14275,
+   "name": "Daniel Coker",
+   "thumb": "portraits/Cheyney_Dorsey_daniel-coker.jpg",
+   "full": "clippings/Cheyney_Dorsey_Collection_Rev_Daniel_Coker.jpg",
+   "caption": "Rev. Daniel Coker",
+   "credit": "Cheyney University, Dorsey Collection. Engraved on steel by John Sartain, Philadelphia. Labeled 'One of the founders of the A. M. E. Church.'"
+  },
+  {
+   "id": 1701,
+   "name": "Lee, Jarena",
+   "thumb": "portraits/1838BM_booklet_jarena-lee.jpg",
+   "full": "clippings/1838BM_booklet_Jarena_Lee.jpg",
+   "caption": "Jarena Lee",
+   "credit": "Public domain image, from the 1838 Black Metropolis walking tour booklet."
+  },
+  {
+   "id": 359991,
+   "name": "Henrietta Duterte",
+   "thumb": "portraits/1838BM_booklet_henrietta-duterte.jpg",
+   "full": "clippings/1838BM_booklet_Henrietta_Duterte.jpg",
+   "caption": "Henrietta Duterte",
+   "credit": "Public domain image, from the 1838 Black Metropolis walking tour booklet."
+  },
+  {
+   "id": 351750,
+   "name": "Harper, Frances Ellen Watkins",
+   "thumb": "portraits/1838BM_booklet_frances-e-w-harper.jpg",
+   "full": "clippings/1838BM_booklet_Frances_Ellen_Watkins_Harper.jpg",
+   "caption": "Frances Ellen Watkins Harper",
+   "credit": "Public domain image, from the 1838 Black Metropolis walking tour booklet."
+  },
+  {
+   "id": 2497,
+   "name": "Still, William",
+   "thumb": "portraits/william-still.jpg",
+   "full": "clippings/William_Still_portrait.jpg",
+   "caption": "William Still",
+   "credit": "Public domain photograph."
+  },
+  {
+   "id": 555,
+   "name": "Catto, Octavius V.",
+   "thumb": "portraits/octavius-v-catto.jpg",
+   "full": "clippings/Octavius_V_Catto_portrait.jpg",
+   "caption": "Octavius V. Catto",
+   "credit": "Public domain image."
+  },
+  {
+   "id": 2773,
+   "name": "White, Jacob C., Sr.",
+   "thumb": "portraits/jacob-c-white-sr.jpg",
+   "full": "clippings/Jacob_C_White_Sr_portrait.jpg",
+   "caption": "Jacob C. White Sr.",
+   "credit": "Public domain image."
+  },
+  {
+   "id": 3037,
+   "name": "Jacob C. White Jr.",
+   "thumb": "portraits/jacob-c-white-jr.jpg",
+   "full": "clippings/Jacob_C_White_Jr_portrait.jpg",
+   "caption": "Jacob C. White Jr.",
+   "credit": "Public domain image."
+  },
+  {
+   "id": 31159,
+   "name": "Lewis, Edmonia",
+   "thumb": "portraits/edmonia-lewis.jpg",
+   "full": "clippings/Edmonia_Lewis_portrait.jpg",
+   "caption": "Edmonia Lewis",
+   "credit": "Public domain image."
+  }
+ ]
+}
