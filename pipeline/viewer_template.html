@@ -21,10 +21,10 @@ header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;gap:18
 #logoLink{flex:0 0 auto;line-height:0}
 #themeBtn{font:13px Georgia;color:var(--gold);background:transparent;border:1px solid var(--line);border-radius:999px;padding:3px 12px;cursor:pointer;white-space:nowrap}
 #themeBtn:hover{border-color:var(--gold)}
-html[data-theme="light"]{color-scheme:light;--n-sel:#ce9033;--n-p:#a3a66e;--n-e:#aa3d1d;--n-o:#8e6fa6;--bg:#f6efe2;--panel:#fbf7ef;--ink:#23271d;--dim:#62645a;--gold:#aa3d1d;--rust:#aa3d1d;--teal:#5e6a3a;--line:#ddd2bd}
+html[data-theme="light"]{color-scheme:light;--n-sel:#c8871e;--n-p:#2f6f64;--n-e:#a5472a;--n-o:#5b3f86;--bg:#f6efe2;--panel:#fbf7ef;--ink:#23271d;--dim:#62645a;--gold:#aa3d1d;--rust:#aa3d1d;--teal:#5e6a3a;--line:#ddd2bd}
 html[data-theme="light"] header h1{color:#393d32}
 html[data-theme="light"] #ocrNotice{background:#efe3c8;border-bottom-color:#aa3d1d}
-html[data-theme="light"] #adsLink:hover,html[data-theme="light"] #tradesLink:hover,html[data-theme="light"] .tchip:hover{background:#efe3c8}
+html[data-theme="light"] #adsLink:hover,html[data-theme="light"] #tradesLink:hover,html[data-theme="light"] #mapbtns button:hover,html[data-theme="light"] .tchip:hover{background:#efe3c8}
 html[data-theme="light"] #tabs button.on,html[data-theme="light"] #filters .chip.on,html[data-theme="light"] #mapbtns button[aria-pressed="true"]{background:#393d32;color:#f1e3c8;border-color:#393d32}
 html[data-theme="light"] .prow{border-bottom-color:#ebe2d1}
 html[data-theme="light"] .prow:hover{background:#f3ead8}
@@ -76,11 +76,11 @@ canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
 #allbtn{position:absolute;top:8px;right:14px;background:var(--panel);border:1px solid var(--line);color:var(--gold);font:12px Georgia;padding:6px 13px;border-radius:14px;cursor:pointer}
 #allbtn:hover{border-color:var(--gold)}
 #allbtn.on{background:#33290f;border-color:var(--gold)}
-#mapbtns{position:absolute;top:8px;right:14px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 28px)}
-#mapbtns button{background:var(--panel);border:1px solid var(--line);color:var(--gold);font:12px Georgia;padding:6px 12px;border-radius:14px;cursor:pointer}
-#mapbtns button:hover{border-color:var(--gold)}
+#mapbtns{display:contents}
+#mapbtns button{background:none;border:1px solid var(--gold);color:var(--gold);font:13px Georgia;padding:3px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+#mapbtns button:hover{background:#33290f}
 #mapbtns button[aria-pressed="true"]{background:#33290f;border-color:var(--gold)}
-.ovl{--bg:#f3ede2;--panel:#fbf8f2;--ink:#2a2118;--dim:#6f6352;--line:#d9cfbd;--gold:#8a6418;--sel:#efe3c9;--org:#a8466e;--ev:#a5472a;color:var(--ink);color-scheme:light;font-family:"Libre Caslon Text",Georgia,serif;position:fixed;inset:0;z-index:9000;background:var(--bg);display:none;flex-direction:column}
+.ovl{--bg:#f3ede2;--panel:#fbf8f2;--ink:#2a2118;--dim:#6f6352;--line:#d9cfbd;--gold:#8a6418;--sel:#efe3c9;--org:#5b3f86;--ev:#a5472a;color:var(--ink);color-scheme:light;font-family:"Libre Caslon Text",Georgia,serif;position:fixed;inset:0;z-index:9000;background:var(--bg);display:none;flex-direction:column}
 .ovl.on{display:flex}
 .ovbar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--panel)}
 .ovbar button{background:var(--sel);color:var(--ink);border:1px solid var(--gold);border-radius:4px;font:13px "Libre Caslon Text",Georgia,serif;padding:6px 12px;cursor:pointer}
@@ -186,7 +186,7 @@ canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
     padding:10px 18px;border-radius:22px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5);z-index:4}
   #detailFab.hide{display:none!important}
   #allbtn{font-size:11px;padding:6px 12px;top:6px;right:10px}
-  #mapbtns{top:6px;right:10px;gap:4px} #mapbtns button{font-size:11px;padding:5px 9px}
+
   #legend{font-size:9.5px;max-width:56vw;top:8px}
   #legend span{display:block;margin-right:0}
   #miniPanel{left:8px;right:8px;top:auto;bottom:60px;width:auto;height:42vh;max-height:340px;max-width:calc(100vw - 16px)}
@@ -207,8 +207,7 @@ canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
 @media (max-width:600px){#scanbar .ttl{display:none}#scanbar{gap:6px;padding:8px}}
 /* Organization Timelines overlay (2026-11-01) */
 #tabs button{font-size:12px;letter-spacing:.05em;padding:7px 4px}
-#tabs button#tab-t{flex:1.3}
-#tlview{--bg:#f3ede2;--panel:#fbf8f2;--ink:#2a2118;--dim:#6f6352;--line:#d9cfbd;--gold:#8a6418;--sel:#efe3c9;--aid:#a5472a;--edu:#2f6f64;--rights:#8a6418;--vig:#34507a;color:var(--ink);color-scheme:light;font-family:"Libre Caslon Text",Georgia,serif;position:fixed;inset:0;z-index:9000;background:var(--bg);display:none;flex-direction:column}
+#tlview{--bg:#f3ede2;--panel:#fbf8f2;--ink:#2a2118;--dim:#6f6352;--line:#d9cfbd;--gold:#8a6418;--sel:#efe3c9;--aid:#a5472a;--edu:#1f6f78;--rights:#b07a12;--vig:#2c4a7c;--church:#6a3d8f;--sport:#3f7a3a;color:var(--ink);color-scheme:light;font-family:"Libre Caslon Text",Georgia,serif;position:fixed;inset:0;z-index:9000;background:var(--bg);display:none;flex-direction:column}
 #tlview.on{display:flex}
 #tlbar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--panel)}
 #tlbar button{background:var(--sel);color:var(--ink);border:1px solid var(--gold);border-radius:4px;font:13px "Libre Caslon Text",Georgia,serif;padding:6px 12px;cursor:pointer}
@@ -246,8 +245,8 @@ canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
 #tlgrid .dia{position:absolute;top:50%;width:10px;height:10px;transform:translate(-50%,-50%) rotate(45deg);border:2px solid currentColor;background:var(--bg);box-sizing:border-box}
 #tlgrid .mk{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid currentColor;background:var(--bg);box-sizing:border-box}
 #tlgrid .sq{position:absolute;top:50%;width:7px;height:7px;transform:translate(-50%,-50%);background:currentColor;opacity:.8}
-#tlview .aid{color:var(--aid)} #tlview .edu{color:var(--edu)} #tlview .rights{color:var(--rights)} #tlview .vig{color:var(--vig)}
-#tlview .c-aid{background:var(--aid)} #tlview .c-edu{background:var(--edu)} #tlview .c-rights{background:var(--rights)} #tlview .c-vig{background:var(--vig)}
+#tlview .aid{color:var(--aid)} #tlview .edu{color:var(--edu)} #tlview .rights{color:var(--rights)} #tlview .vig{color:var(--vig)} #tlview .church{color:var(--church)} #tlview .sport{color:var(--sport)}
+#tlview .c-aid{background:var(--aid)} #tlview .c-edu{background:var(--edu)} #tlview .c-rights{background:var(--rights)} #tlview .c-vig{background:var(--vig)} #tlview .c-church{background:var(--church)} #tlview .c-sport{background:var(--sport)}
 #tldetail{background:var(--panel);border:1px solid var(--gold);border-radius:4px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;box-sizing:border-box}
 #tlgrid #tldetail{position:sticky;left:0;margin:4px 0 14px;max-width:none}
 #tldetail .tlx{align-self:flex-start;font:12px "IBM Plex Mono",ui-monospace,Menlo,monospace;background:none;border:1px solid var(--line);color:var(--dim);border-radius:4px;padding:3px 9px;cursor:pointer}
@@ -275,6 +274,8 @@ canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
 #tldetail li{font-size:13.5px;line-height:1.35}
 #tldetail .pn{background:none;border:0;padding:0;color:var(--gold);font:bold 13.5px "Libre Caslon Text",Georgia,serif;cursor:pointer;text-align:left;text-decoration:underline;text-decoration-color:rgba(138,100,24,.35);text-underline-offset:2px}
 #tldetail .pn:hover{text-decoration-color:var(--gold)}
+#tldetail .evl{background:none;border:0;padding:0;font:inherit;color:var(--gold);cursor:pointer;text-align:left;text-decoration:underline dotted}
+#tldetail .s a,#tldetail .ys a{color:var(--gold)}
 #tldetail .r{color:var(--dim)}
 #tldetail .ys{font:10.5px "IBM Plex Mono",ui-monospace,Menlo,monospace;color:var(--dim);margin:-2px 0 8px}
 #tldetail .s{display:block;font:10.5px "IBM Plex Mono",ui-monospace,Menlo,monospace;color:var(--dim)}
@@ -293,14 +294,16 @@ canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
 <header>
   <button id="menuBtn" aria-label="Open menu" title="Open menu">☰</button>
   <a id="logoLink" href="https://www.1838blackmetropolis.com/" target="_blank" rel="noopener" title="1838 Black Metropolis"><img id="logo" src="logo_1838.jpg" alt="1838 Black Metropolis seal"></a><h1><b>1838 BLACK METROPOLIS</b> · People &amp; Papers Network</h1>
-  <a id="adsLink" href="ads.html" title="Advertisements by Black business owners, cut from the newspapers">Business ads &#8594;</a> <a id="tradesLink" href="trades.html" title="The 1838 Register of Trades of the Colored People, by trade">1838 trades &#8594;</a> <button id="themeBtn" type="button" title="Switch between light and dark colors"></button>
+  <a id="adsLink" href="ads.html" title="Advertisements by Black business owners, cut from the newspapers">Business ads</a> <a id="tradesLink" href="trades.html" title="The 1838 Register of Trades of the Colored People, by trade">1838 trades</a>
+  <div id="mapbtns"><button id="orgmapbtn" title="Map of organizations linked by shared members">Org map</button><button id="evtlbtn" title="Every event on one timeline">Events timeline</button><button id="tab-t" title="Organization timelines">Org timelines</button></div>
+  <button id="themeBtn" type="button" title="Switch between light and dark colors"></button>
   <span class="sub">This database connects people, events and organizations in Philadelphia prior to 1900. Its foundation is the 1838 and 1847 censuses of the free Black population, informed by over 30 years of research by historian Julie Winch. To this we added 19th-century newspapers that were freely available, church histories, school histories and more. This is constantly growing. Sources are listed at the bottom of the page. · build __BUILD__</span>
 </header>
 <div id="drawerBackdrop" class="hide"></div>
 <div id="wrap">
   <div id="left">
     <button id="leftClose" aria-label="Close menu" title="Close">✕</button>
-    <div id="tabs"><button id="tab-p" class="on">PEOPLE</button><button id="tab-e">EVENTS</button><button id="tab-o">ORGS</button><button id="tab-t" title="Organization timelines">TIMELINES</button></div>
+    <div id="tabs"><button id="tab-p" class="on">PEOPLE</button><button id="tab-e">EVENTS</button><button id="tab-o">ORGS</button></div>
     <input id="search" placeholder="Search a name… e.g. Cornish" autocomplete="off">
     <div id="filters">
       <span class="chip on" data-f="all">All</span>
@@ -324,7 +327,6 @@ canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
       <span><i class="dot" style="background:var(--n-e)"></i>event</span>
       <span><i class="dot" style="background:var(--n-o)"></i>organization</span>
     </div>
-    <div id="mapbtns"><button id="expbtn" aria-pressed="false" title="When on, clicking a person or event in this view adds their connections instead of moving to them">+ Expand</button><button id="orgmapbtn" title="Map of organizations linked by shared members">Organization map</button><button id="evtlbtn" title="Every event on one timeline">Events timeline</button></div>
     <div id="miniPanel">
       <div id="miniHead"><span id="miniTitle"></span><button id="miniClose" title="close">✕</button></div>
       <canvas id="miniCv"></canvas>
@@ -341,7 +343,7 @@ canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
     <div id="right"><p class="empty">Select a person to see their newspaper appearances, writings, events, co-attendees, and Winch reference entry.</p></div>
   </div>
 </div>
-<footer id="sitefooter"><a href="https://www.1838blackmetropolis.com/" target="_blank" rel="noopener">1838 Black Metropolis Historiography, AI Visuals, and Interpretation</a> © 2023, 2024, 2025, 2026 by 1838 Black Metropolis, Inc., is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="noopener">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a><details class="credits"><summary>Sources &amp; credits</summary><a href="https://drive.google.com/drive/u/0/search?q=julie" target="_blank" rel="noopener">Julie Winch notes</a> appear courtesy and copyright Dr. Julie Winch, Edmonia Lewis data appears courtesy and copyright Dr. Melissa Benbow-Flowers, Freedom&rsquo;s Journal / Colored American / Pennsylvania Freeman courtesy the Center for Research Libraries (<a href="https://www.crl.edu/" target="_blank" rel="noopener">crl.edu</a>), the Philadelphia Tribune courtesy The Philadelphia Tribune (<a href="https://www.phillytrib.com/" target="_blank" rel="noopener">phillytrib.com</a>), <em>The North Star</em> appears courtesy Howard University (<a href="https://dh.howard.edu/" target="_blank" rel="noopener">dh.howard.edu</a>), <em>Frederick Douglass&rsquo; Paper</em> appears courtesy the New York Heritage Digital Collections, St. John Fisher University (<a href="https://nyheritage.org/organizations/st-john-fisher-university" target="_blank" rel="noopener">nyheritage.org</a>), the <em>Christian Recorder</em> appears courtesy the Internet Archive (<a href="https://archive.org/" target="_blank" rel="noopener">archive.org</a>), the <a href="https://www.1838blackmetropolis.com/1838-pas-census" target="_blank" rel="noopener">1838 Pennsylvania Abolition Society Census</a> courtesy the Historical Society of Pennsylvania (<a href="https://hsp.org/" target="_blank" rel="noopener">hsp.org</a>), the 1847 Pennsylvania Abolition Society Census courtesy the Swarthmore College Friends Historical Library (<a href="https://ds-pages.swarthmore.edu/paac/data/" target="_blank" rel="noopener">ds-pages.swarthmore.edu/paac/data</a>), and the 1820 Philadelphia City Directory courtesy the Greater Philadelphia GeoHistory Network (<a href="https://www.philageohistory.org/rdic-images/index2.cfm" target="_blank" rel="noopener">philageohistory.org</a>), the <a href="https://archive.org/details/philadelphiadire1811phil" target="_blank" rel="noopener">1811 Philadelphia Directory</a> (Directory of Coloured Persons and the African Insurance Company) appears courtesy the Internet Archive, the <a href="https://archive.org/details/registeroftrades00phil" target="_blank" rel="noopener"><em>Register of Trades of the Colored People</em> (1838)</a> appears courtesy the Internet Archive (Library of Congress copy), <a href="https://archive.org/details/sim_juvenile-magazine_1813_1-4_3" target="_blank" rel="noopener"><em>The Juvenile Magazine</em> (1813)</a> appears courtesy the Internet Archive (Boston Public Library copy; found through the Bernice Dutrieuille Shelton papers at the Historical Society of Pennsylvania), the Abolition Society&rsquo;s <a href="https://archive.org/details/presentstatecond00penn" target="_blank" rel="noopener"><em>Present State and Condition of the Free People of Color</em> (1838)</a> appears courtesy the Internet Archive, the <a href="https://archive.org/details/undergroundrailr00lcstil" target="_blank" rel="noopener">Underground Railroad</a> appears courtesy Internet Archive, and Fanny Jackson Coppin&rsquo;s <em>Reminiscences of School Life, and Hints on Teaching</em> (Institute for Colored Youth students) courtesy <a href="https://docsouth.unc.edu/neh/jacksonc/jackson.html" target="_blank" rel="noopener">Documenting the American South</a> (UNC-Chapel Hill), and the mob-attack StoryMaps (1834, 1835, 1842, 1849, 1871) are original research and interpretation by <a href="https://www.1838blackmetropolis.com/" target="_blank" rel="noopener">1838 Black Metropolis</a>, and the <a href="https://www.1838blackmetropolis.com/blog" target="_blank" rel="noopener">1838 Black Metropolis blog archive</a> appears courtesy 1838 Black Metropolis, the <a href="https://coloredamerican.org/?page_id=773" target="_blank" rel="noopener"><em>Colored American Magazine</em> (February 1903)</a> appears courtesy The Digital Colored American Magazine (CC BY-NC 4.0), from the copy in the James Weldon Johnson Memorial Collection, Beinecke Rare Book and Manuscript Library, Yale University, newspaper clippings from the <i>United States Gazette</i> and the <i>Philadelphia Inquirer</i> appear courtesy <a href="https://www.newspapers.com/" target="_blank" rel="noopener">Newspapers.com</a>, and the <a href="https://www.1838blackmetropolis.com/attackstats" target="_blank" rel="noopener">1838 Mob Attack Statistics</a> are original research by 1838 Black Metropolis.</details></footer>
+<footer id="sitefooter"><a href="https://www.1838blackmetropolis.com/" target="_blank" rel="noopener">1838 Black Metropolis Historiography, AI Visuals, and Interpretation</a> © 2023, 2024, 2025, 2026 by 1838 Black Metropolis, Inc., is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="noopener">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a><details class="credits"><summary>Sources &amp; credits</summary><a href="https://drive.google.com/drive/u/0/search?q=julie" target="_blank" rel="noopener">Julie Winch notes</a> appear courtesy and copyright Dr. Julie Winch, Edmonia Lewis data appears courtesy and copyright Dr. Melissa Benbow-Flowers, Freedom&rsquo;s Journal / Colored American / Pennsylvania Freeman courtesy the Center for Research Libraries (<a href="https://www.crl.edu/" target="_blank" rel="noopener">crl.edu</a>), the Philadelphia Tribune courtesy The Philadelphia Tribune (<a href="https://www.phillytrib.com/" target="_blank" rel="noopener">phillytrib.com</a>), <em>The North Star</em> appears courtesy Howard University (<a href="https://dh.howard.edu/" target="_blank" rel="noopener">dh.howard.edu</a>), <em>Frederick Douglass&rsquo; Paper</em> appears courtesy the New York Heritage Digital Collections, St. John Fisher University (<a href="https://nyheritage.org/organizations/st-john-fisher-university" target="_blank" rel="noopener">nyheritage.org</a>), the <em>Christian Recorder</em> appears courtesy the Internet Archive (<a href="https://archive.org/" target="_blank" rel="noopener">archive.org</a>), the <a href="https://www.1838blackmetropolis.com/1838-pas-census" target="_blank" rel="noopener">1838 Pennsylvania Abolition Society Census</a> courtesy the Historical Society of Pennsylvania (<a href="https://hsp.org/" target="_blank" rel="noopener">hsp.org</a>), the 1847 Pennsylvania Abolition Society Census courtesy the Swarthmore College Friends Historical Library (<a href="https://ds-pages.swarthmore.edu/paac/data/" target="_blank" rel="noopener">ds-pages.swarthmore.edu/paac/data</a>), and the 1820 Philadelphia City Directory courtesy the Greater Philadelphia GeoHistory Network (<a href="https://www.philageohistory.org/rdic-images/index2.cfm" target="_blank" rel="noopener">philageohistory.org</a>), the <a href="https://archive.org/details/philadelphiadire1811phil" target="_blank" rel="noopener">1811 Philadelphia Directory</a> (Directory of Coloured Persons and the African Insurance Company) appears courtesy the Internet Archive, the <a href="https://archive.org/details/registeroftrades00phil" target="_blank" rel="noopener"><em>Register of Trades of the Colored People</em> (1838)</a> appears courtesy the Internet Archive (Library of Congress copy), Richard Allen&rsquo;s <a href="https://archive.org/details/lifeexperiencego1880alle/page/20/mode/2up" target="_blank" rel="noopener"><em>Life, Experience, and Gospel Labors</em> (1880 printing)</a> appears courtesy the Internet Archive, <a href="https://archive.org/details/sim_juvenile-magazine_1813_1-4_3" target="_blank" rel="noopener"><em>The Juvenile Magazine</em> (1813)</a> appears courtesy the Internet Archive (Boston Public Library copy; found through the Bernice Dutrieuille Shelton papers at the Historical Society of Pennsylvania), the Abolition Society&rsquo;s <a href="https://archive.org/details/presentstatecond00penn" target="_blank" rel="noopener"><em>Present State and Condition of the Free People of Color</em> (1838)</a> appears courtesy the Internet Archive, the <a href="https://archive.org/details/undergroundrailr00lcstil" target="_blank" rel="noopener">Underground Railroad</a> appears courtesy Internet Archive, and Fanny Jackson Coppin&rsquo;s <em>Reminiscences of School Life, and Hints on Teaching</em> (Institute for Colored Youth students) courtesy <a href="https://docsouth.unc.edu/neh/jacksonc/jackson.html" target="_blank" rel="noopener">Documenting the American South</a> (UNC-Chapel Hill), and the mob-attack StoryMaps (1834, 1835, 1842, 1849, 1871) are original research and interpretation by <a href="https://www.1838blackmetropolis.com/" target="_blank" rel="noopener">1838 Black Metropolis</a>, and the <a href="https://www.1838blackmetropolis.com/blog" target="_blank" rel="noopener">1838 Black Metropolis blog archive</a> appears courtesy 1838 Black Metropolis, the <a href="https://coloredamerican.org/?page_id=773" target="_blank" rel="noopener"><em>Colored American Magazine</em> (February 1903)</a> appears courtesy The Digital Colored American Magazine (CC BY-NC 4.0), from the copy in the James Weldon Johnson Memorial Collection, Beinecke Rare Book and Manuscript Library, Yale University, newspaper clippings from the <i>United States Gazette</i> and the <i>Philadelphia Inquirer</i> appear courtesy <a href="https://www.newspapers.com/" target="_blank" rel="noopener">Newspapers.com</a>, and the <a href="https://www.1838blackmetropolis.com/attackstats" target="_blank" rel="noopener">1838 Mob Attack Statistics</a> are original research by 1838 Black Metropolis.</details></footer>
 <script>
 // new-version check: compare our build stamp against the server's every few minutes
 (function(){
@@ -394,7 +396,7 @@ const BAKED_FULLMAP = /*__FULLMAP__*/null;
 window._fullLayoutCache = BAKED_FULLMAP ? new Map(BAKED_FULLMAP) : null;
 // graph colors follow the light/dark switch
 function TH(){ const L=document.documentElement.getAttribute('data-theme')!=='dark';
-  return L ? {sel:'#ce9033',p:'#a3a66e',e:'#aa3d1d',o:'#8e6fa6',ring:'#23271d',pin:'rgba(35,39,29,.5)',hl:'rgba(170,61,29,',faint:'rgba(57,61,50,',line:'rgba(57,61,50,',lblSel:'#23271d',lbl:'#2f3228',halo:'rgba(246,239,226,.85)',faintA:.16,lineA:.32}
+  return L ? {sel:'#c8871e',p:'#2f6f64',e:'#a5472a',o:'#5b3f86',ring:'#23271d',pin:'rgba(35,39,29,.5)',hl:'rgba(170,61,29,',faint:'rgba(57,61,50,',line:'rgba(57,61,50,',lblSel:'#23271d',lbl:'#2f3228',halo:'rgba(246,239,226,.85)',faintA:.16,lineA:.32}
            : {sel:'#d4a24e',p:'#4e8f83',e:'#b4552d',o:'#d18aa8',ring:'#efe7d8',pin:'rgba(239,231,216,.6)',hl:'rgba(232,196,120,',faint:'rgba(168,156,134,',line:'rgba(212,162,78,',lblSel:'#efe7d8',lbl:'#c9bda6',halo:'rgba(22,19,14,.7)',faintA:.10,lineA:.25}; }
 const P = new Map(DATA.people.map(p=>[p.id,p]));
 const E = new Map(DATA.events.map(e=>[e.id,e]));
@@ -1104,7 +1106,7 @@ function drawMini(){
   }
   for(const n of miniNodes){
     miniCtx.beginPath(); miniCtx.arc(n.x,n.y,Math.max(1.5,n.r),0,7);
-    const th=TH(); miniCtx.fillStyle = n.fixed ? th.sel : n.type==='e' ? th.e : n.type==='o' ? th.o : th.p;
+    const th=TH(); miniCtx.fillStyle = n.type==='o' ? th.o : n.type==='e' ? th.e : n.fixed ? th.sel : th.p;
     miniCtx.fill();
     if(n.fixed){ miniCtx.strokeStyle=TH().ring; miniCtx.lineWidth=1.2; miniCtx.stroke(); }
   }
@@ -1418,8 +1420,6 @@ function buildFullGraph(){
 }
 // The all-connections map was retired 2026-11-14 (Michiko): too big to use. buildFullGraph() is kept
 // but no longer reachable; the Organization map and Events timeline overlays (below) replace it.
-// "+ Expand": in the one-person view, clicking a person or event adds its connections to the
-// picture instead of moving to it, so you can walk outward one step at a time.
 const themeBtn=document.getElementById('themeBtn');
 function paintThemeBtn(){ const d=document.documentElement.getAttribute('data-theme')==='dark';
   themeBtn.textContent = d ? '\u2600 Light' : '\u263E Dark'; themeBtn.setAttribute('aria-label', d ? 'Switch to light colors' : 'Switch to dark colors'); }
@@ -1427,39 +1427,7 @@ paintThemeBtn();
 themeBtn.addEventListener('click',()=>{ const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
   document.documentElement.setAttribute('data-theme',t); try{ localStorage.setItem('bm-theme',t); }catch(e){}
   paintThemeBtn(); try{ if(typeof drawMini==='function') drawMini(); }catch(e){} });
-const expbtn=document.getElementById('expbtn');
-window._expand=false;
-expbtn.addEventListener('click',()=>{
-  window._expand=!window._expand; expbtn.setAttribute('aria-pressed',window._expand);
-  document.getElementById('hint').textContent = window._expand
-    ? 'expand is on: tap a person or event to add their connections · tap + Expand again to turn it off'
-    : 'drag to pan · pinch or scroll to zoom · tap a node to navigate';
-});
-function expandNode(n){
-  const have=new Map(nodes.map(m=>[m.type+m.id,m]));
-  const was=nodes.map(m=>m.fixed); nodes.forEach(m=>m.fixed=true);
-  const add=(id,type,label)=>{ const k=type+id; if(have.has(k)) return have.get(k);
-    const a=Math.random()*Math.PI*2, d=40+Math.random()*40;
-    const m={id,type,label,r:6,x:n.x+Math.cos(a)*d,y:n.y+Math.sin(a)*d,z:0,vx:0,vy:0,vz:0};
-    have.set(k,m); nodes.push(m); return m; };
-  const linked=new Set(links.map(l=>l.s.type+l.s.id+'|'+l.t.type+l.t.id));
-  const link=(s,t,w,faint)=>{ const k1=s.type+s.id+'|'+t.type+t.id, k2=t.type+t.id+'|'+s.type+s.id;
-    if(s===t||linked.has(k1)||linked.has(k2)) return; linked.add(k1); links.push({s,t,w,faint}); };
-  if(n.type==='p'){
-    const nb=[...(NBR.get(n.id)||new Map()).entries()].sort((a,b)=>b[1]-a[1]).slice(0,15);
-    for(const [q,w] of nb){ const op=P.get(q); if(op) link(n,add(q,'p',op.name),Math.min(w,4)); }
-    const p=P.get(n.id);
-    for(const x of (p&&p.events)||[]){ const e=E.get(x.e); if(!e) continue;
-      if(have.has('e'+e.id)||e.att.length<=12) link(n,add(e.id,'e',e.name),3); }
-  } else if(n.type==='e'){
-    const e=E.get(n.id);
-    for(const [q] of ((e&&e.att)||[]).slice(0,30)){ const op=P.get(q); if(op) link(n,add(q,'p',op.name),2); }
-  }
-  sizeByDegree(nodes,links,5,20,2.6);
-  for(let it=0;it<160;it++) tick();
-  nodes.forEach((m,i)=>{ m.fixed = i<was.length ? was[i] : false; });
-  n.expanded=true;
-}
+// (The "+ Expand" feature was removed 2026-11-18 at Michiko's request.)
 function draw(){
   const th=TH();
   ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
@@ -1494,8 +1462,9 @@ function draw(){
     const isHl = !hlN || n===hlN || (hl && hl.has(n));
     ctx.globalAlpha = depth * (isHl ? 1 : 0.18);
     ctx.beginPath();ctx.arc(n.px,n.py,Math.max(1.5,n.r*n.ps),0,7);
-    ctx.fillStyle = (n.fixed||n.sel) ? th.sel
-      : n.type==='e' ? th.e : n.type==='o' ? th.o : th.p;
+    // organizations stay purple and events stay red even when selected; gold means a selected person only.
+    // The dark ring and bold label still mark the selection (Michiko 2026-11-18)
+    ctx.fillStyle = n.type==='o' ? th.o : n.type==='e' ? th.e : (n.fixed||n.sel) ? th.sel : th.p;
     ctx.fill();
     if(n.fixed||n.sel){ctx.strokeStyle=th.ring;ctx.lineWidth=1.5;ctx.stroke();}
     else if(n.pin){ctx.strokeStyle=th.pin;ctx.lineWidth=1.2;ctx.stroke();}
@@ -1626,11 +1595,7 @@ function pointerUp(x,y){
   if(dragN && wasClick && dragStart){
     dragN.x=dragStart.x; dragN.y=dragStart.y; dragN.z=dragStart.z; dragN.vx=dragN.vy=dragN.vz=0;
   }
-  if(dragN && wasClick && window._expand && !window._fullView && (dragN.type==='p'||dragN.type==='e') && dragN!==nodes[0]){
-    expandNode(dragN); setHighlight(dragN);
-    window._noRebuild=true;
-    try{ if(dragN.type==='p') select(dragN.id); else selectEvent(dragN.id); } finally { window._noRebuild=false; } }
-  else if(dragN && wasClick){
+  if(dragN && wasClick){
     setHighlight(dragN);
     if(dragN.type==='p') select(dragN.id);
     else if(dragN.type==='e') selectEvent(dragN.id);
@@ -1776,7 +1741,7 @@ syncFab();
       if(hov){ cx.strokeStyle='rgba(111,99,82,.10)'; cx.lineWidth=.5; }
       for(const n of N){
         const dim=hn&&!hn.has(n), r=Math.max(2.5,n.r*Math.sqrt(v.k));
-        cx.globalAlpha=dim?.25:1; cx.fillStyle=n===hov?'#7a2a4c':'#a8466e';
+        cx.globalAlpha=dim?.25:1; cx.fillStyle=n===hov?'#3d2a5c':'#5b3f86';
         cx.beginPath(); cx.arc(sx(n.x),sy(n.y),r,0,Math.PI*2); cx.fill();
         cx.strokeStyle='#fbf8f2'; cx.lineWidth=1; cx.stroke();
       }
@@ -1791,7 +1756,7 @@ syncFab();
         if(boxes.some(b=>bx[0]<b[2]&&bx[2]>b[0]&&bx[1]<b[3]&&bx[3]>b[1])) continue;
         if(!hn && boxes.length>=Math.round(18*Math.max(1,v.k*v.k))) break;
         boxes.push(bx);
-        cx.lineWidth=3; cx.strokeStyle='rgba(243,237,226,.9)'; cx.strokeText(t,X,Y); cx.fillStyle=n===hov?'#7a2a4c':'#2a2118'; cx.fillText(t,X,Y);
+        cx.lineWidth=3; cx.strokeStyle='rgba(243,237,226,.9)'; cx.strokeText(t,X,Y); cx.fillStyle=n===hov?'#3d2a5c':'#2a2118'; cx.fillText(t,X,Y);
       }
     }
     function pick(px,py){ let best=null,bd=1e9; for(const n of N){ const r=Math.max(2.5,n.r*Math.sqrt(v.k))+6, d=Math.hypot(sx(n.x)-px,sy(n.y)-py); if(d<r&&d<bd){bd=d;best=n;} } return best; }
@@ -1832,7 +1797,7 @@ syncFab();
   const evv=document.getElementById('evview');
   if(evv){
     const svg=document.getElementById('evsvg'); let built=false;
-    function frac(d){ const m=String(d||'').match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/); if(!m) return null;
+    function frac(d){ const m=String(d||'').match(/^(?:c\.\s*)?(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/); if(!m) return null;   // 'c. 1793' is placed at 1793 (2026-11-18)
       return +m[1]+((+m[2]||6)-1)/12+((+m[3]||15)-1)/365; }
     function build(){
       if(built) return; built=true;
@@ -1883,7 +1848,7 @@ syncFab();
  <div id="tlbar"><button id="tlclose" title="Close and go back to the database">&#8592; Back</button><span class="ttl">ORGANIZATION TIMELINES</span></div>
  <div id="tlscroll">
   <div id="tlwip"><b>Work in progress.</b> These timelines are still being built and will change as we add sources.</div>
-  <div><p id="tllede">Each row is one Black Philadelphia organization. A dot marks a year when the database has people in it; bigger dots mean more names, and a ringed dot means officers were named. A diamond marks the founding year given in the 1838 Pennsylvania Abolition Society report, and a small square marks that report&rsquo;s 1837 membership count. A hollow circle marks another dated note, such as the founding dates and 1813 counts Arthur Donaldson printed in <i>The Juvenile Magazine</i>. The thin line runs from the first record to the last. These are the years our sources cover, not closing dates. Click a row to open its details right below it, including the 1838 report figures; click a name to open that person in the database.</p></div>
+  <div><p id="tllede">Each row is one Black Philadelphia organization. A dot marks a year when the database has people in it; bigger dots mean more names, and a ringed dot means officers were named. A diamond marks the founding year given in the 1838 Pennsylvania Abolition Society report, and a small square marks that report&rsquo;s 1837 membership count. A hollow circle marks another dated note, such as the founding dates and 1813 counts Arthur Donaldson printed in <i>The Juvenile Magazine</i>, or the founding of the African Church and of Bethel as Richard Allen told it. The thin line runs from the first record to the last. These are the years our sources cover, not closing dates. Click a row to open its details right below it, including the 1838 report figures; click a name to open that person in the database.</p></div>
   <div id="tlchips" role="group" aria-label="Show categories"></div>
   <div id="tlchart"><div id="tlgrid"></div></div>
   <section id="tldetail" aria-live="polite" hidden></section>
@@ -1897,8 +1862,8 @@ syncFab();
   const tv=document.getElementById('tlview'), tab=document.getElementById('tab-t');
   if(!T||!tv||!tab||typeof document.addEventListener!=='function'||typeof window.addEventListener!=='function') return;
   const Y0=1785,Y1=1870, x=y=>((y-Y0)/(Y1-Y0)*100);
-  const CATS={edu:'Education & literary',rights:'Rights & reform',vig:'Vigilance & self-protection',aid:'Mutual aid, beneficial & economic'};
-  const show={aid:1,edu:1,rights:1,vig:1,pas:1};
+  const CATS={edu:'Education & literary',rights:'Rights, reform & anti-slavery',vig:'Vigilance & self-protection',aid:'Mutual aid, beneficial & economic',church:'Churches & conferences',sport:'Sports clubs'};
+  const show={aid:1,edu:1,rights:1,vig:1,church:1,sport:1,pas:1};
   const PN={}; (DATA.people||[]).forEach(p=>PN[p.id]=p.name);
   const e=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const nm=id=>{let n=PN[id]||'';const m=n.match(/^([^,]+),\s*(.+)$/);if(m&&!/^(Jr|Sr)\.?$/.test(m[2])){const g=m[2].match(/^(.*?)\s+((?:Jr|Sr)\.?)$/);n=g?g[1]+' '+m[1]+' '+g[2]:m[2]+' '+m[1];}return n===n.toUpperCase()?n.replace(/\w\S*/g,w=>w[0]+w.slice(1).toLowerCase()):n;};
@@ -1933,7 +1898,7 @@ syncFab();
         const rng=new Set(l.att.filter(a=>a[1]>a[0]).map(a=>a[0]+'-'+a[1]));
         rng.forEach(r=>{const [a,b]=r.split('-').map(Number); t+=`<div class="rng c-${c}" style="left:${x(a)}%;width:${x(b)-x(a)}%"></div>`;});
         if(l.pas) t+=`<div class="sq ${c}" style="left:${x(1837)}%" title="1837: ${l.pas[0]==null?'members not given':l.pas[0]+' members'} (PAS report)"></div>`;
-        (l.marks||[]).forEach(m=>{t+=`<div class="mk ${c}" style="left:${x(m[0])}%" title="${m[0]}: ${e(m[1])}"></div>`;});
+        (l.marks||[]).forEach(m=>{t+=`<div class="mk ${c}" style="left:${x(m[0])}%" title="${m[0]}: ${e(m[1].replace(/\s*Scans?:.*$/,''))}"></div>`;});
         if(l.founded) t+=`<div class="dia ${c}" style="left:${x(l.founded)}%" title="Instituted ${l.founded} (PAS report)"></div>`;
         Object.entries(ys).forEach(([y,v])=>{const d=Math.max(7,Math.min(24,5+Math.sqrt(v.n)*3.1));
           t+=`<div class="dot ${c} c-${c}${v.o?' off':''}" style="left:${x(+y)}%;width:${d}px;height:${d}px" title="${y}: ${v.n} name${v.n>1?'s':''}"></div>`;});
@@ -1962,17 +1927,20 @@ syncFab();
       <div><dt>Subscriptions, 1837</dt><dd>${money(l.pas[1])}</dd></div><div><dt>Expenditures, 1837</dt><dd>${money(l.pas[2])}</dd></div><div><dt>Fund</dt><dd>${money(l.pas[3])}</dd></div></dl>
       ${f?`<div class="pasf">Note in the report: ${e(f)}</div>`:''}${l.pasNote?`<div class="pasf">${e(l.pasNote)}</div>`:''}</div>`;
     }
-    if(l.marks) h+=`<div class="yrs">${l.marks.map(m=>`<div class="yr"><h3>${m[0]}</h3><p class="note">${e(m[1])}</p></div>`).join('')}</div>`;
+    if(l.marks) h+=`<div class="yrs">${l.marks.map(m=>`<div class="yr"><h3>${m[0]}</h3><p class="note">${typeof linkify==='function'?linkify(e(m[1])):e(m[1])}</p></div>`).join('')}</div>`;
     if(l.note) h+=`<p class="note">${typeof linkify==='function'?linkify(e(l.note)):e(l.note)}</p>`;
     const org=(DATA.orgs||[]).find(o=>o.name===l.name)||null;
     h+=`<div class="yrs${Object.keys(by).length===1?' single':''}">`;
     Object.keys(by).sort().forEach(y=>{
       const L=by[y].slice().sort((a,b)=>b[5]-a[5]||nm(a[2]).localeCompare(nm(b[2])));
       const one=L.every(a=>a[4]===L[0][4]&&a[1]===a[0])&&L.length>1?L[0][4]:'';
-      const li=a=>`<li><button class="pn" data-pid="${a[2]}">${e(nm(a[2]))}</button>${a[3]&&!/^member\b/i.test(a[3])?` <span class="r">${e(a[3])}</span>`:''}${one?'':`<span class="s">${a[1]>a[0]?a[0]+'–'+a[1]+' · ':''}${e(a[4])}</span>`}</li>`;
+      // 2026-11-18 (Michiko): a record that comes from an event links to the full entry and to the scanned page
+      const EV=id=>id&&(DATA.events||[]).find(v=>v.id===id);
+      const evl=a=>{const v=EV(a[6]); return v?`<button class="evl" data-e="${v.id}" title="Open the full entry">${e(a[4])}</button>${typeof srcLinks==='function'?srcLinks(v.issue,v.pg):''}`:e(a[4]);};
+      const li=a=>`<li><button class="pn" data-pid="${a[2]}">${e(nm(a[2]))}</button>${a[3]&&!/^member\b/i.test(a[3])?` <span class="r">${e(a[3])}</span>`:''}${one?'':`<span class="s">${a[1]>a[0]?a[0]+'–'+a[1]+' · ':''}${evl(a)}</span>`}</li>`;
       const off=L.filter(a=>a[5]), rest=L.filter(a=>!a[5]);
       const single=Object.keys(by).length===1, first=single?L:(off.length?off:rest.slice(0,8)), hid=single?[]:(off.length?rest:rest.slice(8));
-      h+=`<div class="yr"><h3>${y} · ${L.length} name${L.length>1?'s':''}</h3>${one?`<div class="ys">${e(one)}</div>`:''}<ul>${first.map(li).join('')}</ul>`;
+      h+=`<div class="yr"><h3>${y} · ${L.length} name${L.length>1?'s':''}</h3>${one?`<div class="ys">${evl(L[0])}</div>`:''}<ul>${first.map(li).join('')}</ul>`;
       if(hid.length) h+=`<ul hidden>${hid.map(li).join('')}</ul><button class="more">${off.length?'and':'show'} ${hid.length} more</button>`;
       h+='</div>';
     });
@@ -1989,6 +1957,8 @@ syncFab();
   det.addEventListener('click',ev=>{
     if(ev.target.closest('.tlx')){ sel=-1; render(); return; }
     const m=ev.target.closest('.more'); if(m){m.previousElementSibling.hidden=false; m.remove(); return;}
+    const v=ev.target.closest('.evl'); if(v){ const eid=+v.dataset.e; close(false);
+      setTimeout(()=>{ try{ selectEvent(eid); if(typeof isMobile==='function'&&isMobile()&&typeof closeLeftDrawer==='function') closeLeftDrawer(); }catch(err){} },60); return; }
     const p=ev.target.closest('.pn'); if(p){ const pid=+p.dataset.pid; close(false);
       setTimeout(()=>{ try{ select(pid); if(typeof isMobile==='function'&&isMobile()&&typeof closeLeftDrawer==='function') closeLeftDrawer(); }catch(err){} },60); }
   });

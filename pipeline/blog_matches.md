@@ -17,7 +17,7 @@ Add a group to merges.json (id-qualified) to attach the blog mentions to the rig
 - **Elizabeth Brown** (blog)  ↔  Brown, Elizabeth#366, Brown, Elizabeth#359047
 - **Ellen Craft** (blog)  ↔  Craft, Ellen#31200, Craft, Ellen#351701, Ellen Craft#358733
 - **Francis Seymour** (blog)  ↔  Seymour, Francis#355936, Francis M. Seymour#365341
-- **George Washington** (blog)  ↔  Washington, George#351632, WASHINGTON, GEORGE#354152, George Washington#364251
+- **George Washington** (blog)  ↔  Washington, George#351632, WASHINGTON, GEORGE#354152, George Washington#364251, George W. Washington#368189
 - **George Williams** (blog)  ↔  George Williams#70420, Williams, George#357110, Williams, George#358678
 - **Henry Simpson** (blog)  ↔  SIMPSON, HENRY#353818, Simpson, Henry#358452
 - **Jacob C. White** (blog)  ↔  White, Jacob#2772, White, Jacob C., Sr.#2773, Jacob White#364235
@@ -37,13 +37,13 @@ Add a group to merges.json (id-qualified) to attach the blog mentions to the rig
 - **Mary Adelaide Jones** (blog)  ↔  Jones, Mary#1607, Mrs. Mary Jones#361096, Mary L. Jones#363549
 - **Mary Hill** (blog)  ↔  Hill, Mary#355963, Mary A. Hill#360592
 - **Morris Brown** (blog)  ↔  Brown, Morris Sr.#398, BROWN, MORRIS#352069, Morris Brown#359790
-- **Richard Allen** (blog)  ↔  Allen, Richard#31, Richard Allen#14194, ALLEN, RICHARD#351780, Allen, Richard#357327
+- **Richard Allen** (blog)  ↔  Allen, Richard#31, ALLEN, RICHARD#351780, Allen, Richard#357327
 - **Robert Douglass** (blog)  ↔  Douglass, Robert Jr.#899, Robert Douglass#14271, Douglass, Robert#357712
 - **Robert Johnson** (blog)  ↔  Johnson, Robert#1560, Johnson, Robert#1561, Johnson, Robert#1562, Johnson, Robert#1563, Johnson, Robert C.#1564, JOHNSON, ROBERT#353012, Robert J. H. Johnson#366895
 - **Robert Jones** (blog)  ↔  Jones, Robert#1611, Jones, Robert#1612, Robert Jones#8628, JONES, ROBERT#353052, Jones, Robert H#357223, Jones, Robert C.#359265, Robert T. Jones#365240
 - **Robert Patterson** (blog)  ↔  Robert Patterson#359756, Robert Patterson#360453
 - **Robert Purvis** (blog)  ↔  Purvis, Robert#2178, Robert E. Purvis#364230, Robert Purvis#364296
-- **Samuel Williams** (blog)  ↔  WILLIAMS, SAMUEL#351596, WILLIAMS, SAMUEL#360594, Williams, Samuel#360595, Williams, Samuel#360596, Williams, Samuel#360597, Samuel Williams#367383, Williams, Samuel#367950
+- **Samuel Williams** (blog)  ↔  WILLIAMS, SAMUEL#351596, WILLIAMS, SAMUEL#360594, Williams, Samuel#360595, Williams, Samuel#360596, Williams, Samuel#360597, Samuel Williams#367383, Williams, Samuel#368558
 - **Sarah Jones** (blog)  ↔  Jones, Sarah#1613, Jones, Sarah#1614, Jones, Miss Sarah#1615, JONES, SARAH#353053, Jones, Sarah E.#359266
 - **Sarah Lewis** (blog)  ↔  Sarah Lewis#309587, LEWIS, SARAH#353177
 - **Stephen Smith** (blog)  ↔  Smith, Stephen#2436, Mrs. Stephen Smith#364846
