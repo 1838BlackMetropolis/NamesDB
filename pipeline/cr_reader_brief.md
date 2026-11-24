@@ -1,41 +1,40 @@
-# Extraction brief: Christian Recorder, October - December 1866
+# Extraction brief: Christian Recorder, April - June 1867
 
 You are extracting names, articles and events from issues of *The Christian Recorder*
 (Philadelphia, organ of the A.M.E. Church; Rev. Elisha Weaver, General Book Steward/Publisher;
-office and AME Book Depository at No. 619 Pine Street) for the **1838 Black Metropolis names
+office at No. 631 Pine Street from Nov 10, 1866; the Book Depository ad still prints 619 Pine) for the **1838 Black Metropolis names
 database**, a public-history project recovering the free Black community of antebellum
 Philadelphia (c. 1780-1865). The owner is a historian who values source-critical rigor: a wrong
 name is worse than a missing one, and every uncertainty must be flagged, not smoothed over.
 
-NOTE for this quarter: in Jul-Sep 1866 every page-1 masthead printed "Rev. Elisha Weaver, Publisher," and every
-page-2 editorial box "The Christian Recorder. Rev. James Lynch, Editor." Check each issue: if the editor or
-publisher line CHANGES this quarter, say so in your notes. Record editors/publishers exactly as printed.
+NOTE for this quarter: in Jan-Mar 1867 the masthead printed "Rev. Elisha Weaver, Publisher" and the page-2 box "Rev. James
+Lynch, Editor". The June 29 masthead reads "Rev. Elisha Weaver, EDITOR" and the page-2 box drops Lynch: report exactly when and how
+the editorship changed (Lynch's departure, Weaver named editor), and record editors/publishers as printed.
 
-## Inputs (scratch dir S = /home/claude/run98_scratch)
-- OCR text: `S/txt/CR_<date>_p<N>.txt` -- one file per page, 7 columns per page separated by
+## Inputs (scratch dir S = /home/claude/1838names/pipeline/run100_wip; OCR text and page images live in the repo)
+- OCR text: `/home/claude/1838names/ocr_text/CR_<date>_p<N>.txt` -- one file per page, 7 columns per page separated by
   `[column N]` markers, top to bottom within each column. Microfilm OCR: names are often garbled.
-- Page images: `S/jpg/CR_<date>_p<N>.jpg` (2000px wide, whole page). For READING names you need
+- Page images: `/home/claude/1838names/pages/CR_<date>_p<N>.jpg` (2000px wide, whole page). For READING names you need
   higher resolution: render a crop from the source PDF instead. Frame numbers: ALWAYS look the frame up in S/jobs.txt
   ('frame:slug:page'). Pages not in jobs.txt DO NOT EXIST in our copy. Cite by DATE and the issue page (1-4).
-  October-December 1866 (Vol. VI, Nos. 40-52): 13 issues, continuous pagination 157-208. ONE issue is missing a leaf
-  in our copy: **October 6 (No. 40)** is present as pages 3-4 only (pages 1 and 2 missing). All other issues are complete.
-  **Frame 1 is a target card, not a page.** The film has FOUR DUPLICATE EXPOSURES, not listed in jobs.txt: frame 17 repeats
-  frame 16 (Nov 3 p1), frame 29 repeats frame 28 (Nov 17 p4), frame 54 repeats frame 53 (Dec 29 p3), frame 52 repeats
-  frame 55 (Dec 29 p4; frame 52 has a torn corner). Read the frame in jobs.txt; if a spot is damaged or blurred there,
-  crop the SAME spot on the duplicate frame and say so in your notes. Frame map (frame:date:page):
-  - Oct 6 (No.40): f2=p3, f3=p4  (p1 and p2 MISSING)
-  - Oct 13 (No.41): f4=p1, f5=p2, f6=p3, f7=p4
-  - Oct 20 (No.42): f8=p1, f9=p2, f10=p3, f11=p4
-  - Oct 27 (No.43): f12=p1, f13=p2, f14=p3, f15=p4
-  - Nov 3 (No.44): f16=p1 (dup f17), f18=p2, f19=p3, f20=p4
-  - Nov 10 (No.45): f21=p1, f22=p2, f23=p3, f24=p4
-  - Nov 17 (No.46): f25=p1, f26=p2, f27=p3, f28=p4 (dup f29)
-  - Nov 24 (No.47): f30=p1, f31=p2, f32=p3, f33=p4
-  - Dec 1 (No.48): f34=p1, f35=p2, f36=p3, f37=p4
-  - Dec 8 (No.49): f38=p1, f39=p2, f40=p3, f41=p4
-  - Dec 15 (No.50): f42=p1, f43=p2, f44=p3, f45=p4
-  - Dec 22 (No.51): f46=p1, f47=p2, f48=p3, f49=p4
-  - Dec 29 (No.52): f50=p1, f51=p2, f53=p3 (dup f54), f55=p4 (dup f52)
+  April-June 1867 (Vol. VII, Nos. 14-26): 13 issues, pagination 53-104. In our copy:
+  **April 13 (No. 15) and May 11 (No. 19) are pages 3-4 only** (the film carries a card "first sheet missing" for each,
+  frames 5 and 20). **May 18's page 1 was filmed twice** (frames 23 and 24; we use 24, use 23 to recheck a blurred word).
+  **June 29 was filmed out of order**: frame 50 is page 4 and frame 51 is page 3. Frame map (frame:date:page), confirmed
+  from mastheads and page numbers:
+  - Apr 6 (No.14): f1=p1, f2=p2, f3=p3, f4=p4
+  - Apr 13 (No.15): f6=p3, f7=p4  (p1 and p2 MISSING)
+  - Apr 20 (No.16): f8=p1, f9=p2, f10=p3, f11=p4
+  - Apr 27 (No.17): f12=p1, f13=p2, f14=p3, f15=p4
+  - May 4 (No.18): f16=p1, f17=p2, f18=p3, f19=p4
+  - May 11 (No.19): f21=p3, f22=p4  (p1 and p2 MISSING)
+  - May 18 (No.20): f24=p1 (dup f23), f25=p2, f26=p3, f27=p4
+  - May 25 (No.21): f28=p1, f29=p2, f30=p3, f31=p4
+  - Jun 1 (No.22): f32=p1, f33=p2, f34=p3, f35=p4
+  - Jun 8 (No.23): f36=p1, f37=p2, f38=p3, f39=p4
+  - Jun 15 (No.24): f40=p1, f41=p2, f42=p3, f43=p4
+  - Jun 22 (No.25): f44=p1, f45=p2, f46=p3, f47=p4
+  - Jun 29 (No.26): f48=p1, f49=p2, f51=p3, f50=p4
   Crops: render from the PDF with
   ```
   python3 S/crop.py <frame> <x0frac> <y0frac> <x1frac> <y1frac> <out.png>
@@ -56,8 +55,8 @@ publisher line CHANGES this quarter, say so in your notes. Record editors/publis
   headings. In past runs readers triaged them and had to be sent back; a report that says pages 1 and 4 were not read in
   full will be sent back again. Page 1 carries letters and church news, page 4 the ads and notices. Read the local, notice,
   marriage, death and advertisement columns of pages 2 and 3 from crops as well, INCLUDING EVERY AD COLUMN OF PAGE 3 (one
-  column per crop, five slices; do not check them on the overview image), and the foot of page 3. (For the short issue, read
-  in full whatever pages are present: October 6 is pages 3-4 only, so read BOTH of its pages in full.)
+  column per crop, five slices; do not check them on the overview image), and the foot of page 3. (For the short issues, read
+  in full whatever pages are present: April 13 and May 11 are pages 3-4 only, so read BOTH of their pages in full.)
   This is slow work: expect well over an hour, and take the time.
 - SAVE YOUR JSON AFTER EACH ISSUE (rewrite the whole file each time), so nothing is lost if you are interrupted.
 - In your report, list exactly which pages and columns you read from the image and which you could not read. Never write in
@@ -117,45 +116,65 @@ Format example (taken from an earlier quarter; the structure is what matters):
   ("W. T. Jones"). Expand nothing you cannot see; do not normalize spellings.
 - Dates ISO (yyyy-mm-dd) when the date of the event is stated or computable; else omit `date`.
 
-## Topics to WATCH FOR this quarter (October - December 1866)
+## Topics to WATCH FOR this quarter (April - June 1867)
 Tag these in your notes and make sure each is captured as an article/event with full rosters:
-- PARADES AND PROCESSIONS (owner tracks this as a topic): receptions, Sabbath-school and society processions, lodge turnouts,
-  funeral processions, fall excursions, election-day marches, Thanksgiving (late November) and Christmas observances. For
-  each: date, route or place, the marshals, the societies, lodges, schools, military companies and bands that marched,
-  speakers, and any interference by police or mobs.
-- STREETCAR exclusion (topic): every ejection, petition, meeting, letter, editorial, court case, car company vote. The bill
-  passed the Pa. House in 1866 but not the Senate: watch for the next legislative session and the Equal Rights League's
-  Railroads committee (D. B. Bowser, W. D. Forten, O. V. Catto).
+- STREETCAR exclusion (topic): Governor Geary signed the law in March 1867 forbidding exclusion from the cars. Capture every
+  first ride, refusal, arrest, prosecution or fine of a conductor or company, celebration meeting, letter and editorial about
+  how the law worked in practice (watch for Caroline R. Le Count, O. V. Catto, the Equal Rights League's Railroads committee).
+- PARADES AND PROCESSIONS (owner tracks this as a topic): New Year's and Emancipation Day (January 1) observances,
+  Washington's birthday, Sabbath-school and society processions, lodge turnouts, funeral processions. For each: date, route
+  or place, marshals, societies, lodges, schools, military companies and bands, speakers, any interference by police or mobs.
 - MIGRATIONS (owner tracks this as a topic): people and missionaries leaving or arriving: A.M.E. missions to the South
-  (South Carolina, Georgia, Florida; T. G. Steward, Henry M. Turner, R. H. Cain, J. M. Brown), teachers going South, emigration
-  to Liberia or Haiti, Major Martin R. Delany, Rev. T. M. D. Ward and the Pacific coast. Capture date, origin, destination,
-  names and the organizing committee.
+  (South Carolina, Georgia, Florida; T. G. Steward, Henry M. Turner, R. H. Cain, J. M. Brown, James Lynch), teachers going South,
+  emigration to Liberia or Haiti, Major Martin R. Delany. Capture date, origin, destination, names and the organizing committee.
 - INFORMATION WANTED notices: capture those with a Philadelphia or nearby link as notices with the named people; others in
   the issue notes only.
-- THE CENTENARY OF METHODISM (1866): the Philadelphia Conference committee planned celebrations Oct 23-29 with a collection
-  on Oct 28. Capture every Philadelphia report, committee and amount. Keep it APART from the A.M.E. Semi-Centenary (never
-  merge or conflate them).
-- THE BOOK CONCERN FAIR at Liberty Hall (opening Nov 1, 1866): committees by church, the women's committee, proceeds, closing.
-- ELECTIONS AND SUFFRAGE: the October 1866 elections, the Fourteenth Amendment, suffrage meetings, the Pennsylvania State and
-  National Equal Rights Leagues (the national meeting was moved to Washington), delegates and officers (Philadelphia names linked).
+- CONVENTIONS AND SUFFRAGE: the National Convention of Colored Soldiers and Sailors and the National Equal Rights League
+  meeting in Washington (January 1867); the Pennsylvania State Equal Rights League; Philadelphia delegates and officers (linked);
+  suffrage petitions and meetings.
+- LIBERTY HALL (the former ICY building on Lombard St., dedicated Nov 1866): every meeting, concert, lecture or fair held
+  there, and stockholder business.
+- THE BOOK CONCERN (Great Union) FAIR aftermath: reports of proceeds, thanks to committees, prizes awarded.
+- THE PHILADELPHIA ANNUAL CONFERENCE (spring 1867 session): place, dates, committees, examinations, ordinations, and the full
+  1867 appointments (record every Philadelphia-district appointment as printed); also the Baltimore, New York and South Carolina
+  conference reports naming Philadelphia clergy.
 - SOCIETY MEETINGS (owner's instruction): every meeting, anniversary, election, installation or notice of a beneficial,
   literary, temperance, relief or burial society, lodge (Masons, Odd Fellows, Good Samaritans), association, school or church
   society, each as its own EVENT with the full name as printed, date, place with address, and every officer and speaker.
-  Fall and December are election and installation season for lodges: capture officer lists.
-- RETURNING soldiers and sailors, bounty and pension claim notices naming Philadelphians; the soldiers' monument or reunion items.
+  January is election and installation season: capture officer lists.
+- RETURNING soldiers and sailors, bounty and pension claim notices naming Philadelphians; soldiers' reunions.
 - BASE BALL AND CRICKET CLUBS: Pythian and Excelsior and any other club; record members as printed.
 - THE WESLEY CHURCHES BY NAME: owner's rulings: Hurst Street Wesley is LITTLE WESLEY (A.M.E.); Lombard Street Wesley is BIG
   WESLEY (A.M.E. Zion), also printed "First Colored Wesley Church"; plain "Wesley Church" notices default to the Little Wesley
   lane but FLAG them. Record each exactly as printed.
-- Philadelphia Conference and Bethel affairs (pastor James Hollen), quarterly meetings, church dedications, fairs and festivals,
+- Bethel affairs (pastor James Hollen), quarterly meetings, church dedications, fairs and festivals, watch-night services,
   the Home for Aged and Infirm Colored Persons, the Institute for Colored Youth, the public colored schools (teachers named),
-  the Banneker Institute, the Library Company, the Social, Civil and Statistical Association, the Pennsylvania Freedmen's Relief.
+  the Banneker Institute, the Library Company, the Social, Civil and Statistical Association, the Pennsylvania Freedmen's Relief,
+  the Zion Mission (Seventh below Dickerson).
 - NEW or changed Black-owned ads; marriages and deaths of Philadelphians, with officiating ministers.
 
-## Already captured (through September 29, 1866) -- do NOT re-enter unless the ad/notice has CHANGED
-Everything in the Christian Recorder THROUGH THE SEPTEMBER 29, 1866 ISSUE is already in the database (Runs #74-#97). A repeated
-ad or standing notice is entered once; an ad whose address, proprietor or wording has CHANGED is new. Many of the ads below
-will still be running in Oct-Dec 1866: note the repeat, do not re-enter.
+## Already captured (through March 30, 1867) -- do NOT re-enter unless the ad/notice has CHANGED
+Everything in the Christian Recorder THROUGH THE MARCH 30, 1867 ISSUE is already in the database (Runs #74-#99). A repeated
+ad or standing notice is entered once; an ad whose address, proprietor or wording has CHANGED is new.
+
+### Run #99 (January - March 1867) -- note repeats, do NOT re-enter
+Ads: Dr. T. M. Kennard & Bro. (832 Carpenter); J. H. Moore's china store For Sale (716 Lombard); M. A. Williams, boxes (1019 Rodman);
+the Blind Sam concerts (National Hall; A. M. Green manager); Mrs. Sarah Irons, shrouding (Union St.; 320 likely: report the number if
+a printing shows it clearly). Captured: the streetcar bill through Senate, House, Common Council and Gov. Geary's signature; Mrs. Sarah G.
+Thompson pushed off a car (conductor bound over); the NERL in Washington (officers, Jan 10); Amelia Mills and Miss Brown teaching in
+Virginia. Rulings: the Eddys are ONE man (J. P. B. / Joshua / Josiah Eddy); Thomas M. Kinnard / Thomas Kennard / Dr. T. M. Kennard are one
+man; Charles W. Brister (Continental Restaurant) = Winch Brister, Charles; S. Morgan Smith is NOT Stephen Smith.
+
+### Run #98 (October - December 1866) -- note repeats, do NOT re-enter
+Ads: Mrs. Sarah Irons, shrouding and laying out the dead, moved to Union Street (number 320 or 820 not settled: if a Jan-Mar
+printing shows the number clearly, report it in notes and flags); A. Upham's confectionery (white-owned; skip); J. H. Moore's
+china (printed 716 Lombard Oct-Dec; 706 in Sep: report which number Jan-Mar printings show); Lodgings (Gaskill St., 410/416:
+report the number shown). Captured: Liberty Hall dedication (Nov 12); the Book Concern (Great Union) Fair (calls, opening
+Nov 15, officers, Mrs. Maria Hallowell president, closing Nov 29, prizes); the Philadelphia soldiers' and sailors' permanent
+organization (Sgt. J. R. V. Morgan president); the Soldiers' and Sailors' National Convention call (Nov 3, Dec 22); the NERL
+Washington call (Nov 24, Dec 15); the Dec 19 Liberty Hall mass meeting electing delegates to Washington (I. C. Wears
+president); the Odd Fellows' gold medal to D. B. Bowser; St. Thomas' fair committee; Bishop Campbell Bible Class officers;
+the ICY examination and 1866 graduates; the Zion Mission; Union A.M.E. quarterly meeting; Elisha Weaver's marriage (Nov 14).
 
 ### Run #97 (July - September 1866) -- note repeats, do NOT re-enter
 Standing ads entered once in Jul-Sep 1866: Mrs. J. Culquhoon's ice cream saloon (No. 913 Lombard; owner's reading of the
@@ -264,6 +283,10 @@ the Pennsylvania Central Railroad; the "Vermifuge" ad; McLane's pills.
   Bolivar) and "Joseph H. Carter" of the 1866 organ ad is the same man: record as printed. A. T. Jones of 718 Lombard (printed
   A. P./A. I./A. J.) is one man. Rev. William Moore of Trenton (1866) is recorded as printed and is NOT linked to Bethel's earlier
   William Moore. Common names on out-of-town committees (N.J., Chester Co., Md.) stay in the text only.
+- Run #98 and Liberty Hall rulings (owner, 2026-11-21): Robert Adger of Liberty Hall IS Robert M. Adger (only one). Robert
+  Allen and Henry Jones, Liberty Hall stockholders, are kept on their own records (not linked to older same-named men). "J. W.
+  Parnell" of the Liberty Hall dedication = James W. Purnell. William Warrick and William Warrick, Jr. of Liberty Hall are one
+  man (Jr.). The ice cream saloon at 913 Lombard is Mrs. J. Culquhoon's (owner's reading). Record all as printed.
 - OPEN identity questions (record as printed, flag, do NOT link across): Rev. William Moore of Bethel (1864-66) vs
   the earlier A.M.E. cleric William Moore of 1835 -- kept apart. H. G. Rhodes vs H. J. Rhodes -- kept as printed. R. P. Gibbs vs
   J. P. Gibbs -- kept as printed. "Malcolm's" branch address read as 609 Walnut is uncertain [VERIFY]. Octavius V. Catto appears on

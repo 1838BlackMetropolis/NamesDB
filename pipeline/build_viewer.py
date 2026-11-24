@@ -116,6 +116,7 @@ for r in con.execute("SELECT * FROM appearances"):
         events[r["event_id"]]["att"].append([pid, r["role"]])
         people[pid]["events"].append({"e": r["event_id"], "role": r["role"]})
     elif r["article_id"] and r["article_id"] in articles:
+        articles[r["article_id"]].setdefault("ppl", []).append([pid, r["role"]])  # people named in the article (2026-11-24: article page in the viewer)
         if r["role"] == "author":
             people[pid]["articles"].append({"a": r["article_id"], "role": r["role"]})
         else:
@@ -518,13 +519,19 @@ if os.path.exists(_tp_path):
             if not hit: raise SystemExit(f"topics.json: no article {k}")
             for a in hit: a.setdefault("tp", []).append(t["slug"]); aids.append(a["id"])
         for k in t.get("events", []):
-            hit = [e for e in events.values() if e["issue"] == k["issue"] and e["name"] == k["name"]]
+            hit = [e for e in events.values() if (e["issue"] or "") == (k["issue"] or "") and e["name"] == k["name"]]
             if not hit: raise SystemExit(f"topics.json: no event {k}")
             for e in hit: e.setdefault("tp", []).append(t["slug"]); eids.append(e["id"])
         aids.sort(key=lambda i: (_idate.get(articles[i]["issue"]) or "9999", articles[i]["pg"] or 0))
         eids.sort(key=lambda i: (events[i].get("date") or _idate.get(events[i]["issue"]) or "9999"))
         data["topics"].append({"label": t["label"], "slug": t["slug"], "note": t.get("note", ""),
                                "links": t.get("links", []), "articles": aids, "events": eids})
+        if t.get("timeline"):  # topic timeline page (2026-11-24, Michiko), e.g. streetcar.html
+            import build_topic_timeline as _btt
+            data["topics"][-1]["timeline"] = t["timeline"]["file"]
+            _n = _btt.make(t["timeline"], data["topics"][-1], articles, events, people, issues, urls, ia_urls, jpeg_slugs,
+                           os.path.dirname(OUT))
+            print("timeline:", t["timeline"]["file"], "|", _n, "entries")
         print("topic:", t["label"], "|", len(aids), "articles,", len(eids), "events")
 # Organization map (2026-11-14, Michiko): replaces the all-connections map. One dot per organization with
 # 3+ members; a line joins two organizations that share members (weight = number shared). The layout is

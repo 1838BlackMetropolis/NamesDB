@@ -1087,7 +1087,64 @@
    "page": 3,
    "headline": "Shrouding: Mrs. Sarah Irons (changed address)",
    "address": [
-    "Union Street, Philadelphia"
+    "No. 320 Union Street, Philadelphia"
+   ]
+  },
+  {
+   "issue": "CR_1867-02-09",
+   "page": 3,
+   "headline": "Dentists and Herb Doctors: Dr. T. M. Kennard & Bro. (new ad)",
+   "address": [
+    "832 Carpenter Street"
+   ]
+  },
+  {
+   "issue": "CR_1867-02-16",
+   "page": 3,
+   "headline": "For Sale: good will and fixtures of a China Store (J. H. Moore)",
+   "address": [
+    "716 Lombard Street"
+   ]
+  },
+  {
+   "issue": "CR_1867-03-09",
+   "page": 3,
+   "headline": "Boxes! Boxes!! Boxes!!! -- M. A. Williams, 1019 Rodman St. (advertisement)",
+   "address": [
+    "1019 Rodman Street"
+   ]
+  },
+  {
+   "issue": "CR_1867-02-23",
+   "page": 3,
+   "headline": "Blind Sam concerts at National Hall (advertisement)",
+   "address": [
+    "National Hall, Market Street above Twelfth"
+   ]
+  },
+  {
+   "issue": "CR_1867-05-25",
+   "page": 3,
+   "headline": "A Rare Chance for a First-Class Dentist (Crummill practice)",
+   "address": [
+    "449 North Third Street, Philadelphia"
+   ]
+  },
+  {
+   "issue": "CR_1867-06-22",
+   "page": 3,
+   "headline": "Whipper & Purnell, Lumber Merchants (new ad)",
+   "address": [
+    "N. E. corner of Broad and Noble Streets, Philadelphia"
+   ]
+  },
+  {
+   "issue": "CR_1867-06-08",
+   "page": 3,
+   "headline": "Dr. T. M. Kennard & Bro. -- now also at 717 Lombard Street (changed ad)",
+   "address": [
+    "832 Carpenter Street, Philadelphia",
+    "717 Lombard Street, Philadelphia"
    ]
   }
  ]

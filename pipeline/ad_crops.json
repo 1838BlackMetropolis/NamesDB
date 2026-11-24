@@ -1698,6 +1698,118 @@
     0.214
    ],
    "check": "placed Run #98, 2026-11-20; col 4 top; house number on Union St. reads 320 or 820 at 1600 dpi (also printed Dec 1866), so the address is shown without it"
+  },
+  {
+   "issue": "CR_1867-02-09",
+   "page": 3,
+   "headline": "Dentists and Herb Doctors: Dr. T. M. Kennard & Bro. (new ad)",
+   "box": [
+    0.281,
+    0.884,
+    0.432,
+    0.966
+   ],
+   "check": "Dentists and herb doctors ad, col 3 foot, header through the hours line (Run #99, 2026-11-23)"
+  },
+  {
+   "issue": "CR_1867-02-16",
+   "page": 3,
+   "headline": "For Sale: good will and fixtures of a China Store (J. H. Moore)",
+   "box": [
+    0.422,
+    0.058,
+    0.565,
+    0.128
+   ],
+   "check": "For Sale china store ad, col 4 top under ADVERTISEMENTS, through J. H. Moore and the address line (Run #99, 2026-11-23)"
+  },
+  {
+   "issue": "CR_1867-03-09",
+   "page": 3,
+   "headline": "Boxes! Boxes!! Boxes!!! -- M. A. Williams, 1019 Rodman St. (advertisement)",
+   "box": [
+    0.422,
+    0.49,
+    0.565,
+    0.545
+   ],
+   "check": "Boxes ad, col 4, header through the March 4 line (Run #99, 2026-11-23)"
+  },
+  {
+   "issue": "CR_1867-03-02",
+   "page": 3,
+   "headline": "Freedman's Cheap Store, Smalls & Gleaves, Beaufort, S. C. (advertisement)",
+   "philadelphia": false,
+   "check": "Beaufort, S.C. (R. H. Gleaves, formerly of Philadelphia): out of town, off ads.html (Run #99)"
+  },
+  {
+   "issue": "CR_1867-02-23",
+   "page": 3,
+   "headline": "Blind Sam concerts at National Hall (advertisement)",
+   "box": [
+    0.425,
+    0.337,
+    0.578,
+    0.613
+   ],
+   "check": "col 4, NATIONAL HALL through 'Feb. 23-1t' (Run #99; Michiko 2026-11-23: put it on the ads page)"
+  },
+  {
+   "issue": "CR_1867-05-25",
+   "page": 3,
+   "headline": "A Rare Chance for a First-Class Dentist (Crummill practice)",
+   "box": [
+    0.425,
+    0.166,
+    0.562,
+    0.262
+   ],
+   "check": "A Rare Chance for a First-Class Dentist ... Sarah Mc. C. Crummill, 449 North Third Street"
+  },
+  {
+   "issue": "CR_1867-06-22",
+   "page": 3,
+   "headline": "Whipper & Purnell, Lumber Merchants (new ad)",
+   "box": [
+    0.284,
+    0.654,
+    0.432,
+    0.716
+   ],
+   "check": "Whipper & Purnell, Lumber Merchants, N. E. Cor. Broad & Noble Sts."
+  },
+  {
+   "issue": "CR_1867-06-08",
+   "page": 3,
+   "headline": "Dr. T. M. Kennard & Bro. -- now also at 717 Lombard Street (changed ad)",
+   "box": [
+    0.424,
+    0.87,
+    0.568,
+    0.965
+   ],
+   "check": "Dentists and Herb Doctors. Dr. T. M. Kennard & Bro. ... 832 Carpenter Street and 717 Lombard Street"
+  }
+ ],
+ "extras": [
+  {
+   "img": "sources/dorsey_box25_sb3_blind_tom_no2_1893.jpg",
+   "full": "sources/dorsey_box25_sb3_blind_tom_no2_1893_photo.jpg",
+   "title": "The Blind Musician: Blind Tom No. 2 and Rev. Dr. Manley, Bainbridge Street Church",
+   "paper": "Dorsey Collection",
+   "date": "April 27, 1893",
+   "iso": "1893-04-27",
+   "people": [
+    [
+     "W. H. Coffey",
+     "newspaper"
+    ]
+   ],
+   "addr": [
+    "Bainbridge Street Church, Bainbridge Street below Twelfth"
+   ],
+   "where": "Broadside. Dorsey Collection, Box 25 (SB-3)",
+   "link_label": "full photo"
   }
  ]
 }
